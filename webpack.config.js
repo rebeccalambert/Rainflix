@@ -7,6 +7,9 @@ module.exports = {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.css', '*']
+  },
   module: {
     rules: [
       {
@@ -15,7 +18,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           query: {
-            presets: ['es2016', 'react']
+            presets: ['@babel/env', '@babel/react']
           }
         },
       }
