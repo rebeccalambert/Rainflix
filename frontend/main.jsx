@@ -29,7 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// <--------------------------Notes to self----------------------------------------------------------->
+// <--------------------------Notes to self--------------------------> //
 
-// The bootstrapping workers, and users can signup, login, and signout, but when a user is logged in they can still navigate
-// to the sign up and log in pages, despite having auth routes...
