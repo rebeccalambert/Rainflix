@@ -9,8 +9,9 @@ const HeaderBar = ({ currentUser, logoutUser}) => {
         </div>
         ) : (
         <div>
+            <h1>Welcome to RainFlix!</h1>
             <Link className="btn" to="/signup">Sign up</Link>
-            <Link className="btn" to="/login">Sign in</Link>
+            <Link className="btn" to="/login">Log in</Link>
         </div>
     );
 

@@ -1,20 +1,18 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { Route } from 'react-router-dom';
 
-import HeaderBar from "./header_bar/header_container";
+import HeaderBarContainer from "./header_bar/header_container";
 import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 
 const App = () => (
     <div>
         <header>
-            <h1>RainFlix App Page!</h1>
-            <HeaderBar />
+        <Route path="/" component={ HeaderBarContainer } />
+        <AuthRoute path="/login" component={ LoginFormContainer } />
+        <AuthRoute path="/signup" component={ SignupFormContainer } />
         </header>
-
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
-
     </div>
 );
 
