@@ -9,7 +9,7 @@ import LoginFormContainer from "./session/login_form_container";
 const App = () => (
     <div>
         <header>
-        <Route path="/" component={ HeaderBarContainer } />
+        <Route exact path="/" component={ HeaderBarContainer } />
     
         <AuthRoute exact path="/login" component={ LoginFormContainer } />
         <AuthRoute exact path="/signup" component={ SignupFormContainer } />

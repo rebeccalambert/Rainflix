@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -24,6 +26,23 @@ class LoginForm extends React.Component {
   }
   render() {
     return (
+      <div>
+      <span>
+            <span className="logo">
+                <Link to="/">
+                    <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
+                </Link>
+            </span>
+
+            <span >
+                <Link className="authLinks redButton" to="/login">Log In</Link>
+            </span>  
+
+            <div> 
+              Already signed up?<a href="#/signup">Sign up</a>
+            </div>
+        
+      </span>
       <div className="login-form">
         <h2>Log in!</h2>
         <form>
@@ -45,6 +64,7 @@ class LoginForm extends React.Component {
           </label>
         </form>
       </div>
+    </div>
     );
   }
 }
