@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, Helvetica, sans-serif;
+    background-color: black;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+
+}
+
+header {
+    font-family: 'Helvetica Neue', Helvetica, Arial, Helvetica, sans-serif;
+    background-color: black;
+    background: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+ .logo {
+     position: relative;
+     text-align: left;
+     width: 100%;
+    max-width: 400px;
+ }
+.intro-card {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.header-bar {
+    position: relative;
+    margin: 0 3.5rem;
+    height: 100%;
+    color: white;
+}
+
+.authLinks.redButton {
+    background-color: #e50914;
+    color: white;
+    text-decoration: none;
+    line-height: normal;
+    padding: 7px 17px;
+    font-weight: 400;
+    font-size: 1rem;
+    float: right;
+}
+
+.title-body {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    color: white;
+    padding-top: 15%;
+}
+
+.title-body div {
+    display: flex;
+    justify-content: center;
+}
+
+.slogan h2 {
+    margin: 0;
+}
+
+.slogan h3 {
+    font-weight: normal;
+}
+
+.welcome-message {
+    float: right;
+}
+
