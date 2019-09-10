@@ -178,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
     component: _session_splash__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -379,10 +379,10 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-form"
+        className: "login-background"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         placeholder: "username",
         type: "text",
         value: this.state.username,
@@ -392,7 +392,7 @@ function (_React$Component) {
         type: "password",
         value: this.state.password,
         onChange: this.handleInput('password')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "errors will go in here")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "authLinks redButton submit",
         onClick: this.handleSubmit
       }, "Log in")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -518,27 +518,44 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-background"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "darken"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png",
+        alt: ""
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        placeholder: "username",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "signup-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeholder: "Username",
         type: "text",
         value: this.state.username,
         onChange: this.handleInput('username')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        placeholder: "password",
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeholder: "Password",
         type: "password",
         value: this.state.password,
         onChange: this.handleInput('password')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "authLinks redButton submit",
+        className: "authLinks redButton signup-submit",
         onClick: this.handleSubmit
       }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "switch-form"
       }, "Already have an account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "link",
         href: "#/login"
-      }, "Log in now."))));
+      }, "Log in.")))));
     }
   }]);
 
@@ -596,18 +613,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/header_bar/header_container */ "./frontend/components/header_bar/header_container.jsx");
+
 
 
 
 var splashPage = function splashPage() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-background"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-header"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "All of Rainflix."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Always Free."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Sign up or log in to check it out!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "All of RainFlix."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Always Free."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Sign up or log in to check it out!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splash-signup-button"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "authLinks redButton",
+    className: "authLinks redButton submit",
     to: "/signup"
-  }, "Sign up"))));
+  }, "Sign up here!"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (splashPage);

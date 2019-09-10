@@ -26,10 +26,11 @@ class LoginForm extends React.Component {
   }
   render() {
     return (
-      <div className="login-form">
+      <div className="login-background">
 
         <div className="auth-form">
-          <h1>Log in</h1>
+          <h2>Log in</h2>
+
             <form>
               <div>
                 <input
@@ -47,6 +48,10 @@ class LoginForm extends React.Component {
                   value={this.state.password}
                   onChange={this.handleInput('password')}
                 />
+              </div>
+
+              <div>
+                <h4>errors will go in here</h4>
               </div>
 
               <div>
