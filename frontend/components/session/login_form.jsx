@@ -28,9 +28,9 @@ class LoginForm extends React.Component {
     return (
       <div>
         <span className="logo">
-            <Link to="/">
-                <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
-            </Link>
+          <Link to="/">
+            <img className="logo" src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
+          </Link>
         </span>  
 
       <div className="auth-form">

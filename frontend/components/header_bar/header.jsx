@@ -49,9 +49,9 @@ const HeaderBar = ({ currentUser, logoutUser}) => {
     return (
     <div>
         <header className="header-bar">
-            <span className="logo">
+            <span >
                 <Link to="/">
-                    <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
+                    <img className="logo" src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
                 </Link>
                 {header_content}
             </span>
