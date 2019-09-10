@@ -1,1 +1,1 @@
-# json.errors @errors
+json.extract! @errors

@@ -24,7 +24,27 @@ class LoginForm extends React.Component {
     e.preventDefault();
     this.props.loginUser(this.state);
   }
+
+
+
+  // renderErrors() {
+  // };
+  
+  
   render() {
+    
+    const errors = this.props.errors.session.map((error, i) => {
+    return (
+      <div>
+        <ul className='login-errors'> 
+          <li key={`${i}`}>
+            {error}
+          </li>    
+        </ul>
+      </div>
+    );
+  });
+
     return (
       <div className="login-background">
         <div className="darken">
@@ -56,6 +76,9 @@ class LoginForm extends React.Component {
                   />
                 </div>
 
+                <div>
+                  {errors}
+                </div>
 
                 <div className="login-page-button">
                   <button className="authLinks redButton login-submit" onClick={this.handleSubmit}>Log in</button>

@@ -23,6 +23,21 @@ class SignupForm extends React.Component {
     e.preventDefault();
     this.props.signupNewUser(this.state);
   }
+
+  renderErrors() {
+    return (
+        <div>
+            <ul className='signup-errors'>
+                {this.props.errors.map((error, i) => (
+                    <li key={`${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
   render() {
     return (
       <div className="signup-background">
@@ -63,7 +78,9 @@ class SignupForm extends React.Component {
                 />
               </div>
 
-
+                <div>
+                  {this.renderErrors()}
+                </div>
 
               <div className="signup-page-button">
                 <button className="authLinks redButton signup-submit" onClick={this.handleSubmit}>Sign Up</button>
