@@ -14,30 +14,18 @@
  *= require_self
  */
 
-html, body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Helvetica Neue', Helvetica, Arial, Helvetica, sans-serif;
-    background-color: black;
-    -webkit-font-smoothing: antialiased;
-    font-size: 16px;
-    color: white;
 
-}
+ @media(min-width:468px) {
 
-header {
-    font-family: 'Helvetica Neue', Helvetica, Arial, Helvetica, sans-serif;
-    background-color: black;
-    background: transparent;
-    -webkit-font-smoothing: antialiased;
-}
- .logo {
-    position: relative;
-    text-align: left;
-    width: 175px;
-    padding-top: 1rem;
 
  }
+html, body, header {
+    font-family: 'Helvetica Neue', Helvetica, Arial, Helvetica, sans-serif;
+    background-color: black;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+}
+
 
 .intro-card {
     position: relative;
@@ -46,11 +34,7 @@ header {
     max-width: 1100px;
 }
 
-.header-bar {
-    position: relative; 
-    margin: 0 3.5rem;
-    color: white;
-}
+
 
 .authLinks.redButton {
     background-color: #e50914;
@@ -60,11 +44,9 @@ header {
     padding: 7px 17px;
     font-weight: 400;
     font-size: 1rem;
-    float: right;
 }
 
 .authLinks.redButton.submit {
-    float: none;
     margin: 1%;
     border: #e50914;
 }

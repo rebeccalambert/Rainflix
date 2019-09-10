@@ -26,12 +26,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div>
-        <span className="logo">
-        <Link to="/">
-          <img className="logo" src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
-        </Link>
-        </span>  
-
+        
         <div className="auth-form">
           <h2>Sign Up</h2>
 

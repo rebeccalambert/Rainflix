@@ -27,43 +27,41 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form">
-        <span className="logo">
-          <Link to="/">
-            <img className="logo" src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
-          </Link>
-        </span>  
 
-      <div className="auth-form">
-        <h2>Log in</h2>
-        <form>
-          <div>
-            <input
-              placeholder="username"
-              type="text"
-              value={this.state.username}
-              onChange={this.handleInput('username')}
-            />
-          </div>
+        <div className="auth-form">
+          <h1>Log in</h1>
+            <form>
+              <div>
+                <input
+                  placeholder="username"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.handleInput('username')}
+                />
+              </div>
 
-          <div>
-            <input
-              placeholder="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')}
-            />
-            <div>
-              <button className="authLinks redButton submit" onClick={this.handleSubmit}>Log in</button>
-            </div>
-          </div>
-        </form>
-        
+              <div>
+                <input
+                  placeholder="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleInput('password')}
+                />
+              </div>
+
+              <div>
+                <button className="authLinks redButton submit" onClick={this.handleSubmit}>Log in</button>
+              </div>
+
+            </form>
+        </div>
+
         <div className="switch-form"> 
               Already signed up?<a className="link" href="#/signup">Sign up now.</a>
         </div>
+
       </div>
     
-    </div>
     );
   }
 }
