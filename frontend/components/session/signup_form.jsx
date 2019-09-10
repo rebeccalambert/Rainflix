@@ -26,18 +26,24 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-background">
-        <div className="darken">
+        
           <div className="signup-header">
-            <Link to="/">
-              <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
-            </Link>
+            <span className="signup-header-item">
+              <Link to="/">
+                <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
+              </Link>
+            </span>
+            <span className="signup-header-item">
+              <a className="login-link" href="#/login">Log in</a>
+            </span>
           </div>
 
-          <div className="auth-form">
+          <div className="signup-auth-form">
+            
             <h2>Sign Up</h2>
 
             <form className="signup-form">
-              <div className="form-field">
+              <div className="signup-form-field">
                 <input
                   placeholder="Username"
                   type="text"
@@ -46,7 +52,7 @@ class SignupForm extends React.Component {
                 />
               </div>
           
-              <div className="form-field">
+              <div className="signup-form-field">
                 <input
                   placeholder="Password"
                   type="password"
@@ -62,12 +68,9 @@ class SignupForm extends React.Component {
               </div>
 
             </form>
-            <div className="switch-form"> 
-                Already have an account?<a className="link" href="#/login">Log in.</a>
-            </div>
 
           </div>
-        </div>
+        
       </div>
     );
   }
