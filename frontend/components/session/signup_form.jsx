@@ -53,10 +53,14 @@ class SignupForm extends React.Component {
                   value={this.state.password}
                   onChange={this.handleInput('password')}
                 />
-                </div>
-                <div className="signup-page-button">
-                  <button className="authLinks redButton signup-submit" onClick={this.handleSubmit}>Sign Up</button>
-                </div>
+              </div>
+
+
+
+              <div className="signup-page-button">
+                <button className="authLinks redButton signup-submit" onClick={this.handleSubmit}>Sign Up</button>
+              </div>
+
             </form>
             <div className="switch-form"> 
                 Already have an account?<a className="link" href="#/login">Log in.</a>

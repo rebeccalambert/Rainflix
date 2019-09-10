@@ -1,4 +1,4 @@
-.signup-background {
+/* .signup-background {
     display: flex;
     height: 100%;
     min-height: 900px;
@@ -12,7 +12,7 @@
 .darken {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.49);
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -31,7 +31,6 @@
 
 .auth-form {
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
     background-color: rgba(0,0,0, 0.84);
@@ -73,4 +72,82 @@
     justify-content: center;
     font-size: 16px;
     font-weight: bold;
+    padding: 11px 0;
+} */
+
+.signup-background {
+    display: flex;
+    height: 100%;
+    min-height: 900px;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.darken {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.49);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    min-height: 900px;
+
+}
+
+.signup-header {
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    padding: 1% 0 0 5%;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.84);
+    width: 20%;
+    height: 40%;
+    min-height: 500px;
+    padding: 50px 55px 40px;
+    margin: 2%;
+
+}
+
+.auth-form h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 28px;
+}
+
+.signup-form {
+    padding: 20px;
+}
+.form-field {
+    display: flex;
+    border-radius: 4px;
+    color: #8c8c8c;
+    height: 36px;
+    padding: 5px 20px ;
+    font-size: 18px;
+    background-color: #333;
+    margin-bottom: 16px;
+    justify-content: center;
+}
+
+.signup-page-button {
+    margin-top: 20%
+}
+
+.authLinks.redButton.signup-submit {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 11px 0;
 }

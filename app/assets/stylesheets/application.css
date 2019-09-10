@@ -33,11 +33,11 @@ html, body, header {
     color: white;
     text-decoration: none;
     line-height: normal;
-    padding: 11px 0;
+    padding: 7px 20px;
     font-weight: 400;
     font-size: 1rem;
     border-radius: 4px;
-    width: 100%
+    width: 100%;
 }
 
 .authLinks.redButton.submit {
