@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="login-form">
         <span className="logo">
           <Link to="/">
             <img className="logo" src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
