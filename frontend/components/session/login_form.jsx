@@ -27,43 +27,42 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-      <span>
-            <span className="logo">
-                <Link to="/">
-                    <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
-                </Link>
-            </span>
+        <span className="logo">
+            <Link to="/">
+                <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
+            </Link>
+        </span>  
 
-            <span >
-                <Link className="authLinks redButton" to="/login">Log In</Link>
-            </span>  
-
-            <div> 
-              Already signed up?<a href="#/signup">Sign up</a>
-            </div>
-        
-      </span>
-      <div className="login-form">
-        <h2>Log in!</h2>
+      <div className="auth-form">
+        <h2>Log in</h2>
         <form>
-          <label>Username:
+          <div>
             <input
+              placeholder="username"
               type="text"
               value={this.state.username}
               onChange={this.handleInput('username')}
             />
-          </label>
+          </div>
 
-          <label>Password:
+          <div>
             <input
+              placeholder="password"
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
             />
-            <button onClick={this.handleSubmit}>Log in!</button>
-          </label>
+            <div>
+              <button className="authLinks redButton submit" onClick={this.handleSubmit}>Log in</button>
+            </div>
+          </div>
         </form>
+        
+        <div className="switch-form"> 
+              Already signed up?<a className="link" href="#/signup">Sign up now.</a>
+        </div>
       </div>
+    
     </div>
     );
   }
