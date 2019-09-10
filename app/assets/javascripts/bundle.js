@@ -118,8 +118,7 @@ var logoutCurrentUser = function logoutCurrentUser() {
   return {
     type: LOGOUT_CURRENT_USER
   };
-}; //comment: do we need this export for receiveErrors?
-
+};
 
 var receiveErrors = function receiveErrors(error) {
   return {
@@ -132,6 +131,8 @@ var signupNewUser = function signupNewUser(user) {
   return function (dispatch) {
     return _util_auth_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (currentUser) {
       return dispatch(receiveCurrentUser(currentUser));
+    }, function (error) {
+      return dispatch(receiveErrors(error));
     });
   };
 };
@@ -139,6 +140,8 @@ var loginUser = function loginUser(user) {
   return function (dispatch) {
     return _util_auth_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (currentUser) {
       return dispatch(receiveCurrentUser(currentUser));
+    }, function (error) {
+      return dispatch(receiveErrors(error));
     });
   };
 };
@@ -374,18 +377,25 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       this.props.loginUser(this.state);
-    } // renderErrors() {
-    // };
-
+    }
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.props.errors.session = [];
+    }
   }, {
     key: "render",
     value: function render() {
+      var new_acc_link = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#/signup"
+      }, "create a new account");
       var errors = this.props.errors.session.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "login-errors"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "".concat(i)
-        }, error)));
+          className: "error-messages",
+          key: "{i}"
+        }, "Sorry, we can't find a user with those credentials. Please try again or ", new_acc_link, ".")));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-background"
@@ -400,7 +410,7 @@ function (_React$Component) {
         alt: ""
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log in"), errors, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-field"
@@ -416,7 +426,7 @@ function (_React$Component) {
         type: "password",
         value: this.state.password,
         onChange: this.handleInput('password')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-page-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "authLinks redButton login-submit",
@@ -542,19 +552,20 @@ function (_React$Component) {
       this.props.signupNewUser(this.state);
     }
   }, {
-    key: "renderErrors",
-    value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "signup-errors"
-      }, this.props.errors.map(function (error, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "".concat(i)
-        }, error);
-      })));
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.props.errors.session = [];
     }
   }, {
     key: "render",
     value: function render() {
+      var errors = this.props.errors.session.map(function (error, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "signup-errors"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: i
+        }, error)));
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-background"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -591,7 +602,7 @@ function (_React$Component) {
         type: "password",
         value: this.state.password,
         onChange: this.handleInput('password')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), errors, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-page-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "authLinks redButton signup-submit",
@@ -812,11 +823,11 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newState = state.slice();
+  var newState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ERROR"]:
-      return newState.concat(action.error);
+      return newState.error = action.error.responseJSON;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return [];

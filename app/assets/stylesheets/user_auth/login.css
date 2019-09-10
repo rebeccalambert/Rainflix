@@ -80,3 +80,18 @@
     font-weight: bold;
     padding: 11px 0;
 }
+
+.login-errors {
+    display: flex;
+    background-color: #E87C03;
+    border-radius: 4px;
+    height: 36px;
+    padding: 8% 6%;
+    font-size: 14px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.error-messages a {
+    text-decoration: underline;
+}

@@ -14,7 +14,6 @@ const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER
 });
 
-//comment: do we need this export for receiveErrors?
 const receiveErrors = (error) => ({
   type: RECEIVE_ERROR,
   error
@@ -22,11 +21,11 @@ const receiveErrors = (error) => ({
 
 
 export const signupNewUser = (user) => dispatch => (
-  auth_util.signup(user).then((currentUser) => dispatch(receiveCurrentUser(currentUser)))
+  auth_util.signup(user).then((currentUser) => dispatch(receiveCurrentUser(currentUser)), (error) => dispatch(receiveErrors(error)))
 );
 
 export const loginUser = (user) => dispatch => (
-  auth_util.login(user).then((currentUser) => dispatch(receiveCurrentUser(currentUser)))
+  auth_util.login(user).then((currentUser) => dispatch(receiveCurrentUser(currentUser)), (error) => dispatch(receiveErrors(error)))
 );
 
 export const logoutUser = () => dispatch => (

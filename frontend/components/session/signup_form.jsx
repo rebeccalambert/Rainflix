@@ -24,21 +24,23 @@ class SignupForm extends React.Component {
     this.props.signupNewUser(this.state);
   }
 
-  renderErrors() {
-    return (
-        <div>
-            <ul className='signup-errors'>
-                {this.props.errors.map((error, i) => (
-                    <li key={`${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
+  componentWillMount() {
+    this.props.errors.session = [];
+  }
 
   render() {
+    const errors = this.props.errors.session.map((error, i) => {
+      return (
+        <div>
+          <ul className='signup-errors'> 
+            <li key={i}>
+              {error}
+            </li>    
+          </ul>
+        </div>
+      );
+    });
+
     return (
       <div className="signup-background">
         
@@ -78,9 +80,8 @@ class SignupForm extends React.Component {
                 />
               </div>
 
-                <div>
-                  {this.renderErrors()}
-                </div>
+              {errors}
+      
 
               <div className="signup-page-button">
                 <button className="authLinks redButton signup-submit" onClick={this.handleSubmit}>Sign Up</button>
@@ -93,6 +94,8 @@ class SignupForm extends React.Component {
       </div>
     );
   }
+
 }
+
 
 export default SignupForm;
