@@ -560,9 +560,9 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var errors = this.props.errors.session.map(function (error, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "signup-errors"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: i
         }, error)));
       });

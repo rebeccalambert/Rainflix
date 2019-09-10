@@ -28,14 +28,16 @@ class SignupForm extends React.Component {
     this.props.errors.session = [];
   }
 
+  
+
   render() {
     const errors = this.props.errors.session.map((error, i) => {
       return (
-        <div>
-          <ul className='signup-errors'> 
+        <div className= "signup-errors">
+          <ul> 
             <li key={i}>
               {error}
-            </li>    
+            </li>   
           </ul>
         </div>
       );
@@ -81,7 +83,6 @@ class SignupForm extends React.Component {
               </div>
 
               {errors}
-      
 
               <div className="signup-page-button">
                 <button className="authLinks redButton signup-submit" onClick={this.handleSubmit}>Sign Up</button>
