@@ -38,8 +38,8 @@
     width: 20%;
     height: 40%;
     min-height: 500px;
-    padding: 60px 55px 40px;
-    margin: 5%;
+    padding: 50px 55px 40px;
+    margin: 2%;
 
 }
 
@@ -56,7 +56,7 @@
     display: flex;
     border-radius: 4px;
     color: #8c8c8c;
-    height: 42px;
+    height: 36px;
     padding: 5px 20px ;
     font-size: 18px;
     background-color: #333;
@@ -64,8 +64,13 @@
     justify-content: center;
 }
 
+.signup-page-button {
+    margin-top: 20%
+}
+
 .authLinks.redButton.signup-submit {
     display: flex;
     justify-content: center;
     font-size: 16px;
+    font-weight: bold;
 }
