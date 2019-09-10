@@ -38,6 +38,8 @@ html, body, header {
     font-size: 1rem;
     border-radius: 4px;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .authLinks.redButton.submit {

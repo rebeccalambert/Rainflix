@@ -39,8 +39,10 @@ class SignupForm extends React.Component {
           </div>
 
           <div className="signup-auth-form">
-            
-            <h2>Sign Up</h2>
+            <div className="signup-text">
+              <h2>Sign Up</h2>
+              <p>Add a username and password to create a new account:</p>
+            </div>
 
             <form className="signup-form">
               <div className="signup-form-field">

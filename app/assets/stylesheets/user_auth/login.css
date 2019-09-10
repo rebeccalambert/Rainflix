@@ -51,6 +51,7 @@
 
 .login-form {
     padding: 20px;
+    width: 100%
 }
 .form-field {
     display: flex;
@@ -62,6 +63,10 @@
     background-color: #333;
     margin-bottom: 16px;
     justify-content: center;
+}
+
+.form-field input {
+    width: 100%;
 }
 
 .login-page-button {

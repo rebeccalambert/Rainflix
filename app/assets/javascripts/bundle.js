@@ -553,7 +553,9 @@ function (_React$Component) {
         href: "#/login"
       }, "Log in"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-auth-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Add a username and password to create a new account:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "signup-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-form-field"
