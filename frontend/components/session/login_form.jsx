@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
     return (
       <div className="login-background">
         <div className="darken">
-          <div className="login-header">
+          <div className="login-header logo">
             <Link to="/">
               <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
             </Link>
