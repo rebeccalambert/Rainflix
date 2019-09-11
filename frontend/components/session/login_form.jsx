@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
 
 handleDemoSubmit() {
   this.state = {
-      username: 'Demo User', 
+      username: 'DemoUser', 
       password: '123456'
   }
   const demoUser = Object.assign({}, this.state);
@@ -40,7 +40,7 @@ handleDemoSubmit() {
 
 render() {
     const new_acc_link = <a href="#/signup">create a new account</a>
-    
+
     const errors = this.props.errors.session.map((error, i) => {
     return (
       <div key={`error-${i}`}>
