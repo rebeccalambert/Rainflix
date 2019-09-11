@@ -1,0 +1,28 @@
+
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 5% 0 2%;
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1% 5% 0 2%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1% 5% 0 2%;
+}
+ .logged-in-header {
+     display: flex;
+     align-items:center;
+ }
+
+ .welcome-message {
+     margin-right: 25px;
+ }
