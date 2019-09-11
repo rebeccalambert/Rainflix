@@ -362,6 +362,7 @@ function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemoSubmit = _this.handleDemoSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -384,6 +385,16 @@ function (_React$Component) {
     key: "componentWillMount",
     value: function componentWillMount() {
       this.props.errors.session = [];
+    }
+  }, {
+    key: "handleDemoSubmit",
+    value: function handleDemoSubmit() {
+      this.state = {
+        username: 'Demo User',
+        password: '123456'
+      };
+      var demoUser = Object.assign({}, this.state);
+      this.props.loginUser(demoUser);
     }
   }, {
     key: "render",
@@ -433,7 +444,12 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "authLinks redButton login-submit",
         onClick: this.handleSubmit
-      }, "Log in"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Log in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "demo-user",
+        type: "submit",
+        value: "Demo User",
+        onClick: this.handleDemoSubmit
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "switch-form"
       }, "New to Rainflix?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "link",
@@ -679,7 +695,7 @@ var splashPage = function splashPage() {
     className: "splash-header"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "All of RainFlix."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Always Free."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Sign up or log in to check it out!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "All of RainFlix."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Always Free."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Rainy day? Have some extra time? Sign up or log in to check it out!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splash-signup-button"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "authLinks redButton submit",

@@ -16,7 +16,7 @@ return (
             <div className="title-body">
                 <h1>All of RainFlix.</h1>
                 <h1>Always Free.</h1>
-                <h3>Sign up or log in to check it out!</h3>
+                <h3>Rainy day? Have some extra time? Sign up or log in to check it out!</h3>
                 
                 <div className="splash-signup-button">
                     <Link className="authLinks redButton submit" to="/signup">Sign up here!</Link>

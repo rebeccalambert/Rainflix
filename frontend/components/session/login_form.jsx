@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
   }
 
   handleInput(type) {
@@ -30,7 +31,16 @@ class LoginForm extends React.Component {
     this.props.errors.session = [];
 }
 
-  render() {
+handleDemoSubmit() {
+  this.state = {
+      username: 'Demo User', 
+      password: '123456'
+  }
+  const demoUser = Object.assign({}, this.state);
+  this.props.loginUser(demoUser);
+};
+
+render() {
     const new_acc_link = <a href="#/signup">create a new account</a>
     const errors = this.props.errors.session.map((error, i) => {
     return (
@@ -44,6 +54,7 @@ class LoginForm extends React.Component {
       </div>
     );
   });
+
 
     return (
       <div className="login-background">
@@ -82,6 +93,13 @@ class LoginForm extends React.Component {
                   <button className="authLinks redButton login-submit" onClick={this.handleSubmit}>Log in</button>
                 </div>
 
+                <input
+                  className='demo-user'
+                  type="submit"
+                  value="Demo User"
+                  onClick={this.handleDemoSubmit}
+                />
+            
               </form>
 
             <div className="switch-form"> 
