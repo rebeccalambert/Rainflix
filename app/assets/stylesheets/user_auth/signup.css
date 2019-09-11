@@ -4,8 +4,6 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    /* height: 100%; */
-    /* min-height: 900px; */
     color: black;
 
 }
@@ -68,7 +66,7 @@
 }
 
 .signup-form-field input {
-    width: 100%
+    width: 100%;
 }
 
 .signup-errors {

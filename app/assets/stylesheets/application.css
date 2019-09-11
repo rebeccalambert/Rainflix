@@ -48,17 +48,11 @@ html, body, header {
     width: 100%;
     justify-content: center;
     border-radius: 4px;
-    font-size: 25px;
+    font-size: 29px;
     font-weight: normal;
     margin: 24px 0 12px;
 }
 
-.switch-form {
-    color: #737373;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 60%;
-}
 
 .link {
     color: white;

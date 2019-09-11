@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
-    min-height: 900px;
+    min-height: 1000px;
     background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/blurry-blue-background-3.jpg");
     background-position: center;
     background-size: cover;
@@ -15,13 +15,13 @@
 .splash-darken {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.70);
+    background-color: rgba(0, 0, 0, 0.65);
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    min-height: 900px;
+    min-height: 1000px;
     
 }
 
@@ -30,29 +30,29 @@
     
 }
 .title-body {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin: 15%;
-  /* background-color: rgba(0,0,0, 0.5);  */
-  color: white;
-  font-weight: bold;
-  /* border: 3px solid #f1f1f1; */
-  width: 40%;
-  height: 40%;
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 12%;
+    color: white;
+    font-weight: bold;
+    width: 40%;
+    height: 40%;
+    padding: 20px
 
 }
 
 .title-body h1 {
-    font-size: 3.125rem;
+    font-size: 3.5rem;
     font-weight: bold;
     line-height: 1.1;
 }
 
 .title-body h3 {
     font-weight: normal;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .splash-signup-button {

@@ -26,10 +26,9 @@ class LoginForm extends React.Component {
     this.props.loginUser(this.state);
   }
 
-
-  componentWillMount() {
-    this.props.errors.session = [];
-}
+  componentDidMount() {
+    this.props.removeError();
+  }
 
 handleDemoSubmit() {
   this.state = {
@@ -44,10 +43,10 @@ render() {
     const new_acc_link = <a href="#/signup">create a new account</a>
     const errors = this.props.errors.session.map((error, i) => {
     return (
-      <div>
+      <div key={`error-${i}`}>
         <ul className="login-errors"> 
           <li className="error-messages"
-            key={`{i}`}>
+            >
             Sorry, we can't find a user with those credentials. Please try again or {new_acc_link}.
           </li>    
         </ul>
@@ -68,9 +67,8 @@ render() {
           <div className="auth-form">
             <h2>Log in</h2>
 
-              {errors}
-
               <form className="login-form">
+              {errors}
                 <div className="form-field">
                   <input
                     placeholder="Username"

@@ -1,4 +1,4 @@
-import { RECEIVE_ERROR, RECEIVE_CURRENT_USER } from "../actions/session_actions";
+import { RECEIVE_ERROR, RECEIVE_CURRENT_USER, REMOVE_ERROR } from "../actions/session_actions";
 
 const sessionErrorsReducer = (state = [], action) => {
     Object.freeze(state);
@@ -9,6 +9,9 @@ const sessionErrorsReducer = (state = [], action) => {
             return newState.error = (action.error.responseJSON);
     
         case RECEIVE_CURRENT_USER:
+            return [];
+
+        case REMOVE_ERROR:
             return [];
 
         default:

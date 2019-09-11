@@ -24,20 +24,18 @@ class SignupForm extends React.Component {
     this.props.signupNewUser(this.state);
   }
 
-  componentWillMount() {
-    this.props.errors.session = [];
+  componentDidMount() {
+    this.props.removeError();
   }
-
   
-
   render() {    
     
     const errors = this.props.errors.session.map((error, i) => {
       return (
-          <div className= "signup-errors">
-            {error}
-          </div>
-        );
+        <div key={`error-${i}`} className="signup-errors">
+          {error}
+        </div>
+      );
     });
 
     return (
