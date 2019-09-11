@@ -30,17 +30,14 @@ class SignupForm extends React.Component {
 
   
 
-  render() {
+  render() {    
+    
     const errors = this.props.errors.session.map((error, i) => {
       return (
-        <div className= "signup-errors">
-          <ul> 
-            <li key={i}>
-              {error}
-            </li>   
-          </ul>
-        </div>
-      );
+          <div className= "signup-errors">
+            {error}
+          </div>
+        );
     });
 
     return (
@@ -72,7 +69,7 @@ class SignupForm extends React.Component {
                   onChange={this.handleInput('username')}
                 />
               </div>
-          
+              
               <div className="signup-form-field">
                 <input
                   placeholder="Password"
@@ -81,7 +78,6 @@ class SignupForm extends React.Component {
                   onChange={this.handleInput('password')}
                 />
               </div>
-
               {errors}
 
               <div className="signup-page-button">
