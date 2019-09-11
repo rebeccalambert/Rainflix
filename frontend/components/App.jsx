@@ -7,8 +7,8 @@ import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 
 const App = () => (
-    <div>
-        <header>
+    <div className="app-div">
+
     
         <AuthRoute exact path="/login" component={ LoginFormContainer } />
         <AuthRoute exact path="/signup" component={ SignupFormContainer } />
@@ -16,7 +16,7 @@ const App = () => (
         <AuthRoute exact path="/" component={ splashPage } />
         <ProtectedRoute path="/home" component={ VideoIndexContainer } />
         
-        </header>
+    
     </div>
 );
 
