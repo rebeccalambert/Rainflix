@@ -40,12 +40,12 @@ handleDemoSubmit() {
 
 render() {
     const new_acc_link = <a href="#/signup">create a new account</a>
+    
     const errors = this.props.errors.session.map((error, i) => {
     return (
       <div key={`error-${i}`}>
         <ul className="login-errors"> 
-          <li className="error-messages"
-            >
+          <li className="error-messages">
             Sorry, we can't find a user with those credentials. Please try again or {new_acc_link}.
           </li>    
         </ul>
