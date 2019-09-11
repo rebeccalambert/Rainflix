@@ -238,7 +238,9 @@ var HeaderBar = function HeaderBar(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png",
     alt: ""
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, header_content)));
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "header-content"
+  }, header_content)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HeaderBar);
