@@ -1,7 +1,8 @@
 import React from "react";
 import HeaderBarContainer from "../header_bar/header_container";
+import VideoIndexItem from "../video_index/video_index_item";
 
-const VideoIndex = () => {
+const VideoIndex = (video) => {
 
 
     return (
@@ -9,7 +10,7 @@ const VideoIndex = () => {
             <HeaderBarContainer />
 
             <div className="video-index-header">
-                <p>Video Index will go here</p>
+                <VideoIndexItem video={video} />
             </div>
     </div>
     )

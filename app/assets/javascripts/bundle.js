@@ -747,13 +747,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header_bar/header_container */ "./frontend/components/header_bar/header_container.jsx");
+/* harmony import */ var _video_index_video_index_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../video_index/video_index_item */ "./frontend/components/video_index/video_index_item.jsx");
+/* harmony import */ var _video_index_video_index_item__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-var VideoIndex = function VideoIndex() {
+
+var VideoIndex = function VideoIndex(video) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "video-index-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Video Index will go here")));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    video: video
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (VideoIndex);
@@ -789,6 +794,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_video_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/video_index/video_index_item.jsx":
+/*!**************************************************************!*\
+  !*** ./frontend/components/video_index/video_index_item.jsx ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
