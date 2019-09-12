@@ -14,9 +14,9 @@ const App = () => (
         <AuthRoute exact path="/signup" component={ SignupFormContainer } />
         
         <AuthRoute exact path="/" component={ splashPage } />
-        <ProtectedRoute path="/home" component={ VideoIndexContainer } />
         
     
+        <ProtectedRoute path="/home" component={ VideoIndexContainer } />
     </div>
 );
 
