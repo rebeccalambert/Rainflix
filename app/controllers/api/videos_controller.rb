@@ -3,9 +3,9 @@ class Api::VideosController < ApplicationController
 
 
     def index
-        @videos = Video.all
+        @videos = Video.all.to_ary
         #where(videos.category.to_arr.includes(query)
-        render  :index
+        render :index
     end
 
 
