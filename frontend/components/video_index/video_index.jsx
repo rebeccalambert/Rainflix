@@ -12,10 +12,13 @@ export default class VideoIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideos()
-        // .then(videos => {
-        //     debugger
-        //     this.setState(videos)
-        // });
+        let el = document.getElementById("app-div")
+        el.classList.remove("app-div-overflow")
+    }
+
+    componentWillUnmount() {
+        let el = document.getElementById("app-div")
+        el.classList.add("app-div-overflow")
     }
 
     render() {

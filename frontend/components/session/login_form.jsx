@@ -12,6 +12,8 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+    this.typeUsername = this.typeUsername.bind(this);
+    this.typePassword = this.typePassword.bind(this);
   }
 
   handleInput(type) {
@@ -35,8 +37,52 @@ handleDemoSubmit() {
       password: '123456'
   }
   const demoUser = Object.assign({}, this.state);
+  setTimeout(function(){ this.props.loginUser(demoUser);}, 3000)
   this.props.loginUser(demoUser);
 };
+
+
+typeUsername(e) {
+  e.preventDefault();
+  let i = 0;
+  let username = 'DemoUser'
+  const speed = 200;
+  let username_field = document.getElementById("username-input");
+  username_field.value = "";
+
+  const typingFunction = () => {
+      if (i < username.length) {
+          username_field.value += username.charAt(i);
+          i++;
+          setTimeout(typingFunction, speed);
+      }
+  };
+
+  typingFunction();
+  setTimeout(this.typePassword, 1300);
+  setTimeout(this.handleDemoSubmit, 2400);
+};
+
+typePassword() {
+  let i = 0;
+  const password = 'password'
+  const speed = 200;
+  let password_field = document.getElementById("password-input");
+  password_field.value = "";
+
+  const typingFunction = () => {
+      if (i < password.length) {
+          password_field.value += password.charAt(i);
+          i++;
+          setTimeout(typingFunction, speed);
+      }
+  };
+  typingFunction();
+};
+
+
+
+
 
 render() {
     const new_acc_link = <a href="#/signup">create a new account</a>
@@ -69,7 +115,7 @@ render() {
               <form className="login-form">
               {errors}
                 <div className="form-field">
-                  <input
+                  <input id="username-input"
                     placeholder="Username"
                     type="text"
                     value={this.state.username}
@@ -78,7 +124,7 @@ render() {
                 </div>
 
                 <div className="form-field">
-                  <input
+                  <input id="password-input"
                     placeholder="Password"
                     type="password"
                     value={this.state.password}
@@ -94,7 +140,7 @@ render() {
                   className='demo-user'
                   type="submit"
                   value="Demo User"
-                  onClick={this.handleDemoSubmit}
+                  onClick={this.typeUsername}
                 />
             
               </form>

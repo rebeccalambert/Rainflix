@@ -246,7 +246,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "app-div"
+    id: "app-div",
+    className: "app-div app-div-overflow"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["AuthRoute"], {
     exact: true,
     path: "/login",
@@ -432,6 +433,8 @@ function (_React$Component) {
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDemoSubmit = _this.handleDemoSubmit.bind(_assertThisInitialized(_this));
+    _this.typeUsername = _this.typeUsername.bind(_assertThisInitialized(_this));
+    _this.typePassword = _this.typePassword.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -463,7 +466,51 @@ function (_React$Component) {
         password: '123456'
       };
       var demoUser = Object.assign({}, this.state);
+      setTimeout(function () {
+        this.props.loginUser(demoUser);
+      }, 3000);
       this.props.loginUser(demoUser);
+    }
+  }, {
+    key: "typeUsername",
+    value: function typeUsername(e) {
+      e.preventDefault();
+      var i = 0;
+      var username = 'DemoUser';
+      var speed = 200;
+      var username_field = document.getElementById("username-input");
+      username_field.value = "";
+
+      var typingFunction = function typingFunction() {
+        if (i < username.length) {
+          username_field.value += username.charAt(i);
+          i++;
+          setTimeout(typingFunction, speed);
+        }
+      };
+
+      typingFunction();
+      setTimeout(this.typePassword, 1300);
+      setTimeout(this.handleDemoSubmit, 2400);
+    }
+  }, {
+    key: "typePassword",
+    value: function typePassword() {
+      var i = 0;
+      var password = 'password';
+      var speed = 200;
+      var password_field = document.getElementById("password-input");
+      password_field.value = "";
+
+      var typingFunction = function typingFunction() {
+        if (i < password.length) {
+          password_field.value += password.charAt(i);
+          i++;
+          setTimeout(typingFunction, speed);
+        }
+      };
+
+      typingFunction();
     }
   }, {
     key: "render",
@@ -498,6 +545,7 @@ function (_React$Component) {
       }, errors, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "username-input",
         placeholder: "Username",
         type: "text",
         value: this.state.username,
@@ -505,6 +553,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "password-input",
         placeholder: "Password",
         type: "password",
         value: this.state.password,
@@ -518,7 +567,7 @@ function (_React$Component) {
         className: "demo-user",
         type: "submit",
         value: "Demo User",
-        onClick: this.handleDemoSubmit
+        onClick: this.typeUsername
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "switch-form"
       }, "New to Rainflix?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -840,10 +889,15 @@ function (_React$Component) {
   _createClass(VideoIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchVideos(); // .then(videos => {
-      //     debugger
-      //     this.setState(videos)
-      // });
+      this.props.fetchVideos();
+      var el = document.getElementById("app-div");
+      el.classList.remove("app-div-overflow");
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      var el = document.getElementById("app-div");
+      el.classList.add("app-div-overflow");
     }
   }, {
     key: "render",

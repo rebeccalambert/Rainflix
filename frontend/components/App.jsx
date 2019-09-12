@@ -7,7 +7,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 
 const App = () => (
-    <div className="app-div">
+    <div id="app-div" className="app-div app-div-overflow">
 
     
         <AuthRoute exact path="/login" component={ LoginFormContainer } />
