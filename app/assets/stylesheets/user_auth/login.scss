@@ -33,9 +33,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.70);
     width: 25%;
-    min-height: 60%;
+    min-height: 70%;
+    min-width: 400px;
     padding: 2% 3%;
     margin-top: 1%;
     justify-content: space-between;
@@ -50,9 +52,9 @@
 .login-form {
     padding: 10px;
     width: 100%;
-
+    height: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
 }
 
@@ -91,7 +93,7 @@
     background-color: #E87C03;
     border-radius: 4px;
     padding: 8% 6%;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
     align-items: center;
 }
