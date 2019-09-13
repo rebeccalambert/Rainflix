@@ -1,7 +1,8 @@
-export const grabVideos = () => (
+export const grabVideos = (search) => (
     $.ajax({
         method: "GET",
-        url: "/api/videos"
+        url: "/api/videos",
+        data: { search }
     })
 );
 

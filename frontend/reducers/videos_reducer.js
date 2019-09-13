@@ -5,8 +5,8 @@ const videosReducer = (state = [], action) => {
     let newState = Object.assign({}, state);
 
     switch (action.type) {
-        case RECEIVE_VIDEOS:
-            return newState.videos = (action.videos);
+        case RECEIVE_VIDEOS: 
+            return newState.videos = action.videos;
     
         case RECEIVE_VIDEO:
             return newState.video = (action.video);

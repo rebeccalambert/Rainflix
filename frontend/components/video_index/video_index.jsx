@@ -11,7 +11,7 @@ export default class VideoIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchVideos()
+        this.props.fetchVideos('throwback');
     }
 
     render() {
@@ -25,8 +25,10 @@ export default class VideoIndex extends React.Component {
                 <HeaderBarContainer />
 
                 <div className="video-index">
-                    <ul className="">
-                        {videoItems}
+                    <ul className="categories">
+                        <div className="slider"> Category
+                            {videoItems}
+                        </div>
                     </ul>
                 </div>
             </div>

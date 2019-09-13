@@ -202,9 +202,9 @@ var receiveVideo = function receiveVideo(video) {
   };
 };
 
-var fetchVideos = function fetchVideos() {
+var fetchVideos = function fetchVideos(search) {
   return function (dispatch) {
-    return _util_video_util__WEBPACK_IMPORTED_MODULE_0__["grabVideos"]().then(function (videos) {
+    return _util_video_util__WEBPACK_IMPORTED_MODULE_0__["grabVideos"](search).then(function (videos) {
       return dispatch(receiveVideos(videos));
     });
   };
@@ -939,7 +939,7 @@ function (_React$Component) {
   _createClass(VideoIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchVideos();
+      this.props.fetchVideos('throwback');
     }
   }, {
     key: "render",
@@ -955,8 +955,10 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: ""
-      }, videoItems)));
+        className: "categories"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Category", videoItems))));
     }
   }]);
 
@@ -992,8 +994,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
-    fetchVideos: function fetchVideos() {
-      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["fetchVideos"])());
+    fetchVideos: function fetchVideos(search) {
+      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["fetchVideos"])(search));
     }
   };
 };
@@ -1049,7 +1051,7 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.video.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         width: "320",
         height: "240",
         controls: true
@@ -1479,10 +1481,13 @@ var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withR
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "grabVideos", function() { return grabVideos; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "grabVideo", function() { return grabVideo; });
-var grabVideos = function grabVideos() {
+var grabVideos = function grabVideos(search) {
   return $.ajax({
     method: "GET",
-    url: "/api/videos"
+    url: "/api/videos",
+    data: {
+      search: search
+    }
   });
 };
 var grabVideo = function grabVideo(id) {

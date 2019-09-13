@@ -17,8 +17,8 @@ const receiveVideo = (video) => ({
 });
 
 
-export const fetchVideos = () => dispatch => (
-    video_util.grabVideos().then((videos) => dispatch(receiveVideos(videos)))
+export const fetchVideos = (search) => dispatch => (
+    video_util.grabVideos(search).then((videos) => dispatch(receiveVideos(videos)))
 );
 
 export const fetchVideo = (id) => dispatch => (

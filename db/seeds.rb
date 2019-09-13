@@ -51,6 +51,6 @@ User.create(username: "jonathan", password: "123456")
     vid9 = Video.create(title: '9-kitten-vid', length: 100, category: "book-made-movie realistic laughs throwback" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid9.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
     
-    vid10 = Video.create(title: '10-kitten-vid', length: 7, category: "laugh" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
+    vid10 = Video.create(title: '10-kitten-vid', length: 7, category: "laughs" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid10.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
     
