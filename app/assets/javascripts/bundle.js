@@ -292,18 +292,27 @@ __webpack_require__.r(__webpack_exports__);
 var HeaderBar = function HeaderBar(_ref) {
   var currentUser = _ref.currentUser,
       logoutUser = _ref.logoutUser;
-  var header_content = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  var header_content = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sticky-header"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "header-bar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "logo logged-in"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png",
+    alt: ""
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "header-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "logged-in-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "welcome-message"
-  }, "Welcome ", currentUser.username, "!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Welcome ", currentUser.username, "!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: logoutUser,
     className: "authLinks redButton"
-  }, "Logout"))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "authLinks redButton",
-    to: "/login"
-  }, "Log In"));
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+  }, "Logout")))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "header-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "logo"
@@ -314,7 +323,11 @@ var HeaderBar = function HeaderBar(_ref) {
     alt: ""
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "header-content"
-  }, header_content)));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "authLinks redButton",
+    to: "/login"
+  }, "Log In")))));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, header_content);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HeaderBar);

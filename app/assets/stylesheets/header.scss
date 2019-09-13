@@ -1,9 +1,10 @@
 
 .header-bar {
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
     padding: 0% 1% 0 2%;
+    width: 100%;
 }
 
 .logo {
@@ -12,16 +13,36 @@
     padding: 1% 5% 0 2%;
 }
 
+.logo.logged-in {
+    width: 20%
+}
+
 .header-content {
     display: flex;
     justify-content: flex-end;
     padding: 1% 5% 0 2%;
+    width: 100%;
 }
  .logged-in-header {
      display: flex;
      align-items:center;
+     width: 50%
  }
 
  .welcome-message {
-     margin-right: 25px;
+    margin-right: 25px;
+    width: 100%;
+    padding: 1%;
+    display: flex;
+    justify-content: flex-end;
+ }
+
+ .sticky-header {
+     position: fixed;
+     top: 0px;
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+     background-color: black;
+     z-index: 3;
  }
