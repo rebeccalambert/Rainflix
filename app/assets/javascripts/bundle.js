@@ -232,7 +232,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _video_index_video_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./video_index/video_index_container */ "./frontend/components/video_index/video_index_container.jsx");
+/* harmony import */ var _video_index_video_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./video_index/video_index */ "./frontend/components/video_index/video_index.jsx");
 /* harmony import */ var _session_splash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session/splash */ "./frontend/components/session/splash.jsx");
 /* harmony import */ var _session_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session/signup_form_container */ "./frontend/components/session/signup_form_container.jsx");
 /* harmony import */ var _session_login_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./session/login_form_container */ "./frontend/components/session/login_form_container.jsx");
@@ -264,7 +264,7 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
     exact: true,
     path: "/home",
-    component: _video_index_video_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _video_index_video_index__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _session_error_page__WEBPACK_IMPORTED_MODULE_7__["default"]
   })));
@@ -883,6 +883,123 @@ var splashPage = function splashPage() {
 
 /***/ }),
 
+/***/ "./frontend/components/video_index/category-list.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/video_index/category-list.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CategoryList; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../video_index/video_index_item */ "./frontend/components/video_index/video_index_item.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var CategoryList =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(CategoryList, _React$Component);
+
+  function CategoryList(props) {
+    var _this;
+
+    _classCallCheck(this, CategoryList);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CategoryList).call(this, props));
+    _this.category = _this.props.category;
+    return _this;
+  }
+
+  _createClass(CategoryList, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // this.props.fetchVideos(`${this.category}`);   
+      this.props.fetchVideos("superhero");
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var vids = this.props.videos.map(function (video, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          video: video,
+          key: "video-index-".concat(idx)
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "video-index"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "videos-by-category"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "video-window"
+      }, vids)));
+    }
+  }]);
+
+  return CategoryList;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+;
+
+/***/ }),
+
+/***/ "./frontend/components/video_index/category_list_container.jsx":
+/*!*********************************************************************!*\
+  !*** ./frontend/components/video_index/category_list_container.jsx ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _category_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./category-list */ "./frontend/components/video_index/category-list.jsx");
+/* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
+ // import VideoIndex from "./video_index";
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    videos: Object.values(state.entities.videos)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    fetchVideos: function fetchVideos(search) {
+      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["fetchVideos"])(search));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_category_list__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/video_index/video_index.jsx":
 /*!*********************************************************!*\
   !*** ./frontend/components/video_index/video_index.jsx ***!
@@ -896,7 +1013,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header_bar/header_container */ "./frontend/components/header_bar/header_container.jsx");
-/* harmony import */ var _video_index_video_index_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../video_index/video_index_item */ "./frontend/components/video_index/video_index_item.jsx");
+/* harmony import */ var _video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../video_index/category_list_container */ "./frontend/components/video_index/category_list_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -932,42 +1049,32 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndex).call(this, props));
     _this.state = {
       videos: _this.props.videos
-    }; // this.categories = ['laughs', 'throwback']
-
+    };
+    _this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic'];
     return _this;
-  }
+  } // componentDidMount() {
+  //     this.props.fetchVideos();   
+  // }
+  // Can search by title or by category ---> but if nothing is searched then it just gives back nothing... 
+  // Need to catch that with a message if there are no video items.
+
 
   _createClass(VideoIndex, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchVideos('laughs');
-    } // Can search by title or by category ---> but if nothing is searched then it just gives back nothing... 
-    // Need to catch that with a message if there are no video items.
-
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      // let div = this.categories.map(
-      //     (category, idx) => <VideoIndexItem fetchVideos={this.props.fetchVideos} category={category} key={`video-index-${idx}`}/>
-      // );
-      var vids = this.props.videos.map(function (video, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          fetchVideos: _this2.props.fetchVideos,
-          video: video,
-          key: "video-index-".concat(idx)
+      var category_lists = this.categories.map(function (category, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          category: category,
+          key: "div-index-".concat(idx)
         });
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "categories"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
-      }, " Category", vids))));
+      }, " Category", category_lists))));
     }
   }]);
 
@@ -976,40 +1083,6 @@ function (_React$Component) {
 
 
 ;
-
-/***/ }),
-
-/***/ "./frontend/components/video_index/video_index_container.jsx":
-/*!*******************************************************************!*\
-  !*** ./frontend/components/video_index/video_index_container.jsx ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _video_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./video_index */ "./frontend/components/video_index/video_index.jsx");
-/* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
-
-
-
-
-var mapStateToProps = function mapStateToProps(state, ownProps) {
-  return {
-    videos: Object.values(state.entities.videos)
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-  return {
-    fetchVideos: function fetchVideos(search) {
-      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["fetchVideos"])(search));
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_video_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 

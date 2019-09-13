@@ -30,7 +30,7 @@ User.create(username: "jonathan", password: "123456")
     vid2 = Video.create(title: '2 kitten vid', length: 14, category: "contemplative realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid2.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
     
-    vid3 = Video.create(title: '3 kitten vid', length: 1, category: "contemplative realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
+    vid3 = Video.create(title: '3 kitten vid', length: 1, category: "superhero book-made-movie mission:Possible throwback laughs contemplative mind-bending sing-along animated realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid3.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
     
     vid4 = Video.create(title: '4 kitten vid', length: 1, category: "contemplative mission:Possible" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
