@@ -1,9 +1,9 @@
 import React from 'react';
 
 class VideoIndexItem extends React.Component {
-
-    render() {
-
+   
+    render () {
+        
         return (
             <li className=''>
                 <h3>{this.props.video.title}</h3>

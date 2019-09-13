@@ -3,12 +3,18 @@ class Api::VideosController < ApplicationController
 
 
     def index(search = '')
-        search = params['search'] || ''
-        @videos =  Video.all.select{|video| video.category.split(" ").include?(search.downcase)}
-        @videos +=  Video.all.select{|video| video.title.split("").include?(search.downcase)}
+         search = params['search'] || ''
+         @videos =  Video.all.select{|video| video.category.split(" ").include?(search.downcase)}
+         
+         # @videos +=  Video.all.select{|video| video.title.downcase.split(" ").include?(search.downcase)}
         
-        #### Put the search as splitting on empty string because of the way the kitten video is name
-        #### Change it to a single space (to search by word) when working with real seed data
+        #search = params['search'] || ''
+        #formatted_search = '%' + search.downcase + '%'
+        #@videos = Video.where('lower(video.title) like ?', formatted_search)
+        #@videos = Videos.where('lower(video.category) like ?', formatted_search)
+        
+        #@videos =  Video.all.select{|video| 'lower(video.title) like ?', formatted_search}
+        # @videos +=  Video.all.select{|video| video.title.downcase.split(" ").include?(search.downcase)}
         
         render :index
     end

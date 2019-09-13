@@ -8,16 +8,26 @@ export default class VideoIndex extends React.Component {
         this.state = {
             videos: this.props.videos
         };
+        // this.categories = ['laughs', 'throwback']
     }
 
     componentDidMount() {
-        this.props.fetchVideos('throwback');
+        this.props.fetchVideos('laughs');   
     }
+    // Can search by title or by category ---> but if nothing is searched then it just gives back nothing... 
+    // Need to catch that with a message if there are no video items.
+       
+
+
 
     render() {
         
-        let videoItems = this.props.videos.map(
-            (video, idx) => <VideoIndexItem video={video} key={`video-index-${idx}`}/>
+        // let div = this.categories.map(
+        //     (category, idx) => <VideoIndexItem fetchVideos={this.props.fetchVideos} category={category} key={`video-index-${idx}`}/>
+        // );
+
+         let vids = this.props.videos.map(
+            (video, idx) => <VideoIndexItem fetchVideos={this.props.fetchVideos} video={video} key={`video-index-${idx}`}/>
         );
 
         return (
@@ -27,7 +37,7 @@ export default class VideoIndex extends React.Component {
                 <div className="video-index">
                     <ul className="categories">
                         <div className="slider"> Category
-                            {videoItems}
+                            {vids}
                         </div>
                     </ul>
                 </div>

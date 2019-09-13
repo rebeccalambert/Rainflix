@@ -932,20 +932,29 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndex).call(this, props));
     _this.state = {
       videos: _this.props.videos
-    };
+    }; // this.categories = ['laughs', 'throwback']
+
     return _this;
   }
 
   _createClass(VideoIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchVideos('throwback');
-    }
+      this.props.fetchVideos('laughs');
+    } // Can search by title or by category ---> but if nothing is searched then it just gives back nothing... 
+    // Need to catch that with a message if there are no video items.
+
   }, {
     key: "render",
     value: function render() {
-      var videoItems = this.props.videos.map(function (video, idx) {
+      var _this2 = this;
+
+      // let div = this.categories.map(
+      //     (category, idx) => <VideoIndexItem fetchVideos={this.props.fetchVideos} category={category} key={`video-index-${idx}`}/>
+      // );
+      var vids = this.props.videos.map(function (video, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          fetchVideos: _this2.props.fetchVideos,
           video: video,
           key: "video-index-".concat(idx)
         });
@@ -958,7 +967,7 @@ function (_React$Component) {
         className: "categories"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
-      }, " Category", videoItems))));
+      }, " Category", vids))));
     }
   }]);
 
