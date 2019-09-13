@@ -8,7 +8,7 @@ const errorPage = () => {
 return (
     <div className="error-background">
 
-        <div className="login-header logo">
+        <div className="error-header">
             <Link to="/">
               <img src="https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png" alt=""/>    
             </Link>

@@ -36,9 +36,7 @@ handleDemoSubmit() {
       username: 'DemoUser', 
       password: '123456'
   }
-  const demoUser = Object.assign({}, this.state);
-  setTimeout(function(){ this.props.loginUser(demoUser);}, 3000)
-  this.props.loginUser(demoUser);
+  this.props.loginUser(this.state);
 };
 
 
@@ -53,18 +51,18 @@ typeUsername(e) {
       if (i < username.length) {
           username_field.value += username.charAt(i);
           i++;
-          setTimeout(typingFunction, 100);
+          setTimeout(typingFunction, 75);
       }
   };
 
   typingFunction();
-  setTimeout(this.typePassword, 1500);
+  setTimeout(this.typePassword, 1200);
   setTimeout(this.handleDemoSubmit, 2400);
 };
 
 typePassword() {
   let i = 0;
-  const password = '123456'
+  const password = '12345678910'
   let password_field = document.getElementById("password-input");
   password_field.value = "";
 
@@ -72,7 +70,7 @@ typePassword() {
       if (i < password.length) {
           password_field.value += password.charAt(i);
           i++;
-          setTimeout(typingFunction, 100);
+          setTimeout(typingFunction, 75);
       }
   };
   typingFunction();
