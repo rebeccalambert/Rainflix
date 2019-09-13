@@ -46,7 +46,6 @@ typeUsername(e) {
   e.preventDefault();
   let i = 0;
   let username = 'DemoUser'
-  const speed = 200;
   let username_field = document.getElementById("username-input");
   username_field.value = "";
 
@@ -54,19 +53,18 @@ typeUsername(e) {
       if (i < username.length) {
           username_field.value += username.charAt(i);
           i++;
-          setTimeout(typingFunction, speed);
+          setTimeout(typingFunction, 100);
       }
   };
 
   typingFunction();
-  setTimeout(this.typePassword, 1300);
+  setTimeout(this.typePassword, 1500);
   setTimeout(this.handleDemoSubmit, 2400);
 };
 
 typePassword() {
   let i = 0;
-  const password = 'password'
-  const speed = 200;
+  const password = '123456'
   let password_field = document.getElementById("password-input");
   password_field.value = "";
 
@@ -74,7 +72,7 @@ typePassword() {
       if (i < password.length) {
           password_field.value += password.charAt(i);
           i++;
-          setTimeout(typingFunction, speed);
+          setTimeout(typingFunction, 100);
       }
   };
   typingFunction();

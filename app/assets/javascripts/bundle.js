@@ -477,7 +477,6 @@ function (_React$Component) {
       e.preventDefault();
       var i = 0;
       var username = 'DemoUser';
-      var speed = 200;
       var username_field = document.getElementById("username-input");
       username_field.value = "";
 
@@ -485,20 +484,19 @@ function (_React$Component) {
         if (i < username.length) {
           username_field.value += username.charAt(i);
           i++;
-          setTimeout(typingFunction, speed);
+          setTimeout(typingFunction, 100);
         }
       };
 
       typingFunction();
-      setTimeout(this.typePassword, 1300);
+      setTimeout(this.typePassword, 1500);
       setTimeout(this.handleDemoSubmit, 2400);
     }
   }, {
     key: "typePassword",
     value: function typePassword() {
       var i = 0;
-      var password = 'password';
-      var speed = 200;
+      var password = '123456';
       var password_field = document.getElementById("password-input");
       password_field.value = "";
 
@@ -506,7 +504,7 @@ function (_React$Component) {
         if (i < password.length) {
           password_field.value += password.charAt(i);
           i++;
-          setTimeout(typingFunction, speed);
+          setTimeout(typingFunction, 100);
         }
       };
 
@@ -890,14 +888,6 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchVideos();
-      var el = document.getElementById("app-div");
-      el.classList.remove("app-div-overflow");
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      var el = document.getElementById("app-div");
-      el.classList.add("app-div-overflow");
     }
   }, {
     key: "render",
