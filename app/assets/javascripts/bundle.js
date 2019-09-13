@@ -414,12 +414,10 @@ var errorPage = function errorPage() {
     alt: ""
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "error-page-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Rainflix Site Error - Page Not Found"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Were were unable to find that page."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Please go to the Rainflix home page by clicking the button bellow."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "error-page-button-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Rainflix Site Error - Page Not Found"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We were unable to find that page."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please go to the Rainflix home page by clicking the button bellow."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "error-page-button",
-    to: "/"
-  }, "Rainflix Home"))));
+    href: "/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Rainflix Home"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (errorPage);

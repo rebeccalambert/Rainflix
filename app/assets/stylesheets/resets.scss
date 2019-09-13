@@ -22,10 +22,12 @@ span, article, footer, time, small {
   background: transparent;
 }
 
+body {
+  background-color: black;
+}
 
 html, body, header {
   font-family: 'Helvetica Neue', Helvetica, Arial, Helvetica, sans-serif;
-  background-color: black;
   -webkit-font-smoothing: antialiased;
   color: white;
   max-width: 100vw;

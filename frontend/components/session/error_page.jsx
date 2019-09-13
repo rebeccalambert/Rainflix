@@ -16,12 +16,13 @@ return (
 
             <div className="error-page-body">
                 <h1>Rainflix Site Error - Page Not Found</h1>
-                <h3>Were were unable to find that page.</h3>
-                <h3>Please go to the Rainflix home page by clicking the button bellow.</h3>
+                <p>We were unable to find that page.</p>
+                <p>Please go to the Rainflix home page by clicking the button bellow.</p>
                 
-                <div className="error-page-button-div">
-                    <Link className="error-page-button" to="/">Rainflix Home</Link>
-                </div>
+                <a className="error-page-button" href="/">
+                    <span>Rainflix Home</span>
+                </a>
+    
             </div>
 
     </div>

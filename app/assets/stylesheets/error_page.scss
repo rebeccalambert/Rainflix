@@ -6,7 +6,7 @@
 }
 
 .error-page-body {
-    margin: 8.5em auto 0 auto;
+    margin: 4em auto 0 auto;
     width: 45em;
 }
 
@@ -14,8 +14,34 @@
     width: 100%;
     display: flex;
     align-content: flex-start;
-    background-color: black;
-    padding: 2% 0 2% 2%;
+    padding: 1% 0 2% 2%;
+    background-color: rgba(0, 0, 0, 0.97);
+    height: 95px;
 }
 
+.error-page-body h1 {
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 2em;
+}
 
+.error-page-body p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold
+}
+
+.error-page-button {
+    border: 1px solid #b3b3b3;
+    font-weight: bold;
+    margin-top: 20px;
+    min-width: 80px;
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #b3b3b3;
+}
