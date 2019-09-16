@@ -10,25 +10,23 @@ export default class CategoryList extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchVideos(`${this.category}`);   
-        this.props.fetchVideos(`superhero`);   
+        this.props.fetchVideos(this.category);   
     }
 
 
     render() {        
-        let vids = this.props.videos.map(
-            (video, idx) => <VideoIndexItem video={video} key={`video-index-${idx}`}/>
-        );
+        let vids = this.props.videos
+        vids = vids.map( (video, idx) => {
+            return <VideoIndexItem video={video} key={`video-index-${idx}`}/>
+        });
+
 
         return (
-                <div className="video-index">
-                    <ul className="videos-by-category">
-                        <h1>{this.category}</h1>
-                        <div className="video-window">
-                            {vids}
-                        </div>
-                    </ul>
-                </div>
+            
+            <div className="video-window">
+                {vids}
+            </div>
+            
         )
     }
 };

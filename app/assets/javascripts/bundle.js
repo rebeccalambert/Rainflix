@@ -935,25 +935,21 @@ function (_React$Component) {
   _createClass(CategoryList, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // this.props.fetchVideos(`${this.category}`);   
-      this.props.fetchVideos("superhero");
+      this.props.fetchVideos(this.category);
     }
   }, {
     key: "render",
     value: function render() {
-      var vids = this.props.videos.map(function (video, idx) {
+      var vids = this.props.videos;
+      vids = vids.map(function (video, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           video: video,
           key: "video-index-".concat(idx)
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "video-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "videos-by-category"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-window"
-      }, vids)));
+      }, vids);
     }
   }]);
 
@@ -977,14 +973,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _category_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./category-list */ "./frontend/components/video_index/category-list.jsx");
 /* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
+/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
  // import VideoIndex from "./video_index";
+
 
 
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    videos: Object.values(state.entities.videos)
+    videos: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["filterVideos"])(ownProps.category, state)
   };
 };
 
@@ -1053,7 +1051,8 @@ function (_React$Component) {
     _this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic'];
     return _this;
   } // componentDidMount() {
-  //     this.props.fetchVideos();   
+  //     this.props.fetchVideos("laughs"); 
+  //     debugger  
   // }
   // Can search by title or by category ---> but if nothing is searched then it just gives back nothing... 
   // Need to catch that with a message if there are no video items.
@@ -1062,19 +1061,22 @@ function (_React$Component) {
   _createClass(VideoIndex, [{
     key: "render",
     value: function render() {
-      var category_lists = this.categories.map(function (category, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          category: category,
-          key: "div-index-".concat(idx)
-        });
-      });
+      // (category, idx) => <CategoryListContainer category={category} key={`div-index-${idx}`}/>
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "categories"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "slider"
-      }, " Category", category_lists))));
+      }, " Laughs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'laughs',
+        key: "li-index-5"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "slider"
+      }, " Contemplative", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'contemplative',
+        key: "li-index-6"
+      })))));
     }
   }]);
 
@@ -1122,25 +1124,27 @@ var VideoIndexItem =
 function (_React$Component) {
   _inherits(VideoIndexItem, _React$Component);
 
-  function VideoIndexItem() {
+  function VideoIndexItem(props) {
+    var _this;
+
     _classCallCheck(this, VideoIndexItem);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(VideoIndexItem).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndexItem).call(this, props));
+    _this.video = _this.props.video;
+    return _this;
   }
 
   _createClass(VideoIndexItem, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.video.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         width: "320",
         height: "240",
         controls: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
-        src: this.props.video.videoURL
-      })));
+        src: this.video.videoURL
+      }))));
     }
   }]);
 
@@ -1267,6 +1271,25 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_3__["combineReducers"])(
   errors: _errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/selectors.js":
+/*!****************************************!*\
+  !*** ./frontend/reducers/selectors.js ***!
+  \****************************************/
+/*! exports provided: filterVideos */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterVideos", function() { return filterVideos; });
+var filterVideos = function filterVideos(category, state) {
+  var vids = Object.values(state.entities.videos);
+  return vids.filter(function (video) {
+    return video.category.includes(category);
+  });
+};
 
 /***/ }),
 
@@ -1397,7 +1420,8 @@ var videosReducer = function videosReducer() {
 
   switch (action.type) {
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_VIDEOS"]:
-      return newState.videos = action.videos;
+      newState = Object.assign({}, newState, action.videos);
+      return newState;
 
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_VIDEO"]:
       return newState.video = action.video;

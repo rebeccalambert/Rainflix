@@ -1,18 +1,24 @@
 import React from 'react';
 
 class VideoIndexItem extends React.Component {
-   
+    constructor(props) {
+        super(props);
+        
+        this.video = this.props.video;
+    }
+
     render () {
         
         return (
-            <li className=''>
-                <h3>{this.props.video.title}</h3>
-                <p>{this.props.video.category}</p>
-                <video width="320" height="240" controls>
-                    <source type="video/mp4" src={this.props.video.videoURL} />
+            <ul>
+                <li>
+                    <h3>{this.video.title}</h3>
+                    <video width="320" height="240" controls>
+                        <source type="video/mp4" src={this.video.videoURL} />
 
-                </video>
-            </li>
+                    </video>
+                </li>
+            </ul>
         );
     }
 }

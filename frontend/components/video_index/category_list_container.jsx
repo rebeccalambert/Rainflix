@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 // import VideoIndex from "./video_index";
 import CategoryList from "./category-list";
 import { fetchVideos } from "../../actions/video_actions";
+import { filterVideos } from "../../reducers/selectors";
 
 const mapStateToProps = (state, ownProps) => ({
-    videos: Object.values(state.entities.videos)
+    videos: filterVideos(ownProps.category, state)
 });
 
 
