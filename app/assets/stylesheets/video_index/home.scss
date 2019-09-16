@@ -1,6 +1,8 @@
 .video-index {
     margin: 7% 0 3% 0;
     font-size: 16px;
+    display: flex;
+    
 }
 
 
@@ -8,4 +10,10 @@
     display: flex;
     width: 100%;
     overflow: scroll;
+    flex-direction: row;
+}
+
+.video-list {
+    display: flex;
+    
 }
