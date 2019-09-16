@@ -1107,9 +1107,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1129,21 +1129,53 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndexItem).call(this, props));
     _this.video = _this.props.video;
+    var active = false; // mouseTarget = document.getElementById("mouseTarget");
+
+    _this.state = {
+      active: false
+    };
+    _this.mouseEnter = _this.mouseEnter.bind(_assertThisInitialized(_this));
+    _this.mouseLeave = _this.mouseLeave.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(VideoIndexItem, [{
+    key: "mouseEnter",
+    value: function mouseEnter() {
+      this.setState({
+        active: true
+      });
+    }
+  }, {
+    key: "mouseLeave",
+    value: function mouseLeave() {
+      this.setState({
+        active: false
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "videos"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      var content = this.state.active === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         width: "320",
         height: "240",
-        controls: true
+        controls: true,
+        autoPlay: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.video.videoURL
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.video.thumbnailURL
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "videos",
+        onMouseEnter: this.mouseEnter,
+        onMouseLeave: this.mouseLeave
+      }, content, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleOpen,
+        className: "index_item_drop_down"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
       })));
     }
   }]);

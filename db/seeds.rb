@@ -26,31 +26,41 @@ User.create(username: "jonathan", password: "123456")
 
     vid1 = Video.create(title: '1 kitten vid', length: 1, category: "contemplative realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid1.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
-    
+    vid1.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
+
     vid2 = Video.create(title: '2 kitten vid', length: 14, category: "contemplative realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid2.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
-    
+    vid2.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
+
     vid3 = Video.create(title: '3 kitten vid', length: 1, category: "superhero book-made-movie mission-possible throwback laughs contemplative mind-bending sing-along animated realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid3.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    vid3.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
     
     vid4 = Video.create(title: '4 kitten vid', length: 1, category: "contemplative mission-possible" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid4.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    vid4.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
     
     vid5 = Video.create(title: '5 kitten vid', length: 1, category: "contemplative" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid5.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    vid5.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
     
     vid6 = Video.create(title: '6 kitten vid', length: 2, category: "contemplative" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid6.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    vid6.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
     
     vid7 = Video.create(title: '7 kitten vid', length: 1, category: "laughs realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid7.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    vid7.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
     
     vid8 = Video.create(title: '8 kitten vid', length: 4, category: "throwback" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid8.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    vid8.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
     
     vid9 = Video.create(title: '9 kitten vid', length: 100, category: "book-made-movie realistic laughs throwback" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid9.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    vid9.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
     
     vid10 = Video.create(title: '10 kitten vid', length: 7, category: "laughs" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
     vid10.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    vid10.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
     
