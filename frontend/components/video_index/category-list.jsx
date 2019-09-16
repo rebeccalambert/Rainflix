@@ -23,7 +23,7 @@ export default class CategoryList extends React.Component {
 
         return (
             
-            <div className="video-list">
+            <div className="category-list">
                 {vids}
             </div>
             

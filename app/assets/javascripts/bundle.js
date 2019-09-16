@@ -948,7 +948,7 @@ function (_React$Component) {
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "video-list"
+        className: "category-list"
       }, vids);
     }
   }]);
@@ -1064,19 +1064,17 @@ function (_React$Component) {
       // (category, idx) => <CategoryListContainer category={category} key={`div-index-${idx}`}/>
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "categories"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
       }, " Laughs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: 'laughs',
         key: "li-index-5"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
       }, " Contemplative", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: 'contemplative',
         key: "li-index-6"
-      })))));
+      }))));
     }
   }]);
 
@@ -1137,14 +1135,16 @@ function (_React$Component) {
   _createClass(VideoIndexItem, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "videos"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         width: "320",
         height: "240",
         controls: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.video.videoURL
-      }))));
+      })));
     }
   }]);
 

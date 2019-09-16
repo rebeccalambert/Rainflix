@@ -2,18 +2,37 @@
     margin: 7% 0 3% 0;
     font-size: 16px;
     display: flex;
-    
+    flex-direction: column;
 }
 
 
-.slider {
+.category-list {
     display: flex;
+    margin: 3%;
     width: 100%;
-    overflow: scroll;
-    flex-direction: row;
+    // overflow: scroll;
+    padding: 0 3%;
 }
 
-.video-list {
-    display: flex;
-    
+
+.videos {
+    border: 1px solid white;
+    background-color: white;
+    margin: 0 2px;
+    text-align: center;
+    transition: transform 300ms ease 100ms;
+    overflow: visible;
 }
+
+.videos:hover {
+    transform: scale(1.4) !important;
+  }
+
+.category-list:hover .videos {
+    transform: translateX(-20%);
+    
+ }
+
+ .videos:hover ~ .videos {
+    transform: translateX(20%);
+ }
