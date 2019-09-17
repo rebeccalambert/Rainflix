@@ -19,7 +19,7 @@
     width: 100%;
 }
 
-.videos {
+.index-item {
     border: 1px solid white;
     background-color: white;
     margin: 0 2px;
@@ -33,14 +33,14 @@
 }
 
 
-.videos:hover {
+.index-item:hover {
     transform: scale(1.4) !important;
   }
 
-.category-list:hover .videos {
+.category-list:hover .index-item {
     transform: translateX(-20%);
  }
 
- .videos:hover ~ .videos {
+ .index-item:hover ~ .index-item {
     transform: translateX(20%);
  }
