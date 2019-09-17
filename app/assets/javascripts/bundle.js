@@ -1129,10 +1129,16 @@ function (_React$Component) {
     };
     _this.mouseEnter = _this.mouseEnter.bind(_assertThisInitialized(_this));
     _this.mouseLeave = _this.mouseLeave.bind(_assertThisInitialized(_this));
+    _this.handleOpen = _this.handleOpen.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(VideoIndexItem, [{
+    key: "handleOpen",
+    value: function handleOpen(e) {
+      console.log(this.video.title);
+    }
+  }, {
     key: "mouseEnter",
     value: function mouseEnter() {
       this.setState({
@@ -1149,7 +1155,9 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var content = this.state.active === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      var content = this.state.active === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "thumbnail-video-player"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         width: "215",
         height: "240",
         controls: true,
@@ -1157,7 +1165,12 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.video.videoURL
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "show-page-button",
+        onClick: this.handleOpen
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "chevron bottom"
+      }))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "thumbnail-pic",
         src: this.video.thumbnailURL
       });
@@ -1165,12 +1178,7 @@ function (_React$Component) {
         className: "index-item",
         onMouseEnter: this.mouseEnter,
         onMouseLeave: this.mouseLeave
-      }, content, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleOpen,
-        className: "index_item_drop_down"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-chevron-down"
-      })));
+      }, content);
     }
   }]);
 
