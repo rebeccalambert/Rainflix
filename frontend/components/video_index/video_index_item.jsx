@@ -1,5 +1,4 @@
 import React from 'react';
-import VideoShowPage from './video_show';
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
@@ -9,11 +8,6 @@ class VideoIndexItem extends React.Component {
         this.state = {active: false}
         this.mouseEnter = this.mouseEnter.bind(this)
         this.mouseLeave = this.mouseLeave.bind(this)
-        this.showPage = this.showPage.bind(this)
-    }
-
-    showPage () {
-
     }
 
     mouseEnter () {
@@ -26,22 +20,17 @@ class VideoIndexItem extends React.Component {
 
     render () {
         let content = (this.state.active === true) ? (
-            <div>
-                <video width="215" height="240" controls autoPlay>
-                    <source type="video/mp4" src={this.video.videoURL} />
-                </video>
-                <button onClick={this.showPage}>showPage</button>
-            </div>
+            <video width="215" height="240" controls autoPlay>
+                <source type="video/mp4" src={this.video.videoURL} />
+            </video>
         ) : (
             <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
         )
 
         return (
-            <div className='index-item-wrapper'>
-                <div className="index-item" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
-                    {content}
-                </div>
-                {/* <VideoShowPage video={this.video} /> */}
+            <div className="index-item" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
+                {content}
+                <button onClick={this.handleOpen} className="index_item_drop_down"><i className="fas fa-chevron-down"></i></button>
             </div>
 
         );

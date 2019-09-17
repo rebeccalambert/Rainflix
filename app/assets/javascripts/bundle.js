@@ -1092,7 +1092,6 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _video_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./video_show */ "./frontend/components/video_index/video_show.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1110,7 +1109,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -1131,14 +1129,10 @@ function (_React$Component) {
     };
     _this.mouseEnter = _this.mouseEnter.bind(_assertThisInitialized(_this));
     _this.mouseLeave = _this.mouseLeave.bind(_assertThisInitialized(_this));
-    _this.showPage = _this.showPage.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(VideoIndexItem, [{
-    key: "showPage",
-    value: function showPage() {}
-  }, {
     key: "mouseEnter",
     value: function mouseEnter() {
       this.setState({
@@ -1155,7 +1149,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var content = this.state.active === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      var content = this.state.active === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         width: "215",
         height: "240",
         controls: true,
@@ -1163,19 +1157,20 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.video.videoURL
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.showPage
-      }, "showPage")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "thumbnail-pic",
         src: this.video.thumbnailURL
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "index-item-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index-item",
         onMouseEnter: this.mouseEnter,
         onMouseLeave: this.mouseLeave
-      }, content));
+      }, content, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleOpen,
+        className: "index_item_drop_down"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
+      })));
     }
   }]);
 
@@ -1183,76 +1178,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (VideoIndexItem);
-
-/***/ }),
-
-/***/ "./frontend/components/video_index/video_show.jsx":
-/*!********************************************************!*\
-  !*** ./frontend/components/video_index/video_show.jsx ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var VideoShowPage =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(VideoShowPage, _React$Component);
-
-  function VideoShowPage(props) {
-    var _this;
-
-    _classCallCheck(this, VideoShowPage);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoShowPage).call(this, props));
-    _this.video = _this.props.video;
-    return _this;
-  }
-
-  _createClass(VideoShowPage, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "background"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "left"
-      }, this.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "right"
-      }, "right")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content-container"
-      }, "content here..."));
-    }
-  }]);
-
-  return VideoShowPage;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (VideoShowPage);
 
 /***/ }),
 

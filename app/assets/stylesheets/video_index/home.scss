@@ -7,7 +7,7 @@
 
 .category-list {
     display: flex;
-    overflow: scroll;
+    // overflow: scroll;
     padding: 0 55px;
     flex: 0 0 19.7%;
     text-align: center;
@@ -19,18 +19,6 @@
     width: 100%;
 }
 
-.index-item-wrapper {
-    border: 1px solid white;
-    background-color: white;
-    margin: 0 2px;
-    max-width: 300px;
-    min-width: 299px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow:hidden
-}
 .index-item {
     padding: 4px;
     margin: 0 2px;
@@ -40,7 +28,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow:hidden
+    overflow:hidden;
+    border: 2px solid white;
 }
 
 
