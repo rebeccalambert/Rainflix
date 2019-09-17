@@ -5,8 +5,6 @@ class VideoIndexItem extends React.Component {
         super(props);
         
         this.video = this.props.video;
-        let active = false;
-        // mouseTarget = document.getElementById("mouseTarget");
         this.state = {active: false}
         this.mouseEnter = this.mouseEnter.bind(this)
         this.mouseLeave = this.mouseLeave.bind(this)
@@ -22,17 +20,17 @@ class VideoIndexItem extends React.Component {
 
     render () {
         let content = (this.state.active === true) ? (
-            <video width="320" height="240" controls autoPlay>
+            <video width="215" height="240" controls autoPlay>
                 <source type="video/mp4" src={this.video.videoURL} />
             </video>
         ) : (
-            <img src={this.video.thumbnailURL}/>
+            <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
         )
 
         return (
             <div className="videos" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                 {content}
-                <button onClick={this.handleOpen} className="index_item_drop_down"><i className="fas fa-chevron-down"></i></button>
+                {/* <button onClick={this.handleOpen} className="index_item_drop_down"><i className="fas fa-chevron-down"></i></button> */}
             </div>
 
         );

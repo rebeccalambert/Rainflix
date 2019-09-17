@@ -31,34 +31,40 @@ export default class VideoIndex extends React.Component {
                 <HeaderBarContainer />
 
                 <div className="video-index">
-                    {/* <div className="slider"> Superhero
+                    {/* <div className="carousel-container"> Superhero
                         <CategoryListContainer category={'superhero'} key={`li-index-1}`}/>
                     </div>
-                    <div className="slider"> Book-Made-Movie
+                    <div className="carousel-container"> Book-Made-Movie
                         <CategoryListContainer category={'book-made-movie'} key={`li-index-2`}/>
                     </div>
-                    <div className="slider"> mission: Possible
+                    <div className="carousel-container"> mission: Possible
                         <CategoryListContainer category={'mission-possible'} key={`li-index-3`}/>
                     </div>
-                    <div className="slider"> Throwback
+                    <div className="carousel-container"> Throwback
                         <CategoryListContainer category={'throwback'} key={`li-index-4`}/>
                     </div> */}
-                    <div className="slider"> Laughs
+                    {/* <div className="carousel-container"> 
+                        <h2>
+                            Laughs
+                        </h2>
                         <CategoryListContainer category={'laughs'} key={`li-index-5`}/>
-                    </div>
-                    <div className="slider"> Contemplative
+                    </div> */}
+                    <div className="carousel-container"> 
+                        <h2>
+                            Contemplative
+                        </h2>
                         <CategoryListContainer category={'contemplative'} key={`li-index-6`}/>
                     </div>
-                    {/* <div className="slider"> Mind-Bending
+                    {/* <div className="carousel-container"> Mind-Bending
                         <CategoryListContainer category={'mind-bending'} key={`li-index-7`}/>
                     </div>
-                    <div className="slider"> Sing-Along
+                    <div className="carousel-container"> Sing-Along
                         <CategoryListContainer category={'sing-along'} key={`li-index-8`}/>
                     </div>
-                    <div className="slider"> Animated
+                    <div className="carousel-container"> Animated
                         <CategoryListContainer category={'animated'} key={`li-index-9`}/>
                     </div>
-                    <div className="slider"> Realistic
+                    <div className="carousel-container"> Realistic
                         <CategoryListContainer category={'realistic'} key={`li-index-10`}/>
                     </div>  */}
                 </div>
