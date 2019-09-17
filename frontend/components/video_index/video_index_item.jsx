@@ -28,9 +28,8 @@ class VideoIndexItem extends React.Component {
         )
 
         return (
-            <div className="videos" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
+            <div className="index-item" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                 {content}
-                {/* <button onClick={this.handleOpen} className="index_item_drop_down"><i className="fas fa-chevron-down"></i></button> */}
             </div>
 
         );

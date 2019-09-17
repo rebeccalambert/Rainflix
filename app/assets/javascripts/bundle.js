@@ -916,10 +916,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var carouselSlide = document.querySelector('.carousel-slide');
-var carouselImages = document.querySelectorAll('.videos');
-var prevBtn = document.querySelector('#prevBtn');
-var nextBtn = document.querySelector('#nextBtn');
 
 var CategoryList =
 /*#__PURE__*/
@@ -950,33 +946,10 @@ function (_React$Component) {
           video: video,
           key: "video-index-".concat(idx)
         });
-      }); // let content = (vids.length === 10 ) ? (
-      //     <section id="section1">
-      //         <a href="#section2">angle left</a>
-      //         {vids[0]}
-      //         {vids[1]}
-      //         {vids[2]}
-      //         {vids[3]}
-      //         {vids[4]}
-      //         <a href="#section2">angle right</a>
-      //     </section>
-      //     <section id="section2">
-      //         <a href="#section1">left</a>
-      //         <a href="#section1">right</a>
-      //     </section>
-      // ) : (
-      //     adslfjoi
-      // );
-
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "carousel-screen"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "video-slice"
-      }, vids[vids.length - 1], vids, vids[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "preBtn"
-      }, "Prev"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "nextBtn"
-      }, "Next"));
+        className: "category-list"
+      }, vids);
     }
   }]);
 
@@ -1189,7 +1162,7 @@ function (_React$Component) {
         src: this.video.thumbnailURL
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "videos",
+        className: "index-item",
         onMouseEnter: this.mouseEnter,
         onMouseLeave: this.mouseLeave
       }, content);
