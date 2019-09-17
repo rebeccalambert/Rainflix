@@ -1,18 +1,21 @@
 import React from 'react';
+import VideoDetailsPageContainer from './video_details_page_container';
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
         super(props);
         
         this.video = this.props.video;
-        this.state = {active: false}
-        this.mouseEnter = this.mouseEnter.bind(this)
-        this.mouseLeave = this.mouseLeave.bind(this)
-        this.handleOpen = this.handleOpen.bind(this)
+        this.showDropdown = this.props.showDropdown;
+        this.dropdown = this.props.dropdown;
+        this.state = {active: false};
+        this.mouseEnter = this.mouseEnter.bind(this);
+        this.mouseLeave = this.mouseLeave.bind(this);
+        this.handleOpen = this.handleOpen.bind(this);
     }
 
     handleOpen(e) {
-        console.log(this.video.title)
+        this.showDropdown(this.video)
     }
 
     mouseEnter () {
@@ -36,9 +39,17 @@ class VideoIndexItem extends React.Component {
             <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
         )
 
+        let dropdown = (this.dropdown === {}) ? (
+            <div></div>
+        ) : (
+            <VideoDetailsPageContainer />
+        );
+
+
         return (
             <div className="index-item" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                 {content}
+                {dropdown}
                 
             </div>
 

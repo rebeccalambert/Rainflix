@@ -17,7 +17,7 @@ export default class CategoryList extends React.Component {
     render() {        
         let vids = this.props.videos
         vids = vids.map( (video, idx) => {
-            return <VideoIndexItem video={video} key={`video-index-${idx}`}/>
+            return <VideoIndexItem video={video} dropdown={this.props.dropdown} showDropdown={this.props.showDropdown} key={`video-index-${idx}`}/>
         });
 
 
