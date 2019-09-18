@@ -980,6 +980,7 @@ function (_React$Component) {
           video: video,
           dropdown: _this2.props.dropdown,
           showDropdown: _this2.props.showDropdown,
+          removeDropdown: _this2.props.removeDropdown,
           key: "video-index-".concat(idx)
         });
       });
@@ -1093,6 +1094,8 @@ function (_React$Component) {
     _this.state = {
       active: true
     };
+    _this.removeDropdown = _this.props.removeDropdown;
+    _this.handleClose = _this.handleClose.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1115,19 +1118,23 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "handleClose",
+    value: function handleClose() {
+      this.removeDropdown();
+    }
+  }, {
     key: "render",
     value: function render() {
       var button = this.state.volume === 'off' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "up-volume",
         onClick: this.upVolume
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "assets/muted.png",
+        src: "assets/grey-mute.png",
         alt: ""
       })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "down-volume",
         onClick: this.downVolume
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "assets/volume.png",
+        src: "assets/grey-volume.png",
         alt: ""
       }));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1158,7 +1165,10 @@ function (_React$Component) {
         className: "title"
       }, "Categories: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.video.category)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "exit",
+        onClick: this.handleClose
+      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         id: "display-video",
         autoPlay: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
@@ -1338,6 +1348,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndexItem).call(this, props));
     _this.video = _this.props.video;
     _this.showDropdown = _this.props.showDropdown;
+    _this.removeDropdown = _this.props.removeDropdown;
     _this.dropdown = _this.props.dropdown;
     _this.state = {
       active: false

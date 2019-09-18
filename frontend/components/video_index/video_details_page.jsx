@@ -7,6 +7,8 @@ class VideoDetailsPage extends React.Component {
         this.upVolume = this.upVolume.bind(this);
         this.downVolume = this.downVolume.bind(this);
         this.state = {active: true};
+        this.removeDropdown = this.props.removeDropdown;
+        this.handleClose = this.handleClose.bind(this);
     }
 
     upVolume () {
@@ -21,12 +23,16 @@ class VideoDetailsPage extends React.Component {
         this.setState({volume: 'off'});
     }
 
+
+    handleClose () {
+        this.removeDropdown();
+    }
     render () {
 
         let button = (this.state.volume === 'off') ? (
-            <button className="up-volume" onClick={this.upVolume}><img src="assets/muted.png" alt=""/></button>
+            <button onClick={this.upVolume}><img src="assets/grey-mute.png" alt=""/></button>
         ) : (
-            <button className="down-volume" onClick={this.downVolume}><img src="assets/volume.png" alt=""/></button>
+            <button className="down-volume" onClick={this.downVolume}><img src="assets/grey-volume.png" alt=""/></button>
         );
 
         return (
@@ -52,6 +58,7 @@ class VideoDetailsPage extends React.Component {
                     
                 </div>
                 <div className="right">
+                    <button className="exit" onClick={this.handleClose}>X</button>
                     <video id="display-video" autoPlay>
                         <source type="video/mp4" src={this.video.videoURL} />
                     </video>

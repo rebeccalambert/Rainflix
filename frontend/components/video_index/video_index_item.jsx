@@ -7,6 +7,7 @@ class VideoIndexItem extends React.Component {
         
         this.video = this.props.video;
         this.showDropdown = this.props.showDropdown;
+        this.removeDropdown = this.props.removeDropdown;
         this.dropdown = this.props.dropdown;
         this.state = {active: false};
         this.mouseEnter = this.mouseEnter.bind(this);
@@ -15,7 +16,7 @@ class VideoIndexItem extends React.Component {
     }
 
     handleOpen(e) {
-        this.showDropdown(this.video)
+        this.showDropdown(this.video)    
     }
 
     mouseEnter () {
