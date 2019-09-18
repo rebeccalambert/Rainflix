@@ -16,6 +16,8 @@ class VideoIndexItem extends React.Component {
     }
 
     handleOpen(e) {
+        // debugger
+        // this.removeDropdown();
         this.showDropdown(this.video)    
     }
 
@@ -28,17 +30,17 @@ class VideoIndexItem extends React.Component {
     }
 
     render () {
-        let content = (this.state.active === true) ? (
+        let content = ((this.state.active === false) || (this.state.locked === true)) ? (
+            <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
+        ) : (
             <div className="thumbnail-video-player">
-                <video width="215" height="240" controls autoPlay>
+                <video width="215" height="240" controls>
                     <source type="video/mp4" src={this.video.videoURL} />
                 </video>
                 <button className="show-page-button" onClick={this.handleOpen}><span className="chevron bottom" /></button>
 
             </div>
-        ) : (
-            <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
-        )
+        ) 
 
 
         return (

@@ -1125,6 +1125,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      // debugger
       var button = this.state.volume === 'off' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.upVolume
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1143,15 +1144,15 @@ function (_React$Component) {
         className: "background"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "metaheader"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "match"
-      }, "95% Match"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.video.year), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "95% Match"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.video.year), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         id: "rating"
-      }, this.video.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Length: ", this.video.length, "m")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, this.props.video.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Length: ", this.props.video.length, "m")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "synopsis"
-      }, this.video.overview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.video.overview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "display-buttons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "display-button play"
@@ -1161,9 +1162,9 @@ function (_React$Component) {
         className: "lists"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "title"
-      }, "Starring: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.video.starring)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "Starring: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.video.starring)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "title"
-      }, "Categories: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.video.category)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Categories: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.video.category)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "exit",
@@ -1173,7 +1174,7 @@ function (_React$Component) {
         autoPlay: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
-        src: this.video.videoURL
+        src: this.props.video.videoURL
       })), button)));
     }
   }]);
@@ -1362,6 +1363,8 @@ function (_React$Component) {
   _createClass(VideoIndexItem, [{
     key: "handleOpen",
     value: function handleOpen(e) {
+      // debugger
+      // this.removeDropdown();
       this.showDropdown(this.video);
     }
   }, {
@@ -1381,13 +1384,15 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var content = this.state.active === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var content = this.state.active === false || this.state.locked === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "thumbnail-pic",
+        src: this.video.thumbnailURL
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "thumbnail-video-player"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         width: "215",
         height: "240",
-        controls: true,
-        autoPlay: true
+        controls: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.video.videoURL
@@ -1396,10 +1401,7 @@ function (_React$Component) {
         onClick: this.handleOpen
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "chevron bottom"
-      }))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "thumbnail-pic",
-        src: this.video.thumbnailURL
-      });
+      })));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index-item",
         onMouseEnter: this.mouseEnter,
