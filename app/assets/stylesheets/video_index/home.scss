@@ -23,7 +23,13 @@
     font-size: 1.4vw;
     color: #e5e5e5;
     font-weight: bold;
-    margin: 20px 50px;
+    margin: 0px 0 0px 50px;
+    overflow: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
 .thumbnail-pic {
@@ -32,7 +38,7 @@
 }
 
 .index-item {
-    padding: 4px;
+    padding: 2x;
     margin: 0 2px;
     max-width: 300px;
     min-width: 299px;
@@ -41,7 +47,7 @@
     justify-content: center;
     align-items: center;
     overflow:hidden;
-    border: 2px solid white;
+    // border: 2px solid white;
     align-items: flex-end;
     transition: all 800ms;
 
@@ -61,6 +67,7 @@
 
 .index-item:hover {
     transform: scale(1.4) !important;
+    z-index: 10;
 
     .show-page-button {
       position: absolute;

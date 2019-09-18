@@ -44,7 +44,7 @@ class VideoDetailsPage extends React.Component {
                         <span className="match">95% Match</span>
                         <span>{this.props.video.year}</span>
                         <span id="rating">{this.props.video.rating}</span>
-                        <span>Length: {this.props.video.length}m</span>
+                        <span>{this.props.video.length}m</span>
                     </p>
                     <p className="synopsis">{this.props.video.overview}</p>
                     <div className="display-buttons">
