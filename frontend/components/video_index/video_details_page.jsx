@@ -65,7 +65,6 @@ class VideoDetailsPage extends React.Component {
                     {button}
                 </div>
             </div>
-            {/* <div className="content-container">{this.video.overview}</div> */}
         </span>
 
         );

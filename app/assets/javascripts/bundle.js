@@ -1363,8 +1363,6 @@ function (_React$Component) {
   _createClass(VideoIndexItem, [{
     key: "handleOpen",
     value: function handleOpen(e) {
-      // debugger
-      // this.removeDropdown();
       this.showDropdown(this.video);
     }
   }, {
@@ -1384,10 +1382,12 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var content = this.state.active === false || this.state.locked === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      var content = this.state.active === false || this.props.dropdown.id !== undefined ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "thumbnail-pic",
         src: this.video.thumbnailURL
-      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "thumbnail-video-player"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         width: "215",
@@ -1396,17 +1396,17 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.video.videoURL
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "show-page-button",
-        onClick: this.handleOpen
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "chevron bottom"
       })));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index-item",
         onMouseEnter: this.mouseEnter,
         onMouseLeave: this.mouseLeave
-      }, content);
+      }, content, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "show-page-button",
+        onClick: this.handleOpen
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "chevron bottom"
+      })));
     }
   }]);
 
