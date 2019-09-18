@@ -978,14 +978,14 @@ function (_React$Component) {
       vids = vids.map(function (video, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           video: video,
-          rowID: idx,
+          rowID: _this2.category,
           dropdown: _this2.props.dropdown,
           showDropdown: _this2.props.showDropdown,
           removeDropdown: _this2.props.removeDropdown,
           key: "video-index-".concat(idx)
         });
       });
-      var indexShow = this.props.dropdown.video === undefined ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_details_page_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+      var indexShow = this.props.dropdown.video === undefined ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null) : this.props.dropdown.rowID === this.category ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_details_page_container__WEBPACK_IMPORTED_MODULE_2__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "category-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

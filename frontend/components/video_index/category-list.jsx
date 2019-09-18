@@ -18,14 +18,21 @@ export default class CategoryList extends React.Component {
     render() {        
         let vids = this.props.videos
         vids = vids.map( (video, idx) => {
-            return <VideoIndexItem video={video} rowID={idx} dropdown={this.props.dropdown} showDropdown={this.props.showDropdown} removeDropdown={this.props.removeDropdown} key={`video-index-${idx}`}/>
-        });
 
+            
+            return <VideoIndexItem video={video} rowID={this.category} dropdown={this.props.dropdown} showDropdown={this.props.showDropdown} removeDropdown={this.props.removeDropdown} key={`video-index-${idx}`}/>
+        });
+        
         let indexShow = (this.props.dropdown.video === undefined) ? (
-            <span></span>
+        <span></span>
         ) : (
-            <VideoDetailsPageContainer />
+            (this.props.dropdown.rowID === this.category) ? (
+                <VideoDetailsPageContainer />
+            ) : (
+                <span></span>
+            )
         );
+        
 
         return (
             <div className="category-bar">
