@@ -208,10 +208,10 @@ var receiveVideo = function receiveVideo(video) {
   };
 };
 
-var renderDropdown = function renderDropdown(video) {
+var renderDropdown = function renderDropdown(payload) {
   return {
     type: DISPLAY_DROPDOWN,
-    dropdown: video
+    dropdown: payload
   };
 };
 
@@ -978,13 +978,14 @@ function (_React$Component) {
       vids = vids.map(function (video, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           video: video,
+          rowID: idx,
           dropdown: _this2.props.dropdown,
           showDropdown: _this2.props.showDropdown,
           removeDropdown: _this2.props.removeDropdown,
           key: "video-index-".concat(idx)
         });
       });
-      var indexShow = this.props.dropdown.id === undefined ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_details_page_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+      var indexShow = this.props.dropdown.video === undefined ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_details_page_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "category-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1204,7 +1205,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    video: state.entities.dropdown
+    video: state.entities.dropdown.video
   };
 };
 
@@ -1375,7 +1376,11 @@ function (_React$Component) {
   _createClass(VideoIndexItem, [{
     key: "handleOpen",
     value: function handleOpen(e) {
-      this.showDropdown(this.video);
+      var payload = {
+        video: this.video,
+        rowID: this.props.rowID
+      };
+      this.showDropdown(payload);
     }
   }, {
     key: "mouseEnter",

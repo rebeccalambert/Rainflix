@@ -16,9 +16,9 @@ const receiveVideo = (video) => ({
     video
 });
 
-const renderDropdown = (video) => ({
+const renderDropdown = (payload) => ({
     type: DISPLAY_DROPDOWN,
-    dropdown: video
+    dropdown: payload
 })
 
 const deleteDropdown = () => ({

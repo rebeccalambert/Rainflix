@@ -16,7 +16,11 @@ class VideoIndexItem extends React.Component {
     }
 
     handleOpen(e) {
-        this.showDropdown(this.video)    
+        let payload = {
+            video: this.video,
+            rowID: this.props.rowID
+        }
+        this.showDropdown(payload)    
     }
 
     mouseEnter () {
