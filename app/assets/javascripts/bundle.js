@@ -1066,9 +1066,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1088,31 +1088,83 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoDetailsPage).call(this, props));
     _this.video = _this.props.video;
+    _this.upVolume = _this.upVolume.bind(_assertThisInitialized(_this));
+    _this.downVolume = _this.downVolume.bind(_assertThisInitialized(_this));
+    _this.state = {
+      active: true
+    };
     return _this;
   }
 
   _createClass(VideoDetailsPage, [{
+    key: "upVolume",
+    value: function upVolume() {
+      var vid = document.getElementById("display-video");
+      vid.volume = 1;
+      this.setState({
+        volume: 'on'
+      });
+    }
+  }, {
+    key: "downVolume",
+    value: function downVolume() {
+      var vid = document.getElementById("display-video");
+      vid.volume = 0;
+      this.setState({
+        volume: 'off'
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var button = this.state.volume === 'off' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "up-volume",
+        onClick: this.upVolume
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "assets/muted.png",
+        alt: ""
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "down-volume",
+        onClick: this.downVolume
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "assets/volume.png",
+        alt: ""
+      }));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "background"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left"
-      }, this.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "metaheader"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "match"
+      }, "95% Match"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.video.year), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        id: "rating"
+      }, this.video.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Length: ", this.video.length, "m")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "synopsis"
+      }, this.video.overview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "display-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "display-button play"
+      }, "PLAY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "display-button mylist"
+      }, "My List")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "lists"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "title"
+      }, "Starring: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.video.starring)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "title"
+      }, "Categories: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.video.category)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
-        width: "215",
-        height: "240",
-        controls: true,
+        id: "display-video",
         autoPlay: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.video.videoURL
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content-container"
-      }, this.video.overview));
+      })), button)));
     }
   }]);
 
