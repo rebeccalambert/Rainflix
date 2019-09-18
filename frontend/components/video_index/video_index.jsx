@@ -23,42 +23,41 @@ export default class VideoIndex extends React.Component {
 
     render() {
 
-         
-        // (category, idx) => <CategoryListContainer category={category} key={`div-index-${idx}`}/>
+        //  let videos_list = this.categories.map ((category, idx) => {
+        //     return <CategoryListContainer category={category} key={`div-index-${idx}`}/>
+        //  });
 
         return (
             <div >
                 <HeaderBarContainer />
 
                 <div className="video-index">
-                    {/* <div className="slider"> Superhero
+                    {/* <div className="slider">
+                        {videos_list}
+                    </div> */}
+                    
+                    <div className="slider"> Superhero
                         <CategoryListContainer category={'superhero'} key={`li-index-1}`}/>
                     </div>
-                    <div className="slider"> Book-Made-Movie
+                    <div className="slider"> Book Made Movie
                         <CategoryListContainer category={'book-made-movie'} key={`li-index-2`}/>
                     </div>
                     <div className="slider"> mission: Possible
                         <CategoryListContainer category={'mission-possible'} key={`li-index-3`}/>
                     </div>
-                    <div className="slider"> Throwback
+                    {/* <div className="slider"> Throwback
                         <CategoryListContainer category={'throwback'} key={`li-index-4`}/>
-                    </div> */}
-                    {/* <div className="slider"> 
-                        <h2>
-                            Laughs
-                        </h2>
+                    </div>
+                    <div className="slider"> Laughs
                         <CategoryListContainer category={'laughs'} key={`li-index-5`}/>
-                    </div> */}
-                    <div className="slider"> 
-                        <h2>
-                            Contemplative
-                        </h2>
+                    </div>
+                    <div className="slider"> Contemplative
                         <CategoryListContainer category={'contemplative'} key={`li-index-6`}/>
                     </div>
-                    {/* <div className="slider"> Mind-Bending
+                    <div className="slider"> Mind-Bending
                         <CategoryListContainer category={'mind-bending'} key={`li-index-7`}/>
                     </div>
-                    <div className="slider"> Sing-Along
+                    <div className="slider"> Sing Along
                         <CategoryListContainer category={'sing-along'} key={`li-index-8`}/>
                     </div>
                     <div className="slider"> Animated

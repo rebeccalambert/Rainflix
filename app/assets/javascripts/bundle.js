@@ -1283,14 +1283,26 @@ function (_React$Component) {
   _createClass(VideoIndex, [{
     key: "render",
     value: function render() {
-      // (category, idx) => <CategoryListContainer category={category} key={`div-index-${idx}`}/>
+      //  let videos_list = this.categories.map ((category, idx) => {
+      //     return <CategoryListContainer category={category} key={`div-index-${idx}`}/>
+      //  });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Contemplative"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        category: 'contemplative',
-        key: "li-index-6"
+      }, " Superhero", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'superhero',
+        key: "li-index-1}"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Book Made Movie", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'book-made-movie',
+        key: "li-index-2"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " mission: Possible", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'mission-possible',
+        key: "li-index-3"
       }))));
     }
   }]);
