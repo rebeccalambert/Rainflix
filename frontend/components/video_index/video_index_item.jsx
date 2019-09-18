@@ -39,19 +39,12 @@ class VideoIndexItem extends React.Component {
             <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
         )
 
-        let dropdown = (this.dropdown === {}) ? (
-            <div></div>
-        ) : (
-            <VideoDetailsPageContainer />
-        );
-
 
         return (
             <div className="index-item" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                 {content}
-                {dropdown}
-                
             </div>
+               
 
         );
     }

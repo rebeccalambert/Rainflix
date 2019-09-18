@@ -10,17 +10,17 @@ class VideoDetailsPage extends React.Component {
     render () {
 
         return (
-            <div className="content">
+            <span className="content">
             <div className="background">
                 <div className="left">{this.video.title}</div>
                 <div className="right">
-                    <video width="2150" height="2400" controls autoPlay>
+                    <video width="215" height="240" controls autoPlay>
                         <source type="video/mp4" src={this.video.videoURL} />
                     </video>
                 </div>
             </div>
             <div className="content-container">{this.video.overview}</div>
-        </div>
+        </span>
 
         );
     }

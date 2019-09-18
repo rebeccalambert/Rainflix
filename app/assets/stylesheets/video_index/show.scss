@@ -1,8 +1,14 @@
 
+.category-bar {
+  display:flex;
+  flex-direction: column;
+}
+
  .content {
     margin-top: 40px;
     height: 300px;
     position: relative;
+    background-color: grey;
     
     .background {
         display: flex;
