@@ -11,7 +11,7 @@ class Api::VideosController < ApplicationController
         
         #search = params['search'] || ''
         formatted_search = '%' + search.downcase + '%'
-        #@videos = Video.where('lower(video.title) like ?', formatted_search)
+        # @videos = Video.where('lower(video.title) like ?', formatted_search)
         @videos = Video.where('lower(videos.category) like ?', formatted_search)
         
         #@videos =  Video.all.select{|video| 'lower(video.title) like ?', formatted_search}

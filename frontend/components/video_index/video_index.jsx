@@ -1,92 +1,71 @@
 import React from "react";
 import HeaderBarContainer from "../header_bar/header_container";
 import CategoryListContainer from "../video_index/category_list_container";
+import { fetchVideos } from "../../actions/video_actions";
 
 export default class VideoIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            videos: this.props.videos
+            videos: this.props.videos,
+            volume: 'on'
         };
         this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic']
         this.upVolume = this.upVolume.bind(this);
         this.downVolume = this.downVolume.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchVideos("laughs"); 
-    //     debugger  
-    // }
-    // Can search by title or by category ---> but if nothing is searched then it just gives back nothing... 
-    // Need to catch that with a message if there are no video items.
-       
-
     upVolume () {
-        let vid = document.getElementById("display-video")
+        let vid = document.getElementById("rpo-vid")
         vid.volume = 1;
         this.setState({volume: 'on'});
     }
 
     downVolume () {
-        let vid = document.getElementById("display-video")
+        let vid = document.getElementById("rpo-vid")
         vid.volume = 0;
         this.setState({volume: 'off'});
     }
 
 
     render() {
+        let button = (this.state.volume === 'off') ? (
+            <button onClick={this.upVolume}><img className="on-volume" src="assets/grey-mute.png" alt=""/></button>
+        ) : (
+            <button className="down-volume" onClick={this.downVolume}><img src="assets/grey-volume.png" alt=""/></button>
+        );
 
-        //  let videos_list = this.categories.map ((category, idx) => {
-        //     return <CategoryListContainer category={category} key={`div-index-${idx}`}/>
-        //  });
-        // debugger
-        // let vid = (this.state.videos === undefined) ? (
-
-        // ) : (
-        //     this.state.videos[0]
-        // );
-        // let button = (this.state.volume === 'off') ? (
-        //     <button onClick={this.upVolume}><img src="assets/grey-mute.png" alt=""/></button>
-        // ) : (
-        //     <button className="down-volume" onClick={this.downVolume}><img src="assets/grey-volume.png" alt=""/></button>
-        // );
         return (
             <div >
                 <HeaderBarContainer />
 
+                
+                <div className="rpo-div">
+                    <div className="rpo-text">
+                        <h2>Ready Player One</h2> 
+                        <span>PG-13</span>
+                        <h3>Watch Below</h3>
+                        <p className="summary">When the creator of the OASIS dies, he makes a posthumous challenge to all OASIS users: whoever finds his digital Easter Egg becomes the heir of his world.</p>
+                    </div>
+                    <div className="rpo-vid-div">
+                        <video id="rpo-vid" autoPlay>
+                            <source type="video/mp4" />
+                        </video>
+                        
+                        <span className="index-rating">PG-13</span>
+                        {button}
+                    </div>
+                </div>
+
+
+
+
                 <div className="video-index">
                     {/* <div className="slider">
                         {videos_list}
-                    </div> */}
-                    {/* <div>
-                    <span className="content">
-                        <div className="background">
-                            <div className="left">
-                                <h2>{vid.title}</h2>
-                                <p className="metaheader">
-                                    <span className="match">95% Match</span>
-                                    <span>{vid.year}</span>
-                                    <span id="rating">{vid.rating}</span>
-                                    <span>{vid.length}m</span>
-                                </p>
-                                <p className="synopsis">{vid.overview}</p>
-                                
-                                <div className="lists"> 
-                                    <div><span className="title">Starring: </span><span>{vid.starring}</span></div>
-                                    <div><span className="title">Categories: </span><span>{vid.category}</span></div>
-                                </div>
-                                
-                            </div>
-                            <div className="right">
-                                <video id="display-video" autoPlay>
-                                    <source type="video/mp4" src={vid.videoURL} />
-                                </video>
-                                {button}
-                            </div>
-                        </div>
-                    </span>
+                    </div>  */}
 
-                    </div> */}
+                    {/* {content} */}
 
                     <div className="slider"> Superhero
                         <CategoryListContainer category={'superhero'} key={`li-index-1}`}/>

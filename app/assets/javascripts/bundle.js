@@ -1244,6 +1244,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header_bar/header_container */ "./frontend/components/header_bar/header_container.jsx");
 /* harmony import */ var _video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../video_index/category_list_container */ "./frontend/components/video_index/category_list_container.jsx");
+/* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1266,6 +1267,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var VideoIndex =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1278,24 +1280,19 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndex).call(this, props));
     _this.state = {
-      videos: _this.props.videos
+      videos: _this.props.videos,
+      volume: 'on'
     };
     _this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic'];
     _this.upVolume = _this.upVolume.bind(_assertThisInitialized(_this));
     _this.downVolume = _this.downVolume.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentDidMount() {
-  //     this.props.fetchVideos("laughs"); 
-  //     debugger  
-  // }
-  // Can search by title or by category ---> but if nothing is searched then it just gives back nothing... 
-  // Need to catch that with a message if there are no video items.
-
+  }
 
   _createClass(VideoIndex, [{
     key: "upVolume",
     value: function upVolume() {
-      var vid = document.getElementById("display-video");
+      var vid = document.getElementById("rpo-vid");
       vid.volume = 1;
       this.setState({
         volume: 'on'
@@ -1304,7 +1301,7 @@ function (_React$Component) {
   }, {
     key: "downVolume",
     value: function downVolume() {
-      var vid = document.getElementById("display-video");
+      var vid = document.getElementById("rpo-vid");
       vid.volume = 0;
       this.setState({
         volume: 'off'
@@ -1313,20 +1310,35 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      //  let videos_list = this.categories.map ((category, idx) => {
-      //     return <CategoryListContainer category={category} key={`div-index-${idx}`}/>
-      //  });
-      // debugger
-      // let vid = (this.state.videos === undefined) ? (
-      // ) : (
-      //     this.state.videos[0]
-      // );
-      // let button = (this.state.volume === 'off') ? (
-      //     <button onClick={this.upVolume}><img src="assets/grey-mute.png" alt=""/></button>
-      // ) : (
-      //     <button className="down-volume" onClick={this.downVolume}><img src="assets/grey-volume.png" alt=""/></button>
-      // );
+      var button = this.state.volume === 'off' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.upVolume
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "on-volume",
+        src: "assets/grey-mute.png",
+        alt: ""
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "down-volume",
+        onClick: this.downVolume
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "assets/grey-volume.png",
+        alt: ""
+      }));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rpo-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rpo-text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Ready Player One"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "PG-13"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Watch Below"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "summary"
+      }, "When the creator of the OASIS dies, he makes a posthumous challenge to all OASIS users: whoever finds his digital Easter Egg becomes the heir of his world.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rpo-vid-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+        id: "rpo-vid",
+        autoPlay: true
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
+        type: "video/mp4"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "index-rating"
+      }, "PG-13"), button)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
@@ -31976,7 +31988,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
