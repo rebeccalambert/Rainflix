@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class VideoDetailsPage extends React.Component {
     constructor(props) {
@@ -28,7 +29,6 @@ class VideoDetailsPage extends React.Component {
         this.removeDropdown();
     }
     render () {
-        // debugger
         let button = (this.state.volume === 'off') ? (
             <button onClick={this.upVolume}><img src="assets/grey-mute.png" alt=""/></button>
         ) : (
@@ -48,8 +48,11 @@ class VideoDetailsPage extends React.Component {
                     </p>
                     <p className="synopsis">{this.props.video.overview}</p>
                     <div className="display-buttons">
-                        <button className="display-button play">PLAY</button>
+                        <Link to={`/watch/${this.props.video.id}`}><button className="display-button play">PLAY</button></Link>
                         <button className="display-button mylist">My List</button>
+                        
+
+                        
                     </div>
                     <div className="lists"> 
                         <div><span className="title">Starring: </span><span>{this.props.video.starring}</span></div>

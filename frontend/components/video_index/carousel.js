@@ -27,5 +27,5 @@ prevBtn.addEventListener('click', ()=> {
 });
 
 carouselSlide.addEventListener('transitionend', () => {
-    if (carouselImages[counter].id === 'lastClone')
-})
+    // if (carouselImages[counter].id === 'lastClone')
+});

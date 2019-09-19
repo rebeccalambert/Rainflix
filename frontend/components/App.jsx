@@ -7,6 +7,7 @@ import splashPage from "./session/splash";
 import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 import errorPage from "./session/error_page";
+import WatchScreen from "./watch_screen/watch_screen";
 
 const App = () => (
     <div id="app-div" className="app-div app-div-overflow">
@@ -16,7 +17,9 @@ const App = () => (
             <AuthRoute path="/login" component={ LoginFormContainer } />
             <AuthRoute exact path="/signup" component={ SignupFormContainer } />
             <ProtectedRoute exact path="/home" component={ VideoIndex } />
+            <ProtectedRoute exact path="/watch/:videoID" component={ WatchScreen } />
             {/* <ProtectedRoute path='/home/:id' component={ VideoIndex } /> */}
+
             <Route component={ errorPage }/>
         </Switch>
 
