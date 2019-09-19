@@ -1129,7 +1129,8 @@ function (_React$Component) {
   }, {
     key: "componentWillUpdate",
     value: function componentWillUpdate() {
-      this.video - this.props.video;
+      this.video = this.props.video;
+      document.getElementById("display-video").load();
     }
   }, {
     key: "handleClose",
@@ -1355,6 +1356,11 @@ function (_React$Component) {
       }, " Book Made Movie", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: 'book-made-movie',
         key: "li-index-2"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " mission: Possible", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'mission-possible',
+        key: "li-index-3"
       }))));
     }
   }]);
