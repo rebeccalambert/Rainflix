@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class WatchScreen extends React.Component {
     constructor(props) {
@@ -8,10 +9,6 @@ class WatchScreen extends React.Component {
         this.downVolume = this.downVolume.bind(this);
         this.handleClose = this.handleClose.bind(this);
     }
-
-    // componentDidMount () {
-
-    // }
 
 
     upVolume () {
@@ -27,19 +24,24 @@ class WatchScreen extends React.Component {
     }
 
 
-    handleClose () {
-        this.removeDropdown();
+    handleClose (e) {
+        e.preventDefault();
+        this.props.removeDropdown();
+        this.props.history.push("/");
     }
 
     render () {
-        
+     
         // debugger
         return (
             <div className="watch-screen">
-                <div>{this.video.title}</div>
-               <video id="watch-video" autoPlay controls>
+                <a href="/" onClick={this.handleClose}>ARROW</a>
+                {/* <Link to="/"><button onClick={this.handleClose} > Arrow </button></Link> */}
+                
+                <video id="watch-video" autoPlay controls>
                     <source type="video/mp4" src={this.props.video.videoURL} />
                 </video>
+                <div>{this.video.title}</div>
            </div>
 
         );

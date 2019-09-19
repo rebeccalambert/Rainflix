@@ -1489,6 +1489,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1509,6 +1510,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var WatchScreen =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1525,9 +1527,7 @@ function (_React$Component) {
     _this.downVolume = _this.downVolume.bind(_assertThisInitialized(_this));
     _this.handleClose = _this.handleClose.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentDidMount () {
-  // }
-
+  }
 
   _createClass(WatchScreen, [{
     key: "upVolume",
@@ -1549,8 +1549,10 @@ function (_React$Component) {
     }
   }, {
     key: "handleClose",
-    value: function handleClose() {
-      this.removeDropdown();
+    value: function handleClose(e) {
+      e.preventDefault();
+      this.props.removeDropdown();
+      this.props.history.push("/");
     }
   }, {
     key: "render",
@@ -1558,14 +1560,17 @@ function (_React$Component) {
       // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "watch-screen"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/",
+        onClick: this.handleClose
+      }, "ARROW"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         id: "watch-video",
         autoPlay: true,
         controls: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.props.video.videoURL
-      })));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.video.title));
     }
   }]);
 
@@ -1593,6 +1598,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  // debugger
   return {
     video: state.entities.videos[ownProps.match.params.videoID]
   };
