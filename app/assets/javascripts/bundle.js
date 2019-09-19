@@ -903,7 +903,7 @@ var splashPage = function splashPage() {
     className: "splash-background"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splash-darken"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, window.scrollTo(0, 0), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splash-header"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title-body"
@@ -1254,9 +1254,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1281,6 +1281,8 @@ function (_React$Component) {
       videos: _this.props.videos
     };
     _this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic'];
+    _this.upVolume = _this.upVolume.bind(_assertThisInitialized(_this));
+    _this.downVolume = _this.downVolume.bind(_assertThisInitialized(_this));
     return _this;
   } // componentDidMount() {
   //     this.props.fetchVideos("laughs"); 
@@ -1291,11 +1293,39 @@ function (_React$Component) {
 
 
   _createClass(VideoIndex, [{
+    key: "upVolume",
+    value: function upVolume() {
+      var vid = document.getElementById("display-video");
+      vid.volume = 1;
+      this.setState({
+        volume: 'on'
+      });
+    }
+  }, {
+    key: "downVolume",
+    value: function downVolume() {
+      var vid = document.getElementById("display-video");
+      vid.volume = 0;
+      this.setState({
+        volume: 'off'
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       //  let videos_list = this.categories.map ((category, idx) => {
       //     return <CategoryListContainer category={category} key={`div-index-${idx}`}/>
       //  });
+      // debugger
+      // let vid = (this.state.videos === undefined) ? (
+      // ) : (
+      //     this.state.videos[0]
+      // );
+      // let button = (this.state.volume === 'off') ? (
+      //     <button onClick={this.upVolume}><img src="assets/grey-mute.png" alt=""/></button>
+      // ) : (
+      //     <button className="down-volume" onClick={this.downVolume}><img src="assets/grey-volume.png" alt=""/></button>
+      // );
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

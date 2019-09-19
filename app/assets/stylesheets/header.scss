@@ -10,11 +10,19 @@
 .logo {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     padding: 1% 5% 0 2%;
 }
 
 .logo.logged-in {
-    width: 20%
+
+    Link {
+
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .header-content {

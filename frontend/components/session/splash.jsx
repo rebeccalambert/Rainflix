@@ -8,7 +8,7 @@ const splashPage = () => {
 return (
     <div className="splash-background">
         <div className="splash-darken">
-
+            {window.scrollTo(0,0)}
             <div className="splash-header">
                 <HeaderBarContainer />
             </div>

@@ -9,6 +9,8 @@ export default class VideoIndex extends React.Component {
             videos: this.props.videos
         };
         this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic']
+        this.upVolume = this.upVolume.bind(this);
+        this.downVolume = this.downVolume.bind(this);
     }
 
     // componentDidMount() {
@@ -19,6 +21,17 @@ export default class VideoIndex extends React.Component {
     // Need to catch that with a message if there are no video items.
        
 
+    upVolume () {
+        let vid = document.getElementById("display-video")
+        vid.volume = 1;
+        this.setState({volume: 'on'});
+    }
+
+    downVolume () {
+        let vid = document.getElementById("display-video")
+        vid.volume = 0;
+        this.setState({volume: 'off'});
+    }
 
 
     render() {
@@ -26,7 +39,17 @@ export default class VideoIndex extends React.Component {
         //  let videos_list = this.categories.map ((category, idx) => {
         //     return <CategoryListContainer category={category} key={`div-index-${idx}`}/>
         //  });
+        // debugger
+        // let vid = (this.state.videos === undefined) ? (
 
+        // ) : (
+        //     this.state.videos[0]
+        // );
+        // let button = (this.state.volume === 'off') ? (
+        //     <button onClick={this.upVolume}><img src="assets/grey-mute.png" alt=""/></button>
+        // ) : (
+        //     <button className="down-volume" onClick={this.downVolume}><img src="assets/grey-volume.png" alt=""/></button>
+        // );
         return (
             <div >
                 <HeaderBarContainer />
@@ -35,7 +58,36 @@ export default class VideoIndex extends React.Component {
                     {/* <div className="slider">
                         {videos_list}
                     </div> */}
-                    
+                    {/* <div>
+                    <span className="content">
+                        <div className="background">
+                            <div className="left">
+                                <h2>{vid.title}</h2>
+                                <p className="metaheader">
+                                    <span className="match">95% Match</span>
+                                    <span>{vid.year}</span>
+                                    <span id="rating">{vid.rating}</span>
+                                    <span>{vid.length}m</span>
+                                </p>
+                                <p className="synopsis">{vid.overview}</p>
+                                
+                                <div className="lists"> 
+                                    <div><span className="title">Starring: </span><span>{vid.starring}</span></div>
+                                    <div><span className="title">Categories: </span><span>{vid.category}</span></div>
+                                </div>
+                                
+                            </div>
+                            <div className="right">
+                                <video id="display-video" autoPlay>
+                                    <source type="video/mp4" src={vid.videoURL} />
+                                </video>
+                                {button}
+                            </div>
+                        </div>
+                    </span>
+
+                    </div> */}
+
                     <div className="slider"> Superhero
                         <CategoryListContainer category={'superhero'} key={`li-index-1}`}/>
                     </div>
