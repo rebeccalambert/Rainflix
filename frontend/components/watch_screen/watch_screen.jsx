@@ -9,6 +9,9 @@ class WatchScreen extends React.Component {
         this.handleClose = this.handleClose.bind(this);
     }
 
+    // componentDidMount () {
+
+    // }
 
 
     upVolume () {
@@ -30,7 +33,7 @@ class WatchScreen extends React.Component {
 
     render () {
         
-        debugger
+        // debugger
         return (
             <div className="watch-screen">
                 <div>{this.video.title}</div>

@@ -267,7 +267,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session/signup_form_container */ "./frontend/components/session/signup_form_container.jsx");
 /* harmony import */ var _session_login_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./session/login_form_container */ "./frontend/components/session/login_form_container.jsx");
 /* harmony import */ var _session_error_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./session/error_page */ "./frontend/components/session/error_page.jsx");
-/* harmony import */ var _watch_screen_watch_screen__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./watch_screen/watch_screen */ "./frontend/components/watch_screen/watch_screen.jsx");
+/* harmony import */ var _watch_screen_watch_screen_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./watch_screen/watch_screen_container */ "./frontend/components/watch_screen/watch_screen_container.jsx");
 
 
 
@@ -300,7 +300,7 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
     exact: true,
     path: "/watch/:videoID",
-    component: _watch_screen_watch_screen__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _watch_screen_watch_screen_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _session_error_page__WEBPACK_IMPORTED_MODULE_7__["default"]
   })));
@@ -1525,7 +1525,9 @@ function (_React$Component) {
     _this.downVolume = _this.downVolume.bind(_assertThisInitialized(_this));
     _this.handleClose = _this.handleClose.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentDidMount () {
+  // }
+
 
   _createClass(WatchScreen, [{
     key: "upVolume",
@@ -1553,7 +1555,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
+      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "watch-screen"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
@@ -1571,6 +1573,40 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (WatchScreen);
+
+/***/ }),
+
+/***/ "./frontend/components/watch_screen/watch_screen_container.jsx":
+/*!*********************************************************************!*\
+  !*** ./frontend/components/watch_screen/watch_screen_container.jsx ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _watch_screen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./watch_screen */ "./frontend/components/watch_screen/watch_screen.jsx");
+/* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    video: state.entities.videos[ownProps.match.params.videoID]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    removeDropdown: function removeDropdown() {
+      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["removeDropdown"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_watch_screen__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 

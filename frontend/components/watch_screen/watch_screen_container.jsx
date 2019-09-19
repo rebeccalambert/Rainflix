@@ -5,7 +5,6 @@ import { removeDropdown } from "../../actions/video_actions";
 
 const mapStateToProps = (state, ownProps) => ({
     video: state.entities.videos[ownProps.match.params.videoID]
-    // video: state.entities.dropdown.video
 });
 
 
