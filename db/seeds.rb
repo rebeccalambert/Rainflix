@@ -111,168 +111,168 @@ User.create(username: "jonathan", password: "123456")
 
 
 
-# vid11 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid11 = Video.create(title: "Guardians of the Galaxy", length: 3, category: "superhero mission-possible laughs sing-along" , overview: "Brash space adventurer Peter Quill (Chris Pratt) finds himself the quarry of relentless bounty hunters after he steals an orb coveted by Ronan, a powerful villain. To evade Ronan, Quill is forced into an uneasy truce with four disparate misfits: gun-toting Rocket Raccoon, treelike-humanoid Groot, enigmatic Gamora, and vengeance-driven Drax the Destroyer. But when he discovers the orb's true power and the cosmic threat it poses, Quill must rally his ragtag group to save the universe.", rating: "PG-13", year: "2014", starring: "Chris Pratt")
 
 
 
-# vid12 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid12 = Video.create(title: "Harry Potter", length: 3, category: "book-made-movie throwback " , overview: "Adaptation of the first of J.K. Rowling's popular children's novels about Harry Potter, a boy who learns on his eleventh birthday that he is the orphaned son of two powerful wizards and possesses unique magical powers of his own. He is summoned from his life as an unwanted child to become a student at Hogwarts, an English boarding school for wizards. There, he meets several friends who become his closest allies and help him discover the truth about his parents' mysterious deaths.", rating: "PG", year: "2001", starring: "Daniel Radcliffe")
 
 
 
-# vid13 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid13 = Video.create(title: "Hercules", length: 2, category: "superhero throwback laughs sing-along animated" , overview: "Disney tackles Greek mythology in this animated feature. Hercules (Tate Donovan), a son of gods, was snatched as a baby by Hades (James Woods) and forced to live among mortals as a half-man, half-god. Now a teenager, Hercules needs to perform a rite of passage on Earth to prove himself worthy of living with the gods on Mount Olympus. With his plucky satyr sidekick, Philoctetes (Danny DeVito), along for the ride, Hercules must learn how to use his strength to defeat a series of evil creatures.", rating: "G", year: "1997", starring: "Tate Donovan")
 
 
 
-# vid14 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid14 = Video.create(title: "Hidden Figures", length: 3, category: "book-made-movie contemplative realistic" , overview: "Three brilliant African-American women at NASA -- Katherine Johnson (Taraji P. Henson), Dorothy Vaughan (Octavia Spencer) and Mary Jackson (Janelle Monáe) -- serve as the brains behind one of the greatest operations in history: the launch of astronaut John Glenn (Glen Powell) into orbit, a stunning achievement that restored the nation's confidence, turned around the Space Race and galvanized the world.", rating: "PG", year: "2016", starring: "Taraji P. Henson")
 
 
 
-# vid15 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid15 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid16 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid16 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid17 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid17 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid18 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid18 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid19 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid19 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid20 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid20 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid21 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid21 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid22 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid22 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid23 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid23 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid24 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid24 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid25 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid25 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid26 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid26 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid27 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid27 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid28 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid28 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid29 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid29 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid30 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid30 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid31 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid31 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid32 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid32 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid33 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid33 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid34 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid34 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid35 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid35 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid36 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid36 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid37 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid37 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid38 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid38 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid39 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid39 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid40 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid40 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid41 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid41 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid42 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid42 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid43 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid43 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid44 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid44 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid45 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid45 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid46 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid46 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid47 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid47 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid48 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid48 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid49 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid49 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid50 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid50 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid51 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid51 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
 
 
 
-# vid52 = Video.create(title: 'adskfjadlskj', length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
+# vid52 = Video.create(title: "titileHere", length: 1, category: "contemplativ" , overview: "Supe", rating: "G", year: "2019", starring: "kitten")
