@@ -1603,16 +1603,20 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "watch-screen"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "watch-arrow",
         href: "/",
         onClick: this.handleClose
-      }, "ARROW"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "assets/left-arrow.png",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         id: "watch-video",
         autoPlay: true,
         controls: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
         src: this.props.video.videoURL
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.video.title));
+      })));
     }
   }]);
 
