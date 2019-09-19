@@ -86,7 +86,7 @@ vid3.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/
 
 vid4 = Video.create(title: 'Charlotte''s Web', length: 1, category: "Charlotte's Web" , overview: "Charlotte's Web is the story of Wilbur the pig and his friendship with Fern Arable, the little girl who adopts him, and his barnyard friends but most importantly, Charlotte the spider. Wilbur, the story's main character, is born the runt of a litter of pigs and thought too weak to live until Fern takes pity on him.", rating: "G", year: "1973", starring: "Rex Allen")
 vid4.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_trailers/charlottes_web.mp4"), filename: "charlottes_web.mp4")
-vi4.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/charlottes-web.jpg"), filename: "kitten.jpg")
+vid4.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/charlottes-web.jpg"), filename: "kitten.jpg")
 
 
 vid5 = Video.create(title: 'Donnie Darko', length: 3, category: "mind-bending" , overview: "During the presidential election of 1988, a teenager named Donnie Darko sleepwalks out of his house one night and sees a giant, demonic-looking rabbit named Frank, who tells him the world will end in 28 days. When Donnie returns home, he finds that a jet engine has crashed into his bedroom. Is Donnie living in a parallel universe, is he suffering from mental illness - or will the world really end?", rating: "R", year: "2001", starring: "Jake Gyllenhaal")
@@ -214,7 +214,7 @@ vid29.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/mov
 vid29.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/mulan.jpg"), filename: "kitten.jpg")
 
 
-vid30 = Video.create(title: "Paprika", length: 1, category: "book-made-movie mind-bending animated" , overview: "Dr. Atsuko Chiba works as a scientist by day and, under the code name "Paprika," is a dream detective at night. Atsuko and her colleagues are working on a device called the DC Mini, which is intended to help psychiatric patients, but in the wrong hands it could destroy people's minds. When a prototype is stolen, Atsuko/Paprika springs into action to recover it before damage is done.", rating: "R", year: "2006", starring: "Satoshi Kon")
+vid30 = Video.create(title: "Paprika", length: 1, category: "book-made-movie mind-bending animated" , overview: "Dr. Atsuko Chiba works as a scientist by day and, under the code name 'Paprika', is a dream detective at night. Atsuko and her colleagues are working on a device called the DC Mini, which is intended to help psychiatric patients, but in the wrong hands it could destroy people's minds. When a prototype is stolen, Atsuko/Paprika springs into action to recover it before damage is done.", rating: "R", year: "2006", starring: "Satoshi Kon")
 vid30.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_trailers/paprika_updated.mp4"), filename: "paprika_updated.mp4")
 vid30.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/paprika.jpg"), filename: "kitten.jpg")
 
@@ -256,7 +256,7 @@ vid37.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack
 
 vid38 = Video.create(title: "Spirited Away", length: 3, category: "throwback mind-bending animated" , overview: "In this animated feature by noted Japanese director Hayao Miyazaki, 10-year-old Chihiro (Rumi Hiiragi) and her parents (Takashi Naitô, Yasuko Sawaguchi) stumble upon a seemingly abandoned amusement park. After her mother and father are turned into giant pigs, Chihiro meets the mysterious Haku (Miyu Irino), who explains that the park is a resort for supernatural beings who need a break from their time spent in the earthly realm, and that she must work there to free herself and her parents.", rating: "PG", year: "2001", starring: "Rumi Hiiragi")
 vid38.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_trailers/spirited-away.mp4"), filename: "spirited-away.mp4")
-vid38.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/spiritied-away.jpg"), filename: "kitten.jpg")
+vid38.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/spirited-away.jpg"), filename: "kitten.jpg")
 
 
 vid39 = Video.create(title: "Star Wars", length: 3, category: "mission-possible throwback sing-along animated" , overview: "The Imperial Forces -- under orders from cruel Darth Vader (David Prowse) -- hold Princess Leia (Carrie Fisher) hostage, in their efforts to quell the rebellion against the Galactic Empire. Luke Skywalker (Mark Hamill) and Han Solo (Harrison Ford), captain of the Millennium Falcon, work together with the companionable droid duo R2-D2 (Kenny Baker) and C-3PO (Anthony Daniels) to rescue the beautiful princess, help the Rebel Alliance, and restore freedom and justice to the Galaxy.", rating: "PG", year: "1980", starring: "Mark Hamill")

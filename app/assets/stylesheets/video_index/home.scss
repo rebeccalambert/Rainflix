@@ -35,6 +35,8 @@
 .thumbnail-pic {
     width: 100%;
     z-index:23;
+    height: 150px;
+
 }
 
 .index-item {
@@ -42,7 +44,7 @@
     margin: 0 2px;
     max-width: 300px;
     min-width: 299px;
-    height: 200px;
+    // height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;

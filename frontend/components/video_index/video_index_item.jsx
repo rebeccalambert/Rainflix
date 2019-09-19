@@ -38,7 +38,7 @@ class VideoIndexItem extends React.Component {
             </div>
         ) : (
             <div className="thumbnail-video-player">
-                <video width="215" height="240" controls>
+                <video width="215" height="240" controls >
                     <source type="video/mp4" src={this.video.videoURL} />
                 </video>
 
@@ -48,7 +48,10 @@ class VideoIndexItem extends React.Component {
 
         return (
             <div className="index-item" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
-                {content}
+                {/* {content} */}
+                <div className="image_container">
+                    <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
+                </div>
                 <button className="show-page-button" onClick={this.handleOpen}><span className="chevron bottom" /></button>
 
             </div>

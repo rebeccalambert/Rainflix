@@ -24,6 +24,9 @@ class VideoDetailsPage extends React.Component {
         this.setState({volume: 'off'});
     }
 
+    componentWillUpdate () {
+        this.video-this.props.video;
+    }
 
     handleClose () {
         this.removeDropdown();
