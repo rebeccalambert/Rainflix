@@ -25,8 +25,11 @@ class VideoDetailsPage extends React.Component {
     }
 
     componentDidUpdate () {
-        this.video=this.props.video;
-        document.getElementById("display-video").load();
+        
+        if (this.video !== this.props.video) {
+            this.video=this.props.video;
+            document.getElementById("display-video").load();
+        }
     }
 
     handleClose () {

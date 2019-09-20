@@ -1129,8 +1129,10 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      this.video = this.props.video;
-      document.getElementById("display-video").load();
+      if (this.video !== this.props.video) {
+        this.video = this.props.video;
+        document.getElementById("display-video").load();
+      }
     }
   }, {
     key: "handleClose",
@@ -1140,18 +1142,14 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var button = this.state.volume === 'off' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      var button = this.state.volume === 'off' ? // <button onClick={this.upVolume}><img src="<=% image_url('grey-mute.png') %>" alt=""/></button>
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.upVolume
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "assets/grey-mute.png",
-        alt: ""
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "OFF") : // <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "down-volume",
         onClick: this.downVolume
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "assets/grey-volume.png",
-        alt: ""
-      }));
+      }, "ON");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1316,19 +1314,14 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var button = this.state.volume === 'off' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      var button = this.state.volume === 'off' ? // <button onClick={this.upVolume}><img className="on-volume" src="<=% image_url('grey-mute.png') %>" alt=""/></button>
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.upVolume
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "on-volume",
-        src: "assets/grey-mute.png",
-        alt: ""
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "OFF") : // <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "down-volume",
         onClick: this.downVolume
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "assets/grey-volume.png",
-        alt: ""
-      }));
+      }, "ON");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rpo-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1343,7 +1336,7 @@ function (_React$Component) {
         autoplay: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
-        src: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3f5fcd5b851c1b3c5828e20eadab0fb403b41c7b/ready-player-one.mp4"
+        src: "https://rainflix-seed-data.s3-us-west-1.amazonaws.com/ready-player-one.mp44"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "index-rating"
       }, "PG-13"), button)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1360,7 +1353,7 @@ function (_React$Component) {
         key: "li-index-2"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
-      }, " mission: Possible", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, " Mission: Possible", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: 'mission-possible',
         key: "li-index-3"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1619,10 +1612,7 @@ function (_React$Component) {
         className: "watch-arrow",
         href: "/",
         onClick: this.handleClose
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "assets/left-arrow.png",
-        alt: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      }, "Arrow"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         id: "watch-video",
         autoPlay: true,
         controls: true
@@ -32005,7 +31995,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
