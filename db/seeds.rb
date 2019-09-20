@@ -230,7 +230,7 @@
     vid11.video.attach(io: file11, filename: "guardians-of-the-galaxy_updated.mp4")
     
     file1111 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/guardians-of-the-galaxy.jpg")
-    vid11.thumbnail.attach(io: file1111, filename: "kitten.jpg")
+    vid11.thumbnail.attach(io: file1111, filename: "guardians-of-the-galaxy.jpg")
     
     
     
@@ -248,7 +248,7 @@
     vid13.video.attach(io: file13, filename: "hercules.mp4")
     
     file1313 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/hercules.jpg")
-    vid13.thumbnail.attach(io: file1313, filename: "kitten.jpg")
+    vid13.thumbnail.attach(io: file1313, filename: "hercules.jpg")
     
     
     
@@ -491,7 +491,7 @@
     vid40.video.attach(io: file40, filename: "dead-poet-society_updated.mp4")
     
     file4040 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/dead-poet-society.jpg")
-    vid40.thumbnail.attach(io: file4040, filename: "kitten.jpg")
+    vid40.thumbnail.attach(io: file4040, filename: "dead-poet-society.jpg")
     
     
     
@@ -536,7 +536,7 @@
     vid45.video.attach(io: file45, filename: "lego-movie_updated.mp4")
     
     file4545 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/the-lego-movie.jpeg")
-    vid45.thumbnail.attach(io: file4545, filename: "the-lego-movie.jpg")
+    vid45.thumbnail.attach(io: file4545, filename: "the-lego-movie.jpeg")
     
     
     
