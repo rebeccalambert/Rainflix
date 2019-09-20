@@ -74,7 +74,7 @@ vid1.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/
 
 
 
-vid2 = Video.create(title: 'Avengers', length: 2, category: "superhero book-made-movie mission-possible" , overview: "When Thor's evil brother, Loki (Tom Hiddleston), gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth. Joining Fury's dream team are Iron Man (Robert Downey Jr.), Captain America (Chris Evans), the Hulk (Mark Ruffalo), Thor (Chris Hemsworth), the Black Widow (Scarlett Johansson) and Hawkeye (Jeremy Renner).", rating: "PG-13", year: "2012", starring: "Robert Downey Jr.")
+vid2 = Video.create(title: 'Avengers', length: 2, category: "superhero mission-possible" , overview: "When Thor's evil brother, Loki (Tom Hiddleston), gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth. Joining Fury's dream team are Iron Man (Robert Downey Jr.), Captain America (Chris Evans), the Hulk (Mark Ruffalo), Thor (Chris Hemsworth), the Black Widow (Scarlett Johansson) and Hawkeye (Jeremy Renner).", rating: "PG-13", year: "2012", starring: "Robert Downey Jr.")
 vid2.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_trailers/avengers-updated.mp4"), filename: "avengers-updated.mp4")
 vid2.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/avengers.jpg"), filename: "kitten.jpg")
 
@@ -259,7 +259,7 @@ vid38.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/mov
 vid38.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/spirited-away.jpg"), filename: "kitten.jpg")
 
 
-vid39 = Video.create(title: "Star Wars", length: 3, category: "mission-possible throwback sing-along animated" , overview: "The Imperial Forces -- under orders from cruel Darth Vader (David Prowse) -- hold Princess Leia (Carrie Fisher) hostage, in their efforts to quell the rebellion against the Galactic Empire. Luke Skywalker (Mark Hamill) and Han Solo (Harrison Ford), captain of the Millennium Falcon, work together with the companionable droid duo R2-D2 (Kenny Baker) and C-3PO (Anthony Daniels) to rescue the beautiful princess, help the Rebel Alliance, and restore freedom and justice to the Galaxy.", rating: "PG", year: "1980", starring: "Mark Hamill")
+vid39 = Video.create(title: "Star Wars", length: 3, category: "mission-possible throwback" , overview: "The Imperial Forces -- under orders from cruel Darth Vader (David Prowse) -- hold Princess Leia (Carrie Fisher) hostage, in their efforts to quell the rebellion against the Galactic Empire. Luke Skywalker (Mark Hamill) and Han Solo (Harrison Ford), captain of the Millennium Falcon, work together with the companionable droid duo R2-D2 (Kenny Baker) and C-3PO (Anthony Daniels) to rescue the beautiful princess, help the Rebel Alliance, and restore freedom and justice to the Galaxy.", rating: "PG", year: "1980", starring: "Mark Hamill")
 vid39.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_trailers/star-wars.mp4"), filename: "star-wars.mp4")
 vid39.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/movie_pics/star-wars.jpg"), filename: "kitten.jpg")
 

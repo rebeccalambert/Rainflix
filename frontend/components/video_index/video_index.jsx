@@ -48,8 +48,8 @@ export default class VideoIndex extends React.Component {
                         <p className="summary">When the creator of the OASIS dies, he makes a posthumous challenge to all OASIS users: whoever finds his digital Easter Egg becomes the heir of his world.</p>
                     </div>
                     <div className="rpo-vid-div">
-                        <video id="rpo-vid" autoPlay>
-                            <source type="video/mp4" />
+                        <video id="rpo-vid" controls autoplay>
+                            <source type="video/mp4" src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3f5fcd5b851c1b3c5828e20eadab0fb403b41c7b/ready-player-one.mp4" />
                         </video>
                         
                         <span className="index-rating">PG-13</span>
@@ -76,7 +76,7 @@ export default class VideoIndex extends React.Component {
                     <div className="slider"> mission: Possible
                         <CategoryListContainer category={'mission-possible'} key={`li-index-3`}/>
                     </div>
-                    {/* <div className="slider"> Throwback
+                    <div className="slider"> Throwback
                         <CategoryListContainer category={'throwback'} key={`li-index-4`}/>
                     </div>
                     <div className="slider"> Laughs
@@ -96,7 +96,7 @@ export default class VideoIndex extends React.Component {
                     </div>
                     <div className="slider"> Realistic
                         <CategoryListContainer category={'realistic'} key={`li-index-10`}/>
-                    </div>  */}
+                    </div> 
                 </div>
             </div>
         )

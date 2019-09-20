@@ -1127,8 +1127,8 @@ function (_React$Component) {
       });
     }
   }, {
-    key: "componentWillUpdate",
-    value: function componentWillUpdate() {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
       this.video = this.props.video;
       document.getElementById("display-video").load();
     }
@@ -1339,9 +1339,11 @@ function (_React$Component) {
         className: "rpo-vid-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         id: "rpo-vid",
-        autoPlay: true
+        controls: true,
+        autoplay: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
-        type: "video/mp4"
+        type: "video/mp4",
+        src: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3f5fcd5b851c1b3c5828e20eadab0fb403b41c7b/ready-player-one.mp4"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "index-rating"
       }, "PG-13"), button)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1361,6 +1363,41 @@ function (_React$Component) {
       }, " mission: Possible", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: 'mission-possible',
         key: "li-index-3"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Throwback", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'throwback',
+        key: "li-index-4"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Laughs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'laughs',
+        key: "li-index-5"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Contemplative", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'contemplative',
+        key: "li-index-6"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Mind-Bending", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'mind-bending',
+        key: "li-index-7"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Sing Along", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'sing-along',
+        key: "li-index-8"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Animated", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'animated',
+        key: "li-index-9"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Realistic", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'realistic',
+        key: "li-index-10"
       }))));
     }
   }]);

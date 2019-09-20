@@ -24,7 +24,7 @@ class VideoDetailsPage extends React.Component {
         this.setState({volume: 'off'});
     }
 
-    componentWillUpdate () {
+    componentDidUpdate () {
         this.video=this.props.video;
         document.getElementById("display-video").load();
     }
