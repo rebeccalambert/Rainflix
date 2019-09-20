@@ -49,7 +49,7 @@ export default class VideoIndex extends React.Component {
                     </div>
                     <div className="rpo-vid-div">
                         <video id="rpo-vid" controls autoplay>
-                            <source type="video/mp4" src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3f5fcd5b851c1b3c5828e20eadab0fb403b41c7b/ready-player-one.mp4" />
+                            <source type="video/mp4" src="https://rainflix-seed-data.s3-us-west-1.amazonaws.com/ready-player-one.mp44" />
                         </video>
                         
                         <span className="index-rating">PG-13</span>
