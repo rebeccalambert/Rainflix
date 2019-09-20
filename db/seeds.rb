@@ -76,9 +76,6 @@
     
     
     
-    User.create(username: "DemoUser", password: "123456")
-    User.create(username: "rebecca", password: "123456")
-    User.create(username: "jonathan", password: "123456")
     
     
     
@@ -91,14 +88,14 @@
     ### vid for testing/dev
     
     
-        # vid1 = Video.create(title: '1 kitten vid', length: 1, category: "contemplative realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
-        # vid1.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
+    # vid1 = Video.create(title: '1 kitten vid', length: 1, category: "contemplative realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
+    # vid1.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
         # vid1.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
-    
+        
         # vid2 = Video.create(title: '2 kitten vid', length: 14, category: "contemplative realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
         # vid2.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
         # vid2.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
-    
+        
         # vid3 = Video.create(title: '3 kitten vid', length: 1, category: "superhero book-made-movie mission-possible throwback laughs contemplative mind-bending sing-along animated realistic" , overview: "Super cute kitten that I found on youtube.", rating: "G", year: "2019", starring: "kitten")
         # vid3.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
         # vid3.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
@@ -131,11 +128,21 @@
         # vid10.video.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.mp4"), filename: "kitten.mp4")
         # vid10.thumbnail.attach(io: File.open("/Users/rebeccalambert/Desktop/aA/fullstack/images/kitten.jpg"), filename: "kitten.jpg")
         
+        
+        
+        #     ### Vids for prod: 
+    require 'open-uri'
     
-    
-    #     ### Vids for prod: 
-     require 'open-uri'
-    
+    User.destroy_all
+
+    User.create(username: "DemoUser", password: "123456")
+    User.create(username: "rebecca", password: "123456")
+    User.create(username: "jonathan", password: "123456")
+        
+
+    Video.destroy_all
+
+
     vid1 = Video.create(title: 'A Star is Born', length: 3, category: "contemplative realistic" , overview: "Seasoned musician Jackson Maine discovers -- and falls in love with -- struggling artist Ally. She has just about given up on her dream to make it big as a singer until Jackson coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jackson fights an ongoing battle with his own internal demons.", rating: "R", year: "2018", starring: "Lady Gaga")
     file1 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/a_star_is_born.mp4")
     vid1.video.attach(io: file1, filename: "a_star_is_born.mp4")
