@@ -75,7 +75,7 @@ file1 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/a_star_is_bo
 vid1.video.attach(io: file1, filename: "a_star_is_born.mp4")
 
 file11 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/a_star_is_born.jpg")
-vid1.thumbnail.attach(io: file11, filename: "a_star_is_born.jpg")
+vid1.thumbnail.attach(io: file11, filename: "a-star-is-born.jpg")
 
 
 
