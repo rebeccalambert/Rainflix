@@ -1291,7 +1291,10 @@ function (_React$Component) {
     _this.upVolume = _this.upVolume.bind(_assertThisInitialized(_this));
     _this.downVolume = _this.downVolume.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentDidMount() {
+  //     this.props.fetchVideo(??????);   
+  // }
+
 
   _createClass(VideoIndex, [{
     key: "upVolume",
@@ -1326,18 +1329,14 @@ function (_React$Component) {
         className: "rpo-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rpo-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Ready Player One"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "PG-13"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Watch Below"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Ready Player One"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Watch Below"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "summary"
       }, "When the creator of the OASIS dies, he makes a posthumous challenge to all OASIS users: whoever finds his digital Easter Egg becomes the heir of his world.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rpo-vid-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
-        id: "rpo-vid",
-        controls: true,
-        autoplay: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
-        type: "video/mp4",
-        src: "https://rainflix-seed-data.s3-us-west-1.amazonaws.com/ready-player-one.mp44"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://www.senselesswisdom.net/wp-content/uploads/2018/04/ready-player-one_YgCnLb-865x498.jpg",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "index-rating"
       }, "PG-13"), button)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"

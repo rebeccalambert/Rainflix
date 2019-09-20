@@ -15,6 +15,10 @@ export default class VideoIndex extends React.Component {
         this.downVolume = this.downVolume.bind(this);
     }
 
+    // componentDidMount() {
+    //     this.props.fetchVideo(??????);   
+    // }
+
     upVolume () {
         let vid = document.getElementById("rpo-vid")
         vid.volume = 1;
@@ -45,14 +49,15 @@ export default class VideoIndex extends React.Component {
                 <div className="rpo-div">
                     <div className="rpo-text">
                         <h2>Ready Player One</h2> 
-                        <span>PG-13</span>
                         <h3>Watch Below</h3>
                         <p className="summary">When the creator of the OASIS dies, he makes a posthumous challenge to all OASIS users: whoever finds his digital Easter Egg becomes the heir of his world.</p>
                     </div>
                     <div className="rpo-vid-div">
-                        <video id="rpo-vid" controls autoplay>
-                            <source type="video/mp4" src="https://rainflix-seed-data.s3-us-west-1.amazonaws.com/ready-player-one.mp44" />
-                        </video>
+                        <img src="https://www.senselesswisdom.net/wp-content/uploads/2018/04/ready-player-one_YgCnLb-865x498.jpg" alt=""/>
+                        {/* <video id="rpo-vid" controls autoPlay>
+                            <source type="video/mp4" src={this.props.video.videoURL} />
+                            <source type="video/mp4" src="https://rainflix-seed-data.s3-us-west-1.amazonaws.com/ready-player-one.mp4" />
+                        </video> */}
                         
                         <span className="index-rating">PG-13</span>
                         {button}
