@@ -1,4 +1,4 @@
-![alt text](https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png "Rainflix")
+![alt text](app/assets/images/readme-logo.png "Rainflix")
 
 
 
