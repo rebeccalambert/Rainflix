@@ -134,13 +134,13 @@
     
     
     #     ### Vids for prod: 
-     require 'open-uri'
+    #  require 'open-uri'
     
     vid1 = Video.create(title: 'A Star is Born', length: 3, category: "contemplative realistic" , overview: "Seasoned musician Jackson Maine discovers -- and falls in love with -- struggling artist Ally. She has just about given up on her dream to make it big as a singer until Jackson coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jackson fights an ongoing battle with his own internal demons.", rating: "R", year: "2018", starring: "Lady Gaga")
     file1 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/a_star_is_born.mp4")
     vid1.video.attach(io: file1, filename: "a_star_is_born.mp4")
     
-    file11 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/a_star_is_born.jpg")
+    file11 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/a-star-is-born.jpg")
     vid1.thumbnail.attach(io: file11, filename: "a-star-is-born.jpg")
     
     
