@@ -1,24 +1,24 @@
-# README
+RainFlix, a Netflix clone, is an internet application that streams videos organized by category.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Visit Rainflix here!](https://rainflix.herokuapp.com/#/)
 
-Things you may want to cover:
+Features
+----------
+* Backend and Frontend user authentication for signup, login, and logout
+* Displays videos organized by category
+* Access video details information in a dropdown slice that opens on button click that appears on hover of the thumbnail
+* Play video through play button on the dropdown slice
 
-* Ruby version
+Primary languages 
+------------------
+* Ruby
+* Javascript
+* SCSS
 
-* System dependencies
+Future Features
+----------------
+This clone was created in approximately 10 day, but additional features will be added:
+* Header video begins playing on VideoIndex on login
+* Ability to save videos into a MyList for later viewing
+* Ability to search for videos by title
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
