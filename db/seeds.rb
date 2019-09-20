@@ -1,3 +1,5 @@
+   require 'open-uri'
+   
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -66,7 +68,7 @@ User.create(username: "jonathan", password: "123456")
 
 
     ### Vids for prod: 
-    require 'open-uri'
+ 
 
 vid1 = Video.create(title: 'A Star is Born', length: 3, category: "contemplative realistic" , overview: "Seasoned musician Jackson Maine discovers -- and falls in love with -- struggling artist Ally. She has just about given up on her dream to make it big as a singer until Jackson coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jackson fights an ongoing battle with his own internal demons.", rating: "R", year: "2018", starring: "Lady Gaga")
 file1 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/a_star_is_born.mp4")
@@ -117,7 +119,7 @@ vid6 = Video.create(title: 'Dr. Strange', length: 3, category: "superhero missio
 file6 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/doctor-strange.mp4")
 vid6.video.attach(io: file6, filename: "doctor-strange.mp4")
 
-file66 = open("pics/doctor-strange.jpg")
+file66 = open("https://rainflix-seed-data.s3-us-west-1.amazonaws.com/doctor-strange.jpg")
 vid6.thumbnail.attach(io: file66, filename: "doctor-strange.jpg")
 
 
