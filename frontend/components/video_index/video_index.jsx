@@ -30,9 +30,9 @@ export default class VideoIndex extends React.Component {
 
     render() {
         let button = (this.state.volume === 'off') ? (
-            <button onClick={this.upVolume}><img className="on-volume" src="assets/grey-mute.png" alt=""/></button>
+            <button onClick={this.upVolume}><img className="on-volume" src="<=% image_url('grey-mute.png') %>" alt=""/></button>
         ) : (
-            <button className="down-volume" onClick={this.downVolume}><img src="assets/grey-volume.png" alt=""/></button>
+            <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
         );
 
         return (

@@ -35,7 +35,7 @@ class WatchScreen extends React.Component {
         // debugger
         return (
             <div className="watch-screen">
-                <a className="watch-arrow" href="/" onClick={this.handleClose}><img src="assets/left-arrow.png" alt=""/></a>
+                <a className="watch-arrow" href="/" onClick={this.handleClose}><img src="<=% image_url('left-arrow.png') %>" alt=""/></a>
                 {/* <Link to="/"><button onClick={this.handleClose} > Arrow </button></Link> */}
                 
                 <video id="watch-video" autoPlay controls>
