@@ -1,3 +1,7 @@
+![alt text](https://fontmeme.com/permalink/190909/b32ef6cfb007eac95c47888abef4e6b5.png "Rainflix")
+
+
+
 RainFlix, a Netflix clone, is an internet application that streams videos organized by category.
 
 [Visit Rainflix here!](https://rainflix.herokuapp.com/#/)
