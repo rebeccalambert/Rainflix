@@ -83,11 +83,12 @@ export default class VideoIndex extends React.Component {
                     </div>
                     {/* <div className="slider"> Mission: Possible
                         <CategoryListContainer category={'mission-possible'} key={`li-index-3`}/>
-                    </div>
+                    </div> */}
                     <div className="slider"> Throwback
                         <CategoryListContainer category={'throwback'} key={`li-index-4`}/>
                     </div>
-                    <div className="slider"> Laughs
+                    
+                    {/* <div className="slider"> Laughs
                         <CategoryListContainer category={'laughs'} key={`li-index-5`}/>
                     </div>
                     <div className="slider"> Contemplative

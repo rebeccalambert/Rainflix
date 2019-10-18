@@ -10,12 +10,13 @@
 }
 
 .category-list {
-    display: flex;
-    // overflow: scroll;
-    flex: 0 0 19.7%;
-    text-align: center;
-    margin: 20px 2px;
-    transition: transform 300ms ease 100ms;
+  display: flex;
+  flex: 0 0 19.7%;
+  text-align: center;
+  /* margin: 5px 2px; */
+  transition: transform 300ms ease 100ms;
+  overflow-x: scroll;
+  padding: 2%;
 }
 
 .slider {
@@ -176,4 +177,9 @@
   background: rgba(255, 255, 255, 0.2);
   padding: .5em 1.5em;
   border-left: 2px solid whitesmoke;
+}
+
+.testing {
+  // overflow:scroll;
+  // border: 1px solid red;
 }

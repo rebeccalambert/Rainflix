@@ -36,10 +36,11 @@ export default class CategoryList extends React.Component {
 
         return (
             <div className="category-bar">
-                <div className="category-list">
-                    {vids}
-                    
-                </div>
+                {/* <div className="testing"> */}
+                    <div className="category-list">
+                        {vids}
+                    </div>
+                {/* </div> */}
                 {indexShow}
             </div>
         )
