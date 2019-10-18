@@ -11,25 +11,25 @@ export default class VideoIndex extends React.Component {
             volume: 'on'
         };
         this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic']
-        this.upVolume = this.upVolume.bind(this);
-        this.downVolume = this.downVolume.bind(this);
+        // this.upVolume = this.upVolume.bind(this);
+        // this.downVolume = this.downVolume.bind(this);
     }
 
     // componentDidMount() {
     //     this.props.fetchVideo(??????);   
     // }
 
-    upVolume () {
-        let vid = document.getElementById("rpo-vid")
-        vid.volume = 1;
-        this.setState({volume: 'on'});
-    }
+    // upVolume () {
+    //     let vid = document.getElementById("rpo-vid")
+    //     vid.volume = 1;
+    //     this.setState({volume: 'on'});
+    // }
 
-    downVolume () {
-        let vid = document.getElementById("rpo-vid")
-        vid.volume = 0;
-        this.setState({volume: 'off'});
-    }
+    // downVolume () {
+    //     let vid = document.getElementById("rpo-vid")
+    //     vid.volume = 0;
+    //     this.setState({volume: 'off'});
+    // }
 
 
     render() {
@@ -76,7 +76,6 @@ export default class VideoIndex extends React.Component {
                         <CategoryListContainer category={'superhero'} key={`li-index-1}`}/>
                     </div>
                     <div className="slider"> Book Made Movie
-                        {/* <CategoryListContainer category={''} key={`li-index-2`}/> */}
                         <CategoryListContainer category={'book-made-movie'} key={`li-index-2`}/>
                     </div>
                     <div className="slider"> Mission: Possible

@@ -1259,9 +1259,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1287,34 +1287,26 @@ function (_React$Component) {
       videos: _this.props.videos,
       volume: 'on'
     };
-    _this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic'];
-    _this.upVolume = _this.upVolume.bind(_assertThisInitialized(_this));
-    _this.downVolume = _this.downVolume.bind(_assertThisInitialized(_this));
+    _this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic']; // this.upVolume = this.upVolume.bind(this);
+    // this.downVolume = this.downVolume.bind(this);
+
     return _this;
   } // componentDidMount() {
   //     this.props.fetchVideo(??????);   
   // }
+  // upVolume () {
+  //     let vid = document.getElementById("rpo-vid")
+  //     vid.volume = 1;
+  //     this.setState({volume: 'on'});
+  // }
+  // downVolume () {
+  //     let vid = document.getElementById("rpo-vid")
+  //     vid.volume = 0;
+  //     this.setState({volume: 'off'});
+  // }
 
 
   _createClass(VideoIndex, [{
-    key: "upVolume",
-    value: function upVolume() {
-      var vid = document.getElementById("rpo-vid");
-      vid.volume = 1;
-      this.setState({
-        volume: 'on'
-      });
-    }
-  }, {
-    key: "downVolume",
-    value: function downVolume() {
-      var vid = document.getElementById("rpo-vid");
-      vid.volume = 0;
-      this.setState({
-        volume: 'off'
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       // let button = (this.state.volume === 'off') ? (
