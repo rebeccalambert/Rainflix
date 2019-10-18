@@ -13,9 +13,10 @@ Features
 * Access video details information in a dropdown slice that opens on button click that appears on hover of the thumbnail
 * Play video through play button on the dropdown slice
 
-Primary languages 
+Primary technology 
 ------------------
-* Ruby
+* Ruby on Rails
+* React/Redux
 * Javascript
 * SCSS
 
