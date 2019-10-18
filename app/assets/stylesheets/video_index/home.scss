@@ -10,12 +10,13 @@
 }
 
 .category-list {
-    display: flex;
-    // overflow: scroll;
-    flex: 0 0 19.7%;
-    text-align: center;
-    margin: 20px 2px;
-    transition: transform 300ms ease 100ms;
+  display: flex;
+  flex: 0 0 19.7%;
+  text-align: center;
+  /* margin: 5px 2px; */
+  transition: transform 300ms ease 100ms;
+  overflow-x: scroll;
+  padding: 2%;
 }
 
 .slider {
@@ -26,7 +27,7 @@
     color: #e5e5e5;
     font-weight: bold;
     margin: 0px 0 0px 50px;
-    overflow: scroll;
+    overflow: hidden;
   }
 
   ::-webkit-scrollbar {
@@ -67,6 +68,7 @@
     background-color: rgba(0, 0, 0, 1);
     z-index: -1;
     max-width: 300px;
+    opacity: .7;
 }
 
 .index-item:hover {
@@ -175,4 +177,9 @@
   background: rgba(255, 255, 255, 0.2);
   padding: .5em 1.5em;
   border-left: 2px solid whitesmoke;
+}
+
+.testing {
+  // overflow:scroll;
+  // border: 1px solid red;
 }
