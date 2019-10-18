@@ -1317,14 +1317,13 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var button = this.state.volume === 'off' ? // <button onClick={this.upVolume}><img className="on-volume" src="<=% image_url('grey-mute.png') %>" alt=""/></button>
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.upVolume
-      }, "OFF") : // <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "down-volume",
-        onClick: this.downVolume
-      }, "ON");
+      // let button = (this.state.volume === 'off') ? (
+      //     // <button onClick={this.upVolume}><img className="on-volume" src="<=% image_url('grey-mute.png') %>" alt=""/></button>
+      //     <button onClick={this.upVolume}>OFF</button>
+      // ) : (
+      //     // <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
+      //     <button className="down-volume" onClick={this.downVolume}>ON</button>
+      // );
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rpo-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1338,18 +1337,58 @@ function (_React$Component) {
         alt: ""
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "index-rating"
-      }, "PG-13"), button)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "PG-13"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
+      }, " Superhero", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'superhero',
+        key: "li-index-1}"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
       }, " Book Made Movie", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        category: '',
+        category: 'book-made-movie',
         key: "li-index-2"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Mission: Possible", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'mission-possible',
+        key: "li-index-3"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slider"
       }, " Throwback", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: 'throwback',
         key: "li-index-4"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Laughs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'laughs',
+        key: "li-index-5"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Contemplative", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'contemplative',
+        key: "li-index-6"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Mind-Bending", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'mind-bending',
+        key: "li-index-7"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Sing Along", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'sing-along',
+        key: "li-index-8"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Animated", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'animated',
+        key: "li-index-9"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider"
+      }, " Realistic", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        category: 'realistic',
+        key: "li-index-10"
       }))));
     }
   }]);

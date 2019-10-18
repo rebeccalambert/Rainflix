@@ -33,13 +33,13 @@ export default class VideoIndex extends React.Component {
 
 
     render() {
-        let button = (this.state.volume === 'off') ? (
-            // <button onClick={this.upVolume}><img className="on-volume" src="<=% image_url('grey-mute.png') %>" alt=""/></button>
-            <button onClick={this.upVolume}>OFF</button>
-        ) : (
-            // <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
-            <button className="down-volume" onClick={this.downVolume}>ON</button>
-        );
+        // let button = (this.state.volume === 'off') ? (
+        //     // <button onClick={this.upVolume}><img className="on-volume" src="<=% image_url('grey-mute.png') %>" alt=""/></button>
+        //     <button onClick={this.upVolume}>OFF</button>
+        // ) : (
+        //     // <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
+        //     <button className="down-volume" onClick={this.downVolume}>ON</button>
+        // );
 
         return (
             <div >
@@ -60,7 +60,7 @@ export default class VideoIndex extends React.Component {
                         </video> */}
                         
                         <span className="index-rating">PG-13</span>
-                        {button}
+                        {/* {button} */}
                     </div>
                 </div>
 
@@ -70,25 +70,23 @@ export default class VideoIndex extends React.Component {
                 <div className="video-index">
                     {/* <div className="slider">
                         {videos_list}
-                    </div>  */}
+                    </div>   */}
 
-                    {/* {content} */}
-
-                    {/* <div className="slider"> Superhero
+                    <div className="slider"> Superhero
                         <CategoryListContainer category={'superhero'} key={`li-index-1}`}/>
-                    </div> */}
-                    <div className="slider"> Book Made Movie
-                        <CategoryListContainer category={''} key={`li-index-2`}/>
-                        {/* <CategoryListContainer category={'book-made-movie'} key={`li-index-2`}/> */}
                     </div>
-                    {/* <div className="slider"> Mission: Possible
+                    <div className="slider"> Book Made Movie
+                        {/* <CategoryListContainer category={''} key={`li-index-2`}/> */}
+                        <CategoryListContainer category={'book-made-movie'} key={`li-index-2`}/>
+                    </div>
+                    <div className="slider"> Mission: Possible
                         <CategoryListContainer category={'mission-possible'} key={`li-index-3`}/>
-                    </div> */}
+                    </div>
                     <div className="slider"> Throwback
                         <CategoryListContainer category={'throwback'} key={`li-index-4`}/>
                     </div>
                     
-                    {/* <div className="slider"> Laughs
+                    <div className="slider"> Laughs
                         <CategoryListContainer category={'laughs'} key={`li-index-5`}/>
                     </div>
                     <div className="slider"> Contemplative
@@ -105,7 +103,7 @@ export default class VideoIndex extends React.Component {
                     </div>
                     <div className="slider"> Realistic
                         <CategoryListContainer category={'realistic'} key={`li-index-10`}/>
-                    </div>  */}
+                    </div> 
                 </div>
             </div>
         )
