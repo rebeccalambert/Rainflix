@@ -26,7 +26,7 @@
     color: #e5e5e5;
     font-weight: bold;
     margin: 0px 0 0px 50px;
-    overflow: scroll;
+    overflow: hidden;
   }
 
   ::-webkit-scrollbar {
@@ -67,6 +67,7 @@
     background-color: rgba(0, 0, 0, 1);
     z-index: -1;
     max-width: 300px;
+    opacity: .7;
 }
 
 .index-item:hover {
