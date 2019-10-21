@@ -1,5 +1,5 @@
-class Api::MyListController < ApplicationController
-    def create(user_id, video_id)\
+class Api::FavoritesController < ApplicationController
+    def create(user_id, video_id)
         @favorite = Favorite.new(user_id: user_id, video_id: video_id)
 
         if @favorite.save
@@ -19,7 +19,7 @@ class Api::MyListController < ApplicationController
 
 
     def index
-        @videos = @current_user.favorite_videos
+        @favorites = @current_user.favorite_videos
 
         render :index
     end
