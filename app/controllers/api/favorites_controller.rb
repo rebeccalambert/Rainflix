@@ -1,39 +1,34 @@
 class Api::MyListController < ApplicationController
-    def create
-        @MyList = MyList.new(video_params_create)
+    def create(user_id, video_id)\
+        @favorite = Favorite.new(user_id: user_id, video_id: video_id)
 
-        if @video.save
-            render :show
+        if @favorite.save
+            render :index
         else
-            render json: @video.errors.full_messages, status: 422
+            render json: ['Saving favorite went wrong...'], status: 422
         end
     end
     
     
     def destroy
-    if logged_in?
-        
-        render json: {}
-    else
-        render json: ["No user to log out"], status: 404
-    end
+        @favorite = Favorite.find_by(user_id: params[:user_id], video_id: params[:video_id])
+        @favorite.destroy
+        render :index
     end
 
 
 
-    def index(search = '')
-        search = params['search'] || ''
-
-        formatted_search = '%' + search.downcase + '%'
-        @videos = Video.where('lower(videos.category) like ?', formatted_search)
+    def index
+        @videos = @current_user.favorite_videos
 
         render :index
     end
 
 
-    def show
-        @video = Video.find(params[:id])
-        render :show
+
+    private
+    def favorite_params
+      params.require(:favorite).permit(:user_id, :video_id)
     end
 
 end
