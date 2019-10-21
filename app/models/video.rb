@@ -6,7 +6,7 @@ class Video < ApplicationRecord
     has_many :favorited,
     primary_key: :id,
     foreign_key: :video_id,
-    class_name: :MyList 
+    class_name: :Favorite 
     
     has_one_attached :video
     has_one_attached :thumbnail

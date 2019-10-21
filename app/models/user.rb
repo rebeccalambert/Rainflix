@@ -9,7 +9,12 @@ class User < ApplicationRecord
     has_many :favorites,
     primary_key: :id,
     foreign_key: :user_id,
-    class_name: :MyList
+    class_name: :Favorite
+
+    has_many :favorite_videos, 
+    through: :favorites,
+    source: :videos
+
     
     after_initialize :ensure_session_token
 
