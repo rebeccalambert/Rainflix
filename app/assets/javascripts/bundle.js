@@ -86,6 +86,40 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/favorites_action.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/favorites_action.js ***!
+  \**********************************************/
+/*! exports provided: GET_FAVORITES, fetchFavorites */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_FAVORITES", function() { return GET_FAVORITES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFavorites", function() { return fetchFavorites; });
+/* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/favorites_util */ "./frontend/util/favorites_util.js");
+
+var GET_FAVORITES = "GET_FAVORITES";
+
+var receiveFavorites = function receiveFavorites(favorites) {
+  return {
+    type: GET_FAVORITES,
+    favorites: favorites
+  };
+};
+
+var fetchFavorites = function fetchFavorites() {
+  return function (dispatch) {
+    return Object(_util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"])().then(function (favorites) {
+      console.log("inside action now");
+      console.log(favorites);
+      dispatch(receiveFavorites(favorites));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -268,6 +302,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_login_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./session/login_form_container */ "./frontend/components/session/login_form_container.jsx");
 /* harmony import */ var _session_error_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./session/error_page */ "./frontend/components/session/error_page.jsx");
 /* harmony import */ var _watch_screen_watch_screen_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./watch_screen/watch_screen_container */ "./frontend/components/watch_screen/watch_screen_container.jsx");
+/* harmony import */ var _favorites_favorites_list_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./favorites/favorites_list_container */ "./frontend/components/favorites/favorites_list_container.jsx");
+
 
 
 
@@ -301,12 +337,135 @@ var App = function App() {
     exact: true,
     path: "/watch/:videoID",
     component: _watch_screen_watch_screen_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
+    exact: true,
+    path: "/favorites",
+    component: _favorites_favorites_list_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _session_error_page__WEBPACK_IMPORTED_MODULE_7__["default"]
   })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/favorites/favorites_list.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/favorites/favorites_list.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FavoritesList; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../video_index/video_index_item */ "./frontend/components/video_index/video_index_item.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var FavoritesList =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(FavoritesList, _React$Component);
+
+  function FavoritesList(props) {
+    _classCallCheck(this, FavoritesList);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(FavoritesList).call(this, props));
+  }
+
+  _createClass(FavoritesList, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      console.log("component did mount call");
+      this.props.grabFavorites();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var vids = this.props.favorites;
+      console.log(vids);
+      console.log("vids should be here");
+      vids = vids.map(function (video, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          video: video,
+          rowID: _this.category,
+          dropdown: _this.props.dropdown,
+          showDropdown: _this.props.showDropdown,
+          removeDropdown: _this.props.removeDropdown,
+          key: "video-index-".concat(idx)
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "category-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "category-list"
+      }, vids));
+    }
+  }]);
+
+  return FavoritesList;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+;
+
+/***/ }),
+
+/***/ "./frontend/components/favorites/favorites_list_container.jsx":
+/*!********************************************************************!*\
+  !*** ./frontend/components/favorites/favorites_list_container.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _favorites_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./favorites_list */ "./frontend/components/favorites/favorites_list.jsx");
+/* harmony import */ var _actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/favorites_action */ "./frontend/actions/favorites_action.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    favorites: Object.values(state.entities.favorites)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    grabFavorites: function grabFavorites() {
+      return dispatch(Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["fetchFavorites"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_favorites_list__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -1666,7 +1825,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/favorites_util */ "./frontend/util/favorites_util.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1694,6 +1855,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.grabFavorites = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["grabFavorites"];
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
@@ -1747,6 +1909,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _videos_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./videos_reducer */ "./frontend/reducers/videos_reducer.js");
 /* harmony import */ var _dropdown_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dropdown_reducer */ "./frontend/reducers/dropdown_reducer.js");
+/* harmony import */ var _favorites_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./favorites_reducer */ "./frontend/reducers/favorites_reducer.js");
+
 
 
 
@@ -1754,7 +1918,8 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   videos: _videos_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  dropdown: _dropdown_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  dropdown: _dropdown_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  favorites: _favorites_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1777,6 +1942,43 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/favorites_reducer.js":
+/*!************************************************!*\
+  !*** ./frontend/reducers/favorites_reducer.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/favorites_action */ "./frontend/actions/favorites_action.js");
+
+
+var favoritesReducer = function favoritesReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState = Object.assign({}, state); // console.log("inside the reducer")
+
+  console.log(action.favorites);
+
+  switch (action.type) {
+    case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["GET_FAVORITES"]:
+      console.log("inside case GET_FAVORITES");
+      newState = Object.assign({}, newState, action.favorites);
+      console.log(newState);
+      console.log("still inside reducer case GET_FAVs");
+      return newState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (favoritesReducer);
 
 /***/ }),
 
@@ -2043,6 +2245,25 @@ var logout = function logout() {
   return $.ajax({
     method: "DELETE",
     url: "/api/session"
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/favorites_util.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/favorites_util.js ***!
+  \*****************************************/
+/*! exports provided: grabFavorites */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "grabFavorites", function() { return grabFavorites; });
+var grabFavorites = function grabFavorites() {
+  return $.ajax({
+    method: "GET",
+    url: "/api/favorites"
   });
 };
 

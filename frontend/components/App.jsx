@@ -8,6 +8,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 import errorPage from "./session/error_page";
 import WatchScreenContainer from "./watch_screen/watch_screen_container";
+import FavoritesPageContainer from "./favorites/favorites_list_container";
 
 const App = () => (
     <div id="app-div" className="app-div app-div-overflow">
@@ -18,6 +19,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={ SignupFormContainer } />
             <ProtectedRoute exact path="/home" component={ VideoIndex } />
             <ProtectedRoute exact path="/watch/:videoID" component={ WatchScreenContainer } />
+            <ProtectedRoute exact path="/favorites" component={ FavoritesPageContainer } />
             {/* <ProtectedRoute path='/home/:id' component={ VideoIndex } /> */}
 
             <Route component={ errorPage }/>
