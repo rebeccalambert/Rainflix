@@ -1761,7 +1761,7 @@ function (_React$Component) {
         className: "watch-arrow",
         href: "/",
         onClick: this.handleClose
-      }, "Arrow"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+      }, " \u27F5 "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         id: "watch-video",
         autoPlay: true,
         controls: true
