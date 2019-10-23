@@ -1476,21 +1476,18 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var content = this.state.active === false || this.props.dropdown.id !== undefined ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "image_container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "thumbnail-pic",
-        src: this.video.thumbnailURL
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "thumbnail-video-player"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
-        width: "215",
-        height: "240",
-        controls: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
-        type: "video/mp4",
-        src: this.video.videoURL
-      })));
+      // let content = ((this.state.active === false) || (this.props.dropdown.id !== undefined)) ? (
+      //     <div className="image_container">
+      //         <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
+      //     </div>
+      // ) : (
+      //     <div className="thumbnail-video-player">
+      //         <video width="215" height="240" controls >
+      //             <source type="video/mp4" src={this.video.videoURL} />
+      //         </video>
+      //     </div>
+      // ) 
+      // This would allow the video to play on hover, but it is pretty glitchy/choppy in function. Use debounce to make the user hover for few seconds before the video pops up?
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index-item",
         onMouseEnter: this.mouseEnter,
