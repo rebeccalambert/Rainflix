@@ -31,5 +31,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// <--------------------------Notes to self--------------------------> //
-
