@@ -1637,7 +1637,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  // debugger
   return {
     video: state.entities.videos[ownProps.match.params.videoID]
   };
@@ -1701,7 +1700,7 @@ document.addEventListener("DOMContentLoaded", function () {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
-}); // <--------------------------Notes to self--------------------------> //
+});
 
 /***/ }),
 
