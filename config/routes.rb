@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :videos, only: [:index, :show]
   end
-  end
+  
+end
   
 
 
