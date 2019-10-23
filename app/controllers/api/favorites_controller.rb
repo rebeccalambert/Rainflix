@@ -3,6 +3,7 @@ class Api::FavoritesController < ApplicationController
         @favorite = Favorite.new(user_id: user_id, video_id: video_id)
 
         if @favorite.save
+            @favorites = @current_user.favorite_videos
             render :index
         else
             render json: ['Saving favorite went wrong...'], status: 422
@@ -13,6 +14,7 @@ class Api::FavoritesController < ApplicationController
     def destroy
         @favorite = Favorite.find_by(user_id: params[:user_id], video_id: params[:video_id])
         @favorite.destroy
+        @favorites = @current_user.favorite_videos
         render :index
     end
 
