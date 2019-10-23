@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
+import {grabFavorites} from "./util/favorites_util"
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // testing
     window.getState = store.getState
     window.dispatch = store.dispatch
+    window.grabFavorites = grabFavorites
     
     ReactDOM.render(<Root store={ store } />, root)
 });
