@@ -27,7 +27,7 @@ export default class FavoritesList extends React.Component {
 
                 <HeaderBarContainer />
                 
-                <div className="category-bar">
+                <div className="video-index">
                         <div className="category-list">
                             {vids}
                         </div>
