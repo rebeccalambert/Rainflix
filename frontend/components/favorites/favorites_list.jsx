@@ -1,6 +1,6 @@
 import React from "react";
 import VideoIndexItem from "../video_index/video_index_item";
-
+import HeaderBarContainer from "../header_bar/header_container";
 
 export default class FavoritesList extends React.Component {
     constructor(props) {
@@ -23,10 +23,15 @@ export default class FavoritesList extends React.Component {
         });
 
         return (
-            <div className="category-bar">
-                    <div className="category-list">
-                        {vids}
-                    </div>
+            <div>
+
+                <HeaderBarContainer />
+                
+                <div className="category-bar">
+                        <div className="category-list">
+                            {vids}
+                        </div>
+                </div>
             </div>
         )
     }
