@@ -136,18 +136,10 @@ var fetchFavorites = function fetchFavorites() {
   };
 };
 var addFavorite = function addFavorite(id) {
-  return function (dispatch) {
-    return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["addFavorite"](id).then(function (favorite) {
-      return dispatch(receiveFavorite(favorite));
-    });
-  };
+  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["addFavorite"](id);
 };
 var removeFavorite = function removeFavorite(id) {
-  return function (dispatch) {
-    return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id).then(function (id) {
-      return dispatch(deleteFavorite(id));
-    });
-  };
+  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id);
 };
 
 /***/ }),
@@ -1863,7 +1855,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/favorites_util */ "./frontend/util/favorites_util.js");
+/* harmony import */ var _actions_favorites_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/favorites_action */ "./frontend/actions/favorites_action.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1894,7 +1888,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.dispatch = store.dispatch;
   window.grabFavorites = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["grabFavorites"];
   window.deleteFavorite = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["deleteFavorite"];
-  window.addFavorite = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["addFavorite"];
+  window.addFavorite = _actions_favorites_action__WEBPACK_IMPORTED_MODULE_5__["addFavorite"];
+  window.removeFavorite = _actions_favorites_action__WEBPACK_IMPORTED_MODULE_5__["removeFavorite"];
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
@@ -2006,10 +2001,10 @@ var favoritesReducer = function favoritesReducer() {
 
   switch (action.type) {
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["GET_FAVORITES"]:
-      console.log("inside case GET_FAVORITES");
-      newState = Object.assign({}, newState, action.favorites);
-      console.log(newState);
-      console.log("still inside reducer case GET_FAVs");
+      // console.log("inside case GET_FAVORITES")
+      newState = Object.assign({}, newState, action.favorites); // console.log(newState)
+      // console.log("still inside reducer case GET_FAVs")
+
       return newState;
 
     default:
@@ -2316,10 +2311,10 @@ var addFavorite = function addFavorite(video_id) {
     }
   });
 };
-var deleteFavorite = function deleteFavorite(id) {
+var deleteFavorite = function deleteFavorite(video_id) {
   return $.ajax({
     method: "DELETE",
-    url: "/api/favorites/".concat(id)
+    url: "/api/favorites/".concat(video_id)
   });
 };
 

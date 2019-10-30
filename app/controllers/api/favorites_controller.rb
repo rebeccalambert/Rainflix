@@ -1,6 +1,6 @@
 class Api::FavoritesController < ApplicationController
     def create
-        debugger
+        # debugger
         @favorite = Favorite.new(user_id: current_user.id, video_id: params[:video_id])
 
         if @favorite.save

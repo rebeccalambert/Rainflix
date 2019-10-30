@@ -24,10 +24,10 @@ export const fetchFavorites = () => dispatch => (
     )
 );
 
-export const addFavorite = (id) => dispatch => (
-    favorites_util.addFavorite(id).then(favorite => dispatch(receiveFavorite(favorite)))
+export const addFavorite = (id) => (
+    favorites_util.addFavorite(id)
 );
 
-export const removeFavorite = (id) => dispatch => (
-    favorites_util.deleteFavorite(id).then(id => dispatch(deleteFavorite(id)))
+export const removeFavorite = (id) => (
+    favorites_util.deleteFavorite(id)
 );

@@ -13,9 +13,9 @@ export const addFavorite = (video_id) => (
     })
 );
 
-export const deleteFavorite = (id) => (
+export const deleteFavorite = (video_id) => (
     $.ajax({
         method: "DELETE",
-        url: `/api/favorites/${id}`
+        url: `/api/favorites/${video_id}`
     })
 );
