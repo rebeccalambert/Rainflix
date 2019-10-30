@@ -12,7 +12,8 @@ class Api::FavoritesController < ApplicationController
     
     
     def destroy
-        @favorite = Favorite.find_by(user_id: params[:user_id], video_id: params[:video_id])
+        #debugger
+        @favorite = Favorite.find_by(user_id: current_user.id, video_id: params[:id])
         @favorite.destroy
         @favorites = current_user.favorite_videos
         render :index

@@ -90,16 +90,22 @@
 /*!**********************************************!*\
   !*** ./frontend/actions/favorites_action.js ***!
   \**********************************************/
-/*! exports provided: GET_FAVORITES, fetchFavorites */
+/*! exports provided: GET_FAVORITES, RECEIVE_FAVORITE, DELETE_FAVORITE, fetchFavorites, addFavorite, removeFavorite */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_FAVORITES", function() { return GET_FAVORITES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FAVORITE", function() { return RECEIVE_FAVORITE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_FAVORITE", function() { return DELETE_FAVORITE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFavorites", function() { return fetchFavorites; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFavorite", function() { return addFavorite; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeFavorite", function() { return removeFavorite; });
 /* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/favorites_util */ "./frontend/util/favorites_util.js");
 
 var GET_FAVORITES = "GET_FAVORITES";
+var RECEIVE_FAVORITE = "RECEIVE_FAVORITE";
+var DELETE_FAVORITE = "DELETE_FAVORITE";
 
 var receiveFavorites = function receiveFavorites(favorites) {
   return {
@@ -108,12 +114,38 @@ var receiveFavorites = function receiveFavorites(favorites) {
   };
 };
 
+var receiveFavorite = function receiveFavorite(favorite) {
+  return {
+    type: RECEIVE_FAVORITE,
+    favorite: favorite
+  };
+};
+
+var deleteFavorite = function deleteFavorite(id) {
+  return {
+    type: DELETE_FAVORITE,
+    video_id: id
+  };
+};
+
 var fetchFavorites = function fetchFavorites() {
   return function (dispatch) {
-    return Object(_util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"])().then(function (favorites) {
-      console.log("inside action now");
-      console.log(favorites);
-      dispatch(receiveFavorites(favorites));
+    return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"]().then(function (favorites) {
+      return dispatch(receiveFavorites(favorites));
+    });
+  };
+};
+var addFavorite = function addFavorite(id) {
+  return function (dispatch) {
+    return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["addFavorite"](id).then(function (favorite) {
+      return dispatch(receiveFavorite(favorite));
+    });
+  };
+};
+var removeFavorite = function removeFavorite(id) {
+  return function (dispatch) {
+    return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id).then(function (id) {
+      return dispatch(deleteFavorite(id));
     });
   };
 };
@@ -463,7 +495,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     grabFavorites: function grabFavorites() {
       return dispatch(Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["fetchFavorites"])());
-    }
+    } // deleteFavorites: () => dispatch(removeFavorites())
+
   };
 };
 
@@ -1860,6 +1893,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.grabFavorites = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["grabFavorites"];
+  window.deleteFavorite = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["deleteFavorite"];
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
@@ -2258,16 +2292,33 @@ var logout = function logout() {
 /*!*****************************************!*\
   !*** ./frontend/util/favorites_util.js ***!
   \*****************************************/
-/*! exports provided: grabFavorites */
+/*! exports provided: grabFavorites, addFavorite, deleteFavorite */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "grabFavorites", function() { return grabFavorites; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFavorite", function() { return addFavorite; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFavorite", function() { return deleteFavorite; });
 var grabFavorites = function grabFavorites() {
   return $.ajax({
     method: "GET",
     url: "/api/favorites"
+  });
+};
+var addFavorite = function addFavorite(video) {
+  return $.ajax({
+    method: "POST",
+    url: "/api/favorites",
+    data: {
+      video: video
+    }
+  });
+};
+var deleteFavorite = function deleteFavorite(id) {
+  return $.ajax({
+    method: "DELETE",
+    url: "/api/favorites/".concat(id)
   });
 };
 
