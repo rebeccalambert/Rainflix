@@ -1894,6 +1894,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.dispatch = store.dispatch;
   window.grabFavorites = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["grabFavorites"];
   window.deleteFavorite = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["deleteFavorite"];
+  window.addFavorite = _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__["addFavorite"];
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
@@ -2306,12 +2307,12 @@ var grabFavorites = function grabFavorites() {
     url: "/api/favorites"
   });
 };
-var addFavorite = function addFavorite(video) {
+var addFavorite = function addFavorite(video_id) {
   return $.ajax({
     method: "POST",
     url: "/api/favorites",
     data: {
-      video: video
+      video_id: video_id
     }
   });
 };
@@ -32257,7 +32258,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

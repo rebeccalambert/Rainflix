@@ -5,11 +5,11 @@ export const grabFavorites = () => (
     })
 );
 
-export const addFavorite = (video) => (
+export const addFavorite = (video_id) => (
     $.ajax({
         method: "POST",
         url: `/api/favorites`,
-        data: {video}
+        data: {video_id}
     })
 );
 
