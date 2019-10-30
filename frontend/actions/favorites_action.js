@@ -9,25 +9,19 @@ const receiveFavorites = (favorites) => ({
     favorites
 })
 
-const receiveFavorite = (favorite) => ({
-    type: RECEIVE_FAVORITE,
-    favorite
-})
-
-const deleteFavorite = (id) => ({
-    type: DELETE_FAVORITE,
-    video_id: id
-})
-
 export const fetchFavorites = () => dispatch => (
     favorites_util.grabFavorites().then(favorites => dispatch(receiveFavorites(favorites))
     )
 );
 
 export const addFavorite = (id) => (
-    favorites_util.addFavorite(id)
-);
+    favorites_util.addFavorite(id).then(
+        favorites_util.grabFavorites().then(favorites => dispatch(receiveFavorites(favorites))
+    )
+));
 
-export const removeFavorite = (id) => (
-    favorites_util.deleteFavorite(id)
-);
+// export const removeFavorite = (id) => (
+//     favorites_util.deleteFavorite(id).then(
+//         favorites_util.grabFavorites().then(favorites => dispatch(receiveFavorites(favorites))
+//     )
+// ));

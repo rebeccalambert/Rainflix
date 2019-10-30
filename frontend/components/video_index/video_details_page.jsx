@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { addFavorite } from '../../actions/favorites_action';
 
 class VideoDetailsPage extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class VideoDetailsPage extends React.Component {
         this.state = {active: true};
         this.removeDropdown = this.props.removeDropdown;
         this.handleClose = this.handleClose.bind(this);
+        this.myList = this.myList.bind(this);
     }
 
     upVolume () {
@@ -30,6 +32,10 @@ class VideoDetailsPage extends React.Component {
             this.video=this.props.video;
             document.getElementById("display-video").load();
         }
+    }
+
+    myList () {
+        addFavorite(this.props.video.id)
     }
 
     handleClose () {
@@ -58,7 +64,7 @@ class VideoDetailsPage extends React.Component {
                     <p className="synopsis">{this.props.video.overview}</p>
                     <div className="display-buttons">
                         <Link to={`/watch/${this.props.video.id}`}><button className="display-button play">PLAY</button></Link>
-                        <button className="display-button mylist">My List</button>
+                        <button onClick={this.myList} className="display-button mylist">My List</button>
                         
 
                         

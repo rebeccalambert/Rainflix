@@ -90,7 +90,7 @@
 /*!**********************************************!*\
   !*** ./frontend/actions/favorites_action.js ***!
   \**********************************************/
-/*! exports provided: GET_FAVORITES, RECEIVE_FAVORITE, DELETE_FAVORITE, fetchFavorites, addFavorite, removeFavorite */
+/*! exports provided: GET_FAVORITES, RECEIVE_FAVORITE, DELETE_FAVORITE, fetchFavorites, addFavorite */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,7 +100,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_FAVORITE", function() { return DELETE_FAVORITE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFavorites", function() { return fetchFavorites; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFavorite", function() { return addFavorite; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeFavorite", function() { return removeFavorite; });
 /* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/favorites_util */ "./frontend/util/favorites_util.js");
 
 var GET_FAVORITES = "GET_FAVORITES";
@@ -114,20 +113,6 @@ var receiveFavorites = function receiveFavorites(favorites) {
   };
 };
 
-var receiveFavorite = function receiveFavorite(favorite) {
-  return {
-    type: RECEIVE_FAVORITE,
-    favorite: favorite
-  };
-};
-
-var deleteFavorite = function deleteFavorite(id) {
-  return {
-    type: DELETE_FAVORITE,
-    video_id: id
-  };
-};
-
 var fetchFavorites = function fetchFavorites() {
   return function (dispatch) {
     return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"]().then(function (favorites) {
@@ -136,11 +121,14 @@ var fetchFavorites = function fetchFavorites() {
   };
 };
 var addFavorite = function addFavorite(id) {
-  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["addFavorite"](id);
-};
-var removeFavorite = function removeFavorite(id) {
-  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id);
-};
+  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["addFavorite"](id).then(_util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"]().then(function (favorites) {
+    return dispatch(receiveFavorites(favorites));
+  }));
+}; // export const removeFavorite = (id) => (
+//     favorites_util.deleteFavorite(id).then(
+//         favorites_util.grabFavorites().then(favorites => dispatch(receiveFavorites(favorites))
+//     )
+// ));
 
 /***/ }),
 
@@ -424,25 +412,18 @@ function (_React$Component) {
   _createClass(FavoritesList, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      console.log("component did mount call");
       this.props.grabFavorites();
     }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       var vids = this.props.favorites;
-      console.log(vids);
-      console.log("vids should be here");
       vids = vids.map(function (video, idx) {
+        // console.log(video.id)
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          video_id: video.id,
           video: video,
-          rowID: _this.category,
-          dropdown: _this.props.dropdown,
-          showDropdown: _this.props.showDropdown,
-          removeDropdown: _this.props.removeDropdown,
-          key: "video-index-".concat(idx)
+          key: "favorite-index-".concat(idx)
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -487,8 +468,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     grabFavorites: function grabFavorites() {
       return dispatch(Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["fetchFavorites"])());
-    } // deleteFavorites: () => dispatch(removeFavorites())
-
+    },
+    deleteFavorite: function deleteFavorite() {
+      return dispatch(Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["removeFavorite"])());
+    }
   };
 };
 
@@ -1253,6 +1236,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/favorites_action */ "./frontend/actions/favorites_action.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1270,6 +1254,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1293,6 +1278,7 @@ function (_React$Component) {
     };
     _this.removeDropdown = _this.props.removeDropdown;
     _this.handleClose = _this.handleClose.bind(_assertThisInitialized(_this));
+    _this.myList = _this.myList.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1321,6 +1307,11 @@ function (_React$Component) {
         this.video = this.props.video;
         document.getElementById("display-video").load();
       }
+    }
+  }, {
+    key: "myList",
+    value: function myList() {
+      Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["addFavorite"])(this.props.video.id);
     }
   }, {
     key: "handleClose",
@@ -1359,6 +1350,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "display-button play"
       }, "PLAY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.myList,
         className: "display-button mylist"
       }, "My List")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lists"
@@ -1593,6 +1585,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _video_details_page_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./video_details_page_container */ "./frontend/components/video_index/video_details_page_container.jsx");
+/* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/favorites_util */ "./frontend/util/favorites_util.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1610,6 +1603,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1634,7 +1628,8 @@ function (_React$Component) {
     };
     _this.mouseEnter = _this.mouseEnter.bind(_assertThisInitialized(_this));
     _this.mouseLeave = _this.mouseLeave.bind(_assertThisInitialized(_this));
-    _this.handleOpen = _this.handleOpen.bind(_assertThisInitialized(_this));
+    _this.handleOpen = _this.handleOpen.bind(_assertThisInitialized(_this)); // this.deleteFavorite = deleteFavorite
+
     return _this;
   }
 
@@ -1662,6 +1657,14 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "removeFavorite",
+    value: function removeFavorite(e) {
+      // debugger
+      console.log('in removeFavorites'); // console.log(id)
+
+      console.log(e.target); // deleteFavorite(this.video_id)
+    }
+  }, {
     key: "render",
     value: function render() {
       // let content = ((this.state.active === false) || (this.props.dropdown.id !== undefined)) ? (
@@ -1676,7 +1679,8 @@ function (_React$Component) {
       //     </div>
       // ) 
       // This would allow the video to play on hover, but it is pretty glitchy/choppy in function. Use debounce to make the user hover for few seconds before the video pops up?
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      // console.log(this.props.video_id)
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index-item",
         onMouseEnter: this.mouseEnter,
         onMouseLeave: this.mouseLeave
@@ -1690,7 +1694,10 @@ function (_React$Component) {
         onClick: this.handleOpen
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "chevron bottom"
-      })));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.removeFavorite,
+        video_id: this.video.id
+      }, "Remove"));
     }
   }]);
 
@@ -1995,16 +2002,11 @@ var favoritesReducer = function favoritesReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newState = Object.assign({}, state); // console.log("inside the reducer")
-
-  console.log(action.favorites);
+  var newState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["GET_FAVORITES"]:
-      // console.log("inside case GET_FAVORITES")
-      newState = Object.assign({}, newState, action.favorites); // console.log(newState)
-      // console.log("still inside reducer case GET_FAVs")
-
+      newState = Object.assign({}, newState, action.favorites);
       return newState;
 
     default:

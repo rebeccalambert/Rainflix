@@ -9,17 +9,18 @@ export default class FavoritesList extends React.Component {
     }
 
     componentDidMount() {
-        console.log("component did mount call")
         this.props.grabFavorites();   
     }
 
-
+    
     render() {        
         let vids = this.props.favorites
-        console.log(vids)
-        console.log("vids should be here")
         vids = vids.map( (video, idx) => {
-            return <VideoIndexItem video={video} rowID={this.category} dropdown={this.props.dropdown} showDropdown={this.props.showDropdown} removeDropdown={this.props.removeDropdown} key={`video-index-${idx}`}/>
+            // console.log(video.id)
+
+            return (
+                <VideoIndexItem video_id={video.id} video={video} key={`favorite-index-${idx}`}/>
+            )
         });
 
         return (
