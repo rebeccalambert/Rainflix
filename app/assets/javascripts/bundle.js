@@ -502,9 +502,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -525,31 +525,18 @@ function (_React$Component) {
     _classCallCheck(this, VideoIndexItem);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndexItem).call(this, props));
-    _this.video = _this.props.video; // this.showDropdown = this.props.showDropdown;
-    // this.removeDropdown = this.props.removeDropdown;
-    // this.dropdown = this.props.dropdown;
-    // this.state = {active: false};
-    // this.mouseEnter = this.mouseEnter.bind(this);
-    // this.mouseLeave = this.mouseLeave.bind(this);
-    // this.handleOpen = this.handleOpen.bind(this);
-    // this.deleteFavorite = deleteFavorite
-
+    _this.video = _this.props.video;
+    _this.removeFavorite = _this.removeFavorite.bind(_assertThisInitialized(_this));
     return _this;
-  } // mouseEnter () {
-  //     this.setState({active: true});
-  // }
-  // mouseLeave () {
-  //     this.setState({active: false});
-  // }
-
+  }
 
   _createClass(VideoIndexItem, [{
     key: "removeFavorite",
     value: function removeFavorite(e) {
-      // debugger
-      console.log('in removeFavorites'); // console.log(id)
-
-      console.log(e.target); // deleteFavorite(this.video_id)
+      // console.log('in removeFavorites')
+      // console.log(e.target)
+      // console.log(this.video.id)
+      Object(_util_favorites_util__WEBPACK_IMPORTED_MODULE_1__["deleteFavorite"])(this.video_id);
     }
   }, {
     key: "render",
@@ -1916,7 +1903,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     video: state.entities.videos[ownProps.match.params.videoID]
   };

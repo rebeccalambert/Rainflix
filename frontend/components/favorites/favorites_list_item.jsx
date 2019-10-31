@@ -7,29 +7,15 @@ class VideoIndexItem extends React.Component {
         super(props);
         
         this.video = this.props.video;
-        // this.showDropdown = this.props.showDropdown;
-        // this.removeDropdown = this.props.removeDropdown;
-        // this.dropdown = this.props.dropdown;
-        // this.state = {active: false};
-        // this.mouseEnter = this.mouseEnter.bind(this);
-        // this.mouseLeave = this.mouseLeave.bind(this);
-        // this.handleOpen = this.handleOpen.bind(this);
-        // this.deleteFavorite = deleteFavorite
+        this.removeFavorite = this.removeFavorite.bind(this)
     }
-    // mouseEnter () {
-    //     this.setState({active: true});
-    // }
     
-    // mouseLeave () {
-    //     this.setState({active: false});
-    // }
 
     removeFavorite(e) {
-        // debugger
-        console.log('in removeFavorites')
-        // console.log(id)
-        console.log(e.target)
-        // deleteFavorite(this.video_id)
+        // console.log('in removeFavorites')
+        // console.log(e.target)
+        // console.log(this.video.id)
+        deleteFavorite(this.video_id)
     }
 
     render () {
