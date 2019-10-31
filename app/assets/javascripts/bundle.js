@@ -374,7 +374,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FavoritesList; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../video_index/video_index_item */ "./frontend/components/video_index/video_index_item.jsx");
+/* harmony import */ var _favorites_favorites_list_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../favorites/favorites_list_item */ "./frontend/components/favorites/favorites_list_item.jsx");
 /* harmony import */ var _header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header_bar/header_container */ "./frontend/components/header_bar/header_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -420,7 +420,7 @@ function (_React$Component) {
       var vids = this.props.favorites;
       vids = vids.map(function (video, idx) {
         // console.log(video.id)
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_favorites_favorites_list_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           video_id: video.id,
           video: video,
           key: "favorite-index-".concat(idx)
@@ -476,6 +476,108 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_favorites_list__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/favorites/favorites_list_item.jsx":
+/*!***************************************************************!*\
+  !*** ./frontend/components/favorites/favorites_list_item.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/favorites_util */ "./frontend/util/favorites_util.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var VideoIndexItem =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(VideoIndexItem, _React$Component);
+
+  function VideoIndexItem(props) {
+    var _this;
+
+    _classCallCheck(this, VideoIndexItem);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndexItem).call(this, props));
+    _this.video = _this.props.video; // this.showDropdown = this.props.showDropdown;
+    // this.removeDropdown = this.props.removeDropdown;
+    // this.dropdown = this.props.dropdown;
+    // this.state = {active: false};
+    // this.mouseEnter = this.mouseEnter.bind(this);
+    // this.mouseLeave = this.mouseLeave.bind(this);
+    // this.handleOpen = this.handleOpen.bind(this);
+    // this.deleteFavorite = deleteFavorite
+
+    return _this;
+  } // mouseEnter () {
+  //     this.setState({active: true});
+  // }
+  // mouseLeave () {
+  //     this.setState({active: false});
+  // }
+
+
+  _createClass(VideoIndexItem, [{
+    key: "removeFavorite",
+    value: function removeFavorite(e) {
+      // debugger
+      console.log('in removeFavorites'); // console.log(id)
+
+      console.log(e.target); // deleteFavorite(this.video_id)
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "index-item",
+        onMouseEnter: this.mouseEnter,
+        onMouseLeave: this.mouseLeave
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "thumbnail-pic",
+        src: this.video.thumbnailURL
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/watch/".concat(this.props.video.id)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "display-button play"
+      }, "Watch Now")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.removeFavorite,
+        video_id: this.video.id
+      }, "Remove"))));
+    }
+  }]);
+
+  return VideoIndexItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (VideoIndexItem);
 
 /***/ }),
 
@@ -1584,8 +1686,6 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _video_details_page_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./video_details_page_container */ "./frontend/components/video_index/video_details_page_container.jsx");
-/* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/favorites_util */ "./frontend/util/favorites_util.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1603,8 +1703,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
 
 
 
@@ -1628,8 +1726,7 @@ function (_React$Component) {
     };
     _this.mouseEnter = _this.mouseEnter.bind(_assertThisInitialized(_this));
     _this.mouseLeave = _this.mouseLeave.bind(_assertThisInitialized(_this));
-    _this.handleOpen = _this.handleOpen.bind(_assertThisInitialized(_this)); // this.deleteFavorite = deleteFavorite
-
+    _this.handleOpen = _this.handleOpen.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1657,14 +1754,6 @@ function (_React$Component) {
       });
     }
   }, {
-    key: "removeFavorite",
-    value: function removeFavorite(e) {
-      // debugger
-      console.log('in removeFavorites'); // console.log(id)
-
-      console.log(e.target); // deleteFavorite(this.video_id)
-    }
-  }, {
     key: "render",
     value: function render() {
       // let content = ((this.state.active === false) || (this.props.dropdown.id !== undefined)) ? (
@@ -1679,8 +1768,7 @@ function (_React$Component) {
       //     </div>
       // ) 
       // This would allow the video to play on hover, but it is pretty glitchy/choppy in function. Use debounce to make the user hover for few seconds before the video pops up?
-      // console.log(this.props.video_id)
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index-item",
         onMouseEnter: this.mouseEnter,
         onMouseLeave: this.mouseLeave
@@ -1694,10 +1782,7 @@ function (_React$Component) {
         onClick: this.handleOpen
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "chevron bottom"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.removeFavorite,
-        video_id: this.video.id
-      }, "Remove"));
+      })));
     }
   }]);
 
@@ -1787,6 +1872,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      // if (!this.props.video.videoURL) {
+      // }
       // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "watch-screen"
@@ -1829,6 +1916,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     video: state.entities.videos[ownProps.match.params.videoID]
   };

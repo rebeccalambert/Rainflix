@@ -1,6 +1,4 @@
 import React from 'react';
-import VideoDetailsPageContainer from './video_details_page_container';
-import { deleteFavorite } from "../../util/favorites_util";
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
@@ -14,7 +12,6 @@ class VideoIndexItem extends React.Component {
         this.mouseEnter = this.mouseEnter.bind(this);
         this.mouseLeave = this.mouseLeave.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
-        // this.deleteFavorite = deleteFavorite
     }
 
     handleOpen(e) {
@@ -32,15 +29,6 @@ class VideoIndexItem extends React.Component {
     mouseLeave () {
         this.setState({active: false});
     }
-
-    removeFavorite(e) {
-        // debugger
-        console.log('in removeFavorites')
-        // console.log(id)
-        console.log(e.target)
-        // deleteFavorite(this.video_id)
-    }
-
     render () {
         // let content = ((this.state.active === false) || (this.props.dropdown.id !== undefined)) ? (
         //     <div className="image_container">
@@ -57,9 +45,7 @@ class VideoIndexItem extends React.Component {
         
         // This would allow the video to play on hover, but it is pretty glitchy/choppy in function. Use debounce to make the user hover for few seconds before the video pops up?
 
-        // console.log(this.props.video_id)
         return (
-        <div>
             <div className="index-item" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                 {/* {content} */}
                 <div className="image_container">
@@ -67,8 +53,6 @@ class VideoIndexItem extends React.Component {
                 </div>
                 <button className="show-page-button" onClick={this.handleOpen}><span className="chevron bottom" /></button>
             </div>
-            <button onClick={this.removeFavorite} video_id={this.video.id}>Remove</button>
-        </div>
 
         );
     }

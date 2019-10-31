@@ -1,5 +1,5 @@
 import React from "react";
-import VideoIndexItem from "../video_index/video_index_item";
+import FavoriteListItem from "../favorites/favorites_list_item";
 import HeaderBarContainer from "../header_bar/header_container";
 
 export default class FavoritesList extends React.Component {
@@ -19,7 +19,7 @@ export default class FavoritesList extends React.Component {
             // console.log(video.id)
 
             return (
-                <VideoIndexItem video_id={video.id} video={video} key={`favorite-index-${idx}`}/>
+                <FavoriteListItem video_id={video.id} video={video} key={`favorite-index-${idx}`}/>
             )
         });
 
