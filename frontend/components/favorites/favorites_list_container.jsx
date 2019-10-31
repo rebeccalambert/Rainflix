@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     grabFavorites: () => dispatch(fetchFavorites()),
-    deleteFavorite: () => dispatch(removeFavorite())
+    deleteFavorite: (id) => dispatch(removeFavorite(id))
 
 });
 

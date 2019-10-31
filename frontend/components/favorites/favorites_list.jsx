@@ -19,7 +19,7 @@ export default class FavoritesList extends React.Component {
             // console.log(video.id)
 
             return (
-                <FavoriteListItem video_id={video.id} video={video} key={`favorite-index-${idx}`}/>
+                <FavoriteListItem video_id={video.id} video={video} deleteFavorite={this.props.deleteFavorite} key={`favorite-index-${idx}`}/>
             )
         });
 

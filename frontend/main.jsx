@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // testing
     window.getState = store.getState
     window.dispatch = store.dispatch
-    window.grabFavorites = grabFavorites
-    window.deleteFavorite = deleteFavorite
-    window.addFavorite = addFavorite
-    window.removeFavorite = removeFavorite
+    // window.grabFavorites = grabFavorites
+    // window.deleteFavorite = deleteFavorite
+    // window.addFavorite = addFavorite
+    // window.removeFavorite = removeFavorite
 
     
     ReactDOM.render(<Root store={ store } />, root)
