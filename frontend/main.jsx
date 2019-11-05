@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch
     // window.grabFavorites = grabFavorites
     // window.deleteFavorite = deleteFavorite
-    // window.addFavorite = addFavorite
+    window.addFavorite = addFavorite
     // window.removeFavorite = removeFavorite
 
     

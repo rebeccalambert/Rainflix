@@ -90,13 +90,13 @@
 /*!**********************************************!*\
   !*** ./frontend/actions/favorites_action.js ***!
   \**********************************************/
-/*! exports provided: GET_FAVORITES, RECEIVE_FAVORITE, DELETE_FAVORITE, fetchFavorites, addFavorite, removeFavorite */
+/*! exports provided: GET_FAVORITES, ADD_FAVORITE, DELETE_FAVORITE, fetchFavorites, addFavorite, removeFavorite */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_FAVORITES", function() { return GET_FAVORITES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FAVORITE", function() { return RECEIVE_FAVORITE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_FAVORITE", function() { return ADD_FAVORITE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_FAVORITE", function() { return DELETE_FAVORITE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFavorites", function() { return fetchFavorites; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFavorite", function() { return addFavorite; });
@@ -104,13 +104,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/favorites_util */ "./frontend/util/favorites_util.js");
 
 var GET_FAVORITES = "GET_FAVORITES";
-var RECEIVE_FAVORITE = "RECEIVE_FAVORITE";
+var ADD_FAVORITE = "ADD_FAVORITE";
 var DELETE_FAVORITE = "DELETE_FAVORITE";
 
 var receiveFavorites = function receiveFavorites(favorites) {
   return {
     type: GET_FAVORITES,
     favorites: favorites
+  };
+};
+
+var newFavorite = function newFavorite(favorite) {
+  return {
+    type: ADD_FAVORITE,
+    favorite: favorite
   };
 };
 
@@ -122,9 +129,9 @@ var fetchFavorites = function fetchFavorites() {
   };
 };
 var addFavorite = function addFavorite(id) {
-  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["addFavorite"](id).then(_util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"]().then(function (favorites) {
-    return dispatch(receiveFavorites(favorites));
-  }));
+  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["addFavorite"](id).then(function (favorite) {
+    return dispatch(newFavorite(favorite));
+  });
 };
 var removeFavorite = function removeFavorite(id) {
   return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id).then(_util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"]().then(function (favorites) {
@@ -1970,8 +1977,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.getState = store.getState;
   window.dispatch = store.dispatch; // window.grabFavorites = grabFavorites
   // window.deleteFavorite = deleteFavorite
-  // window.addFavorite = addFavorite
-  // window.removeFavorite = removeFavorite
+
+  window.addFavorite = _actions_favorites_action__WEBPACK_IMPORTED_MODULE_5__["addFavorite"]; // window.removeFavorite = removeFavorite
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
@@ -2085,7 +2092,7 @@ var favoritesReducer = function favoritesReducer() {
       newState = Object.assign({}, newState, action.favorites);
       return newState;
 
-    case ADD_FAVORITE:
+    case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["ADD_FAVORITE"]:
       newState = Object.assign({}, newState, action.favorite);
       return newState;
 
