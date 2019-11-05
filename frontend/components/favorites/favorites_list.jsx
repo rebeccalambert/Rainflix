@@ -12,6 +12,9 @@ export default class FavoritesList extends React.Component {
         this.props.grabFavorites();   
     }
 
+    // componentDidUpdate() {
+    //     this.props.grabFavorites();
+    // }
     
     render() {        
         let vids = this.props.favorites

@@ -14,9 +14,9 @@ const newFavorite = (favorite) => ({
     favorite
 })
 
-const removeFavorite = (id) => ({
+const removeFavorite = (videos) => ({
     type: DELETE_FAVORITE,
-    id
+    videos
 })
 
 export const fetchFavorites = () => dispatch => (
@@ -29,5 +29,5 @@ export const addFavorite = (id) => (
 );
 
 export const deleteFavorite = (id) => (
-    favorites_util.deleteFavorite(id).then(video => dispatch(removeFavorite(video)))
+    favorites_util.deleteFavorite(id).then((videos) => dispatch(removeFavorite(videos)))
 );

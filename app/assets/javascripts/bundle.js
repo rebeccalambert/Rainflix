@@ -121,10 +121,10 @@ var newFavorite = function newFavorite(favorite) {
   };
 };
 
-var removeFavorite = function removeFavorite(id) {
+var removeFavorite = function removeFavorite(videos) {
   return {
     type: DELETE_FAVORITE,
-    id: id
+    videos: videos
   };
 };
 
@@ -141,8 +141,8 @@ var addFavorite = function addFavorite(id) {
   });
 };
 var deleteFavorite = function deleteFavorite(id) {
-  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id).then(function (video) {
-    return dispatch(removeFavorite(video));
+  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id).then(function (videos) {
+    return dispatch(removeFavorite(videos));
   });
 };
 
@@ -429,7 +429,10 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.grabFavorites();
-    }
+    } // componentDidUpdate() {
+    //     this.props.grabFavorites();
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -1951,14 +1954,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-/* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/favorites_util */ "./frontend/util/favorites_util.js");
-/* harmony import */ var _actions_favorites_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/favorites_action */ "./frontend/actions/favorites_action.js");
+/* harmony import */ var _actions_favorites_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/favorites_action */ "./frontend/actions/favorites_action.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-
+ // import {grabFavorites, deleteFavorite} from "./util/favorites_util"
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -1985,8 +1987,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.dispatch = store.dispatch; // window.grabFavorites = grabFavorites
   // window.deleteFavorite = deleteFavorite
 
-  window.addFavorite = _actions_favorites_action__WEBPACK_IMPORTED_MODULE_5__["addFavorite"]; // window.removeFavorite = removeFavorite
-
+  window.addFavorite = _actions_favorites_action__WEBPACK_IMPORTED_MODULE_4__["addFavorite"];
+  window.deleteFavorite = _actions_favorites_action__WEBPACK_IMPORTED_MODULE_4__["deleteFavorite"];
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
@@ -2093,8 +2095,8 @@ var favoritesReducer = function favoritesReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var newState = Object.assign({}, state);
+  console.log("favorites reducer");
   console.log(action);
-  console.log("in deleteFavorite reducer");
 
   switch (action.type) {
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["GET_FAVORITES"]:
@@ -2106,8 +2108,8 @@ var favoritesReducer = function favoritesReducer() {
       return newState;
 
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["DELETE_FAVORITE"]:
-      newState = Object.assign({}, newState);
-      delete newState[action.video.id];
+      newState = Object.assign({}, action.videos); // delete newState[action.video.id];
+
       return newState;
 
     default:

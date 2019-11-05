@@ -3,8 +3,9 @@ import { GET_FAVORITES, ADD_FAVORITE, DELETE_FAVORITE } from "../actions/favorit
 const favoritesReducer = (state = [], action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
+
+    console.log("favorites reducer")
     console.log(action)
-    console.log("in deleteFavorite reducer")
 
 
     switch (action.type) {
@@ -18,8 +19,8 @@ const favoritesReducer = (state = [], action) => {
             return newState;
         
         case DELETE_FAVORITE:
-            newState = Object.assign({}, newState)
-            delete newState[action.video.id];
+            newState = Object.assign({}, action.videos)
+            // delete newState[action.video.id];
             return newState;
 
         default:
