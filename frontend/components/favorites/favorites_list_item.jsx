@@ -1,5 +1,4 @@
 import React from 'react';
-// import { deleteFavorite } from "../../util/favorites_util";
 import { Link } from 'react-router-dom';
 
 class VideoIndexItem extends React.Component {
@@ -14,6 +13,7 @@ class VideoIndexItem extends React.Component {
 
     removeFavorite(e) {
         console.log('in removeFavorites')
+        console.log(this.video.id)
         this.deleteFavorite(this.video.id)
     }
 

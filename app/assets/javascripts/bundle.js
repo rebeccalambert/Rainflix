@@ -90,7 +90,7 @@
 /*!**********************************************!*\
   !*** ./frontend/actions/favorites_action.js ***!
   \**********************************************/
-/*! exports provided: GET_FAVORITES, ADD_FAVORITE, DELETE_FAVORITE, fetchFavorites, addFavorite, removeFavorite */
+/*! exports provided: GET_FAVORITES, ADD_FAVORITE, DELETE_FAVORITE, fetchFavorites, addFavorite, deleteFavorite */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,7 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_FAVORITE", function() { return DELETE_FAVORITE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFavorites", function() { return fetchFavorites; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFavorite", function() { return addFavorite; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeFavorite", function() { return removeFavorite; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFavorite", function() { return deleteFavorite; });
 /* harmony import */ var _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/favorites_util */ "./frontend/util/favorites_util.js");
 
 var GET_FAVORITES = "GET_FAVORITES";
@@ -121,6 +121,13 @@ var newFavorite = function newFavorite(favorite) {
   };
 };
 
+var removeFavorite = function removeFavorite(id) {
+  return {
+    type: DELETE_FAVORITE,
+    id: id
+  };
+};
+
 var fetchFavorites = function fetchFavorites() {
   return function (dispatch) {
     return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"]().then(function (favorites) {
@@ -133,10 +140,10 @@ var addFavorite = function addFavorite(id) {
     return dispatch(newFavorite(favorite));
   });
 };
-var removeFavorite = function removeFavorite(id) {
-  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id).then(_util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["grabFavorites"]().then(function (favorites) {
-    return dispatch(receiveFavorites(favorites));
-  }));
+var deleteFavorite = function deleteFavorite(id) {
+  return _util_favorites_util__WEBPACK_IMPORTED_MODULE_0__["deleteFavorite"](id).then(function (video) {
+    return dispatch(removeFavorite(video));
+  });
 };
 
 /***/ }),
@@ -482,7 +489,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
       return dispatch(Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["fetchFavorites"])());
     },
     deleteFavorite: function deleteFavorite(id) {
-      return dispatch(Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["removeFavorite"])(id));
+      return dispatch(Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["deleteFavorite"])(id));
     }
   };
 };
@@ -521,7 +528,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import { deleteFavorite } from "../../util/favorites_util";
 
 
 
@@ -546,6 +552,7 @@ function (_React$Component) {
     key: "removeFavorite",
     value: function removeFavorite(e) {
       console.log('in removeFavorites');
+      console.log(this.video.id);
       this.deleteFavorite(this.video.id);
     }
   }, {
@@ -2086,6 +2093,8 @@ var favoritesReducer = function favoritesReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var newState = Object.assign({}, state);
+  console.log(action);
+  console.log("in deleteFavorite reducer");
 
   switch (action.type) {
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["GET_FAVORITES"]:
@@ -2094,6 +2103,11 @@ var favoritesReducer = function favoritesReducer() {
 
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["ADD_FAVORITE"]:
       newState = Object.assign({}, newState, action.favorite);
+      return newState;
+
+    case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["DELETE_FAVORITE"]:
+      newState = Object.assign({}, newState);
+      delete newState[action.video.id];
       return newState;
 
     default:
