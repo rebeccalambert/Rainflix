@@ -538,10 +538,7 @@ function (_React$Component) {
   _createClass(VideoIndexItem, [{
     key: "removeFavorite",
     value: function removeFavorite(e) {
-      console.log('in removeFavorites'); // console.log(e.target)
-      // console.log(this.video.id)
-      // this.props.deleteFavorite(this.video.id)
-
+      console.log('in removeFavorites');
       this.deleteFavorite(this.video.id);
     }
   }, {
@@ -2086,6 +2083,10 @@ var favoritesReducer = function favoritesReducer() {
   switch (action.type) {
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["GET_FAVORITES"]:
       newState = Object.assign({}, newState, action.favorites);
+      return newState;
+
+    case ADD_FAVORITE:
+      newState = Object.assign({}, newState, action.favorite);
       return newState;
 
     default:

@@ -7,7 +7,11 @@ const favoritesReducer = (state = [], action) => {
     switch (action.type) {
         case GET_FAVORITES: 
             newState = Object.assign({}, newState, action.favorites);
-            return newState
+            return newState;
+
+        case ADD_FAVORITE:
+            newState = Object.assign({}, newState, action.favorite)
+            return newState;
 
         default:
             return state;
