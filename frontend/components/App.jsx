@@ -20,7 +20,6 @@ const App = () => (
             <ProtectedRoute exact path="/home" component={ VideoIndex } />
             <ProtectedRoute exact path="/watch/:videoID" component={ WatchScreenContainer } />
             <ProtectedRoute exact path="/favorites" component={ FavoritesPageContainer } />
-            {/* <ProtectedRoute path='/home/:id' component={ VideoIndex } /> */}
 
             <Route component={ errorPage }/>
         </Switch>
