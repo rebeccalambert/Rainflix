@@ -1,6 +1,6 @@
 .authLinks.redButton {
     background-color: #e50914;
-    border: 1px transparent;
+    // border: 2px transparent;
     color: white;
     text-decoration: none;
     line-height: normal;
@@ -11,6 +11,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 0 2px;
 }
 
 .authLinks.redButton.submit {
@@ -26,8 +27,9 @@
 }
 
 .authLinks.redButton:hover {
-    background-color: #ff2b2b;
-
+    background-color: #ff4949;
+    padding: 9px 22px;
+    margin: 0px
 }
 
 .link {
