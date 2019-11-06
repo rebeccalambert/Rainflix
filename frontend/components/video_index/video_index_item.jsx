@@ -1,5 +1,4 @@
 import React from 'react';
-import VideoDetailsPageContainer from './video_details_page_container';
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
@@ -30,7 +29,6 @@ class VideoIndexItem extends React.Component {
     mouseLeave () {
         this.setState({active: false});
     }
-
     render () {
         // let content = ((this.state.active === false) || (this.props.dropdown.id !== undefined)) ? (
         //     <div className="image_container">
@@ -54,9 +52,7 @@ class VideoIndexItem extends React.Component {
                     <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
                 </div>
                 <button className="show-page-button" onClick={this.handleOpen}><span className="chevron bottom" /></button>
-
             </div>
-               
 
         );
     }

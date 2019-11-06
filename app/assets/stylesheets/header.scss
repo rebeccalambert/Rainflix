@@ -11,7 +11,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 1% 5% 0 2%;
+    margin-top: 1%;
 }
 
 .logo.logged-in {
@@ -32,17 +32,17 @@
     width: 100%;
 }
  .logged-in-header {
-     display: flex;
-     align-items:center;
-     width: 50%
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
  }
 
  .welcome-message {
-    margin-right: 25px;
-    width: 100%;
-    padding: 1%;
-    display: flex;
-    justify-content: flex-end;
+    // margin-right: 25px;
+    // width: 100%;
+    // padding: 1%;
+    // display: flex;
+    // justify-content: flex-end;
  }
 
  .sticky-header {
@@ -54,3 +54,30 @@
      background-color: black;
      z-index: 3;
  }
+
+ .mylist {
+    font-weight: bold;
+    border: 1px solid darkgrey;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin: 3px 8px 3px 15px;
+ }
+
+ .about {
+    font-weight: bold;
+    border: 1px solid darkgrey;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin: 2px 15px 2px 7px;
+    cursor: pointer
+    }
+
+.mylist:hover {
+    padding: 8px 12px;
+    margin: 0px 6px 0px 13px;
+}
+
+.about:hover {
+    padding: 8px 12px;
+    margin: 0px 13px 2px 5px;
+}

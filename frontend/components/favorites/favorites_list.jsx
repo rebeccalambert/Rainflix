@@ -1,6 +1,6 @@
 import React from "react";
-import VideoIndexItem from "../video_index/video_index_item";
-
+import FavoriteListItem from "../favorites/favorites_list_item";
+import HeaderBarContainer from "../header_bar/header_container";
 
 export default class FavoritesList extends React.Component {
     constructor(props) {
@@ -9,24 +9,31 @@ export default class FavoritesList extends React.Component {
     }
 
     componentDidMount() {
-        console.log("component did mount call")
-        this.props.grabFavorites();   
+        this.props.grabFavorites();  
     }
 
 
     render() {        
         let vids = this.props.favorites
-        console.log(vids)
-        console.log("vids should be here")
         vids = vids.map( (video, idx) => {
-            return <VideoIndexItem video={video} rowID={this.category} dropdown={this.props.dropdown} showDropdown={this.props.showDropdown} removeDropdown={this.props.removeDropdown} key={`video-index-${idx}`}/>
+            // console.log(video.id)
+
+            return (
+                <FavoriteListItem video_id={video.id} video={video} deleteFavorite={this.props.deleteFavorite} key={`favorite-index-${idx}`}/>
+            )
         });
 
         return (
-            <div className="category-bar">
-                    <div className="category-list">
-                        {vids}
-                    </div>
+            <div className="favorites-index">
+
+                <HeaderBarContainer />
+                
+                <div className="video-index">
+                    <h1 className="favorites-header">Your List</h1>
+                        <div className="category-list favorites">
+                            {vids}
+                        </div>
+                </div>
             </div>
         )
     }

@@ -3,10 +3,9 @@ import WatchScreen from "./watch_screen";
 import { removeDropdown } from "../../actions/video_actions";
 
 
-const mapStateToProps = (state, ownProps) => {
-    return {
+const mapStateToProps = (state, ownProps) => ({
     video: state.entities.videos[ownProps.match.params.videoID]
-}};
+});
 
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

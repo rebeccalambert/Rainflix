@@ -1,6 +1,7 @@
 class Api::FavoritesController < ApplicationController
-    def create(user_id, video_id)
-        @favorite = Favorite.new(user_id: user_id, video_id: video_id)
+    def create
+        # debugger
+        @favorite = Favorite.new(user_id: current_user.id, video_id: params[:video_id])
 
         if @favorite.save
             @favorites = current_user.favorite_videos
@@ -12,7 +13,7 @@ class Api::FavoritesController < ApplicationController
     
     
     def destroy
-        @favorite = Favorite.find_by(user_id: params[:user_id], video_id: params[:video_id])
+        @favorite = Favorite.find_by(user_id: current_user.id, video_id: params[:id])
         @favorite.destroy
         @favorites = current_user.favorite_videos
         render :index
