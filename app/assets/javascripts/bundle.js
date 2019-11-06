@@ -445,10 +445,14 @@ function (_React$Component) {
           key: "favorite-index-".concat(idx)
         });
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "favorites-index"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "category-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "favorites-header"
+      }, "Your List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "category-list favorites"
       }, vids)));
     }
   }]);

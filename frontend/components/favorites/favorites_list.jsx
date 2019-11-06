@@ -24,13 +24,13 @@ export default class FavoritesList extends React.Component {
         });
 
         return (
-            <div>
+            <div className="favorites-index">
 
                 <HeaderBarContainer />
                 
                 <div className="video-index">
-                    <h1>Your List</h1>
-                        <div className="category-list">
+                    <h1 className="favorites-header">Your List</h1>
+                        <div className="category-list favorites">
                             {vids}
                         </div>
                 </div>
