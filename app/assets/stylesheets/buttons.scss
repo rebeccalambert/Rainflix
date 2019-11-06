@@ -11,7 +11,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0 2px;
+}
+
+.authLinks.redButton.logout {
+    margin: 0 2px
 }
 
 .authLinks.redButton.submit {
@@ -27,6 +30,10 @@
 }
 
 .authLinks.redButton:hover {
+    background-color: #ff4949;
+}
+
+.authLinks.redButton.logout:hover {
     background-color: #ff4949;
     padding: 9px 22px;
     margin: 0px

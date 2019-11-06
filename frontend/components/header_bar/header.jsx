@@ -25,7 +25,7 @@ const HeaderBar = ({ currentUser, logoutUser}) => {
                         <p className="about">About Me</p>
                     </span>
                     <span>
-                        <button onClick={logoutUser} className="authLinks redButton">Logout</button>
+                        <button onClick={logoutUser} className="authLinks redButton logout">Logout</button>
                     </span>
                 </span>
             </span>

@@ -624,7 +624,7 @@ var HeaderBar = function HeaderBar(_ref) {
     className: "about"
   }, "About Me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: logoutUser,
-    className: "authLinks redButton"
+    className: "authLinks redButton logout"
   }, "Logout")))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "header-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
