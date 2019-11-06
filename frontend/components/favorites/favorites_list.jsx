@@ -9,13 +9,10 @@ export default class FavoritesList extends React.Component {
     }
 
     componentDidMount() {
-        this.props.grabFavorites();   
+        this.props.grabFavorites();  
     }
 
-    // componentDidUpdate() {
-    //     this.props.grabFavorites();
-    // }
-    
+
     render() {        
         let vids = this.props.favorites
         vids = vids.map( (video, idx) => {

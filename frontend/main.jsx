@@ -25,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // testing
     window.getState = store.getState
     window.dispatch = store.dispatch
-    // window.grabFavorites = grabFavorites
-    // window.deleteFavorite = deleteFavorite
     window.addFavorite = addFavorite
     window.deleteFavorite = deleteFavorite
 

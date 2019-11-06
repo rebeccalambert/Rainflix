@@ -429,10 +429,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.grabFavorites();
-    } // componentDidUpdate() {
-    //     this.props.grabFavorites();
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -554,8 +551,6 @@ function (_React$Component) {
   _createClass(VideoIndexItem, [{
     key: "removeFavorite",
     value: function removeFavorite(e) {
-      console.log('in removeFavorites');
-      console.log(this.video.id);
       this.deleteFavorite(this.video.id);
     }
   }, {
@@ -1984,9 +1979,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   window.getState = store.getState;
-  window.dispatch = store.dispatch; // window.grabFavorites = grabFavorites
-  // window.deleteFavorite = deleteFavorite
-
+  window.dispatch = store.dispatch;
   window.addFavorite = _actions_favorites_action__WEBPACK_IMPORTED_MODULE_4__["addFavorite"];
   window.deleteFavorite = _actions_favorites_action__WEBPACK_IMPORTED_MODULE_4__["deleteFavorite"];
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2094,9 +2087,8 @@ var favoritesReducer = function favoritesReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newState = Object.assign({}, state);
-  console.log("favorites reducer");
-  console.log(action);
+  var newState = Object.assign({}, state); // console.log("favorites reducer")
+  // console.log(action)
 
   switch (action.type) {
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["GET_FAVORITES"]:

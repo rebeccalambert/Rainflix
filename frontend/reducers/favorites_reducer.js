@@ -4,8 +4,8 @@ const favoritesReducer = (state = [], action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
 
-    console.log("favorites reducer")
-    console.log(action)
+    // console.log("favorites reducer")
+    // console.log(action)
 
 
     switch (action.type) {

@@ -12,8 +12,7 @@ class VideoIndexItem extends React.Component {
     
 
     removeFavorite(e) {
-        console.log('in removeFavorites')
-        console.log(this.video.id)
+        
         this.deleteFavorite(this.video.id)
     }
 
