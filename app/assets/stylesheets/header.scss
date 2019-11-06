@@ -11,7 +11,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 1% 5% 0 2%;
+    margin-top: 1%;
 }
 
 .logo.logged-in {
@@ -60,11 +60,24 @@
     border: 1px solid darkgrey;
     padding: 6px 10px;
     border-radius: 3px;
-    margin: 0 15px;
-
-    
+    margin: 3px 8px 3px 15px;
  }
 
  .about {
-        margin-left: 0px
+    font-weight: bold;
+    border: 1px solid darkgrey;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin: 2px 15px 2px 7px;
+    cursor: pointer
     }
+
+.mylist:hover {
+    padding: 8px 12px;
+    margin: 0px 6px 0px 13px;
+}
+
+.about:hover {
+    padding: 8px 12px;
+    margin: 0px 13px 2px 5px;
+}

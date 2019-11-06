@@ -621,7 +621,7 @@ var HeaderBar = function HeaderBar(_ref) {
     className: "mylist",
     to: "/favorites"
   }, "MyList")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "mylist about"
+    className: "about"
   }, "About Me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: logoutUser,
     className: "authLinks redButton"
