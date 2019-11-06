@@ -15,11 +15,11 @@ const HeaderBar = ({ currentUser, logoutUser}) => {
             </span>
             <span className="header-content">
                 <span className="logged-in-header">
-                    <span>
-                        <Link to="/favorites">MyList</Link>
-                    </span>
                     <span className="welcome-message">
                         <h3>Welcome {currentUser.username}!</h3>
+                    </span>
+                    <span>
+                        <Link className="mylist" to="/favorites">MyList</Link>
                     </span>
                     <span>
                         <button onClick={logoutUser} className="authLinks redButton">Logout</button>
