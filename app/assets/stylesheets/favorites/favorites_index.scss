@@ -1,0 +1,35 @@
+
+.favorite-item {
+    padding: 2x;
+    margin: 0 2px;
+    max-width: 300px;
+    min-width: 299px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    transition: all 800ms;
+    flex-direction: column;
+    border-radius: 3px;
+
+}
+
+.image-container {
+  display: flex;
+
+}
+
+
+
+.favorites-button {
+    font-weight: bold;
+    border: 1px solid darkgrey;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin: 2px 15px 2px 7px;
+    cursor: pointer
+}
+
+.favorites-button:hover {
+    box-shadow: 0 0 5px;
+}

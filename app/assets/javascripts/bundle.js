@@ -447,7 +447,7 @@ function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_bar_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "category-list"
       }, vids)));
     }
@@ -557,7 +557,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "index-item",
+        className: "favorite-item",
         onMouseEnter: this.mouseEnter,
         onMouseLeave: this.mouseLeave
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -566,10 +566,12 @@ function (_React$Component) {
         className: "thumbnail-pic",
         src: this.video.thumbnailURL
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "favorites-button",
         to: "/watch/".concat(this.props.video.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "display-button play"
       }, "Watch Now")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "favorites-button",
         onClick: this.removeFavorite
       }, "Remove"))));
     }
