@@ -1,12 +1,10 @@
-
-
 .splash-background {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
     width: 100%;
-    min-height: 1000px;
+    min-height: 100vh;
     background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/blurry-blue-background-3.jpg");
     background-position: center;
     background-size: cover;
@@ -25,6 +23,7 @@
     flex-direction: column;
     align-items: center;
     // min-height: 1000px;
+    // overflow: hidden
     
 }
 
