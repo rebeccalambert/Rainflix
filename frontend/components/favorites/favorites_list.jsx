@@ -16,7 +16,6 @@ export default class FavoritesList extends React.Component {
     render() {        
         let vids = this.props.favorites
         vids = vids.map( (video, idx) => {
-            // console.log(video.id)
 
             return (
                 <FavoriteListItem video_id={video.id} video={video} deleteFavorite={this.props.deleteFavorite} key={`favorite-index-${idx}`}/>

@@ -437,7 +437,6 @@ function (_React$Component) {
 
       var vids = this.props.favorites;
       vids = vids.map(function (video, idx) {
-        // console.log(video.id)
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_favorites_favorites_list_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           video_id: video.id,
           video: video,
@@ -1304,7 +1303,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _category_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./category-list */ "./frontend/components/video_index/category-list.jsx");
 /* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
 /* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
- // import VideoIndex from "./video_index";
 
 
 
@@ -1416,20 +1414,11 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      console.log("in update");
-
       if (this.video !== this.props.video) {
         this.video = this.props.video;
         document.getElementById("display-video").load();
       }
-    } // componentDidMount() {
-    //     console.log("in did mount")
-    //     if (this.favorites.includes(`${this.props.video.id}`)) {
-    //         document.getElementById("my-list-toggle").innerHTML = "Added!"
-    //         console.log("hit update")
-    //     }
-    // }
-
+    }
   }, {
     key: "myList",
     value: function myList() {
@@ -1451,9 +1440,7 @@ function (_React$Component) {
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "down-volume",
         onClick: this.downVolume
-      }, "ON"); // console.log(this.video.id)
-      // console.log(this.favorites)
-
+      }, "ON");
       var mylist = this.favorites.includes("".concat(this.video.id)) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.myList,
         className: "display-button mylist"
@@ -1559,7 +1546,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _header_bar_header_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header_bar/header_container */ "./frontend/components/header_bar/header_container.jsx");
 /* harmony import */ var _video_index_category_list_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../video_index/category_list_container */ "./frontend/components/video_index/category_list_container.jsx");
-/* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1577,7 +1563,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -1602,10 +1587,7 @@ function (_React$Component) {
     // this.downVolume = this.downVolume.bind(this);
 
     return _this;
-  } // componentDidMount() {
-  //     this.props.fetchVideo(??????);   
-  // }
-  // upVolume () {
+  } // upVolume () {
   //     let vid = document.getElementById("rpo-vid")
   //     vid.volume = 1;
   //     this.setState({volume: 'on'});
@@ -1785,18 +1767,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // let content = ((this.state.active === false) || (this.props.dropdown.id !== undefined)) ? (
-      //     <div className="image_container">
-      //         <img className="thumbnail-pic" src={this.video.thumbnailURL}/>
-      //     </div>
-      // ) : (
-      //     <div className="thumbnail-video-player">
-      //         <video width="215" height="240" controls >
-      //             <source type="video/mp4" src={this.video.videoURL} />
-      //         </video>
-      //     </div>
-      // ) 
-      // This would allow the video to play on hover, but it is pretty glitchy/choppy in function. Use debounce to make the user hover for few seconds before the video pops up?
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index-item",
         onMouseEnter: this.mouseEnter,
@@ -1901,9 +1871,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // if (!this.props.video.videoURL) {
-      // }
-      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "watch-screen"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -2115,8 +2082,7 @@ var favoritesReducer = function favoritesReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newState = Object.assign({}, state); // console.log("favorites reducer")
-  // console.log(action)
+  var newState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["GET_FAVORITES"]:
@@ -2128,8 +2094,7 @@ var favoritesReducer = function favoritesReducer() {
       return newState;
 
     case _actions_favorites_action__WEBPACK_IMPORTED_MODULE_0__["DELETE_FAVORITE"]:
-      newState = Object.assign({}, action.videos); // delete newState[action.video.id];
-
+      newState = Object.assign({}, action.videos);
       return newState;
 
     default:

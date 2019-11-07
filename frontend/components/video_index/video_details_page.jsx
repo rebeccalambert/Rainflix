@@ -28,21 +28,12 @@ class VideoDetailsPage extends React.Component {
     }
 
     componentDidUpdate () {
-        console.log("in update")
         if (this.video !== this.props.video) {
             this.video = this.props.video;
             document.getElementById("display-video").load();
         }
 
     }
-
-    // componentDidMount() {
-    //     console.log("in did mount")
-    //     if (this.favorites.includes(`${this.props.video.id}`)) {
-    //         document.getElementById("my-list-toggle").innerHTML = "Added!"
-    //         console.log("hit update")
-    //     }
-    // }
 
     myList () {
         document.getElementById("my-list-toggle").innerHTML = "Added!";
@@ -60,8 +51,7 @@ class VideoDetailsPage extends React.Component {
             // <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
             <button className="down-volume" onClick={this.downVolume}>ON</button>
         );
-            // console.log(this.video.id)
-            // console.log(this.favorites)
+
         let mylist = (this.favorites.includes(`${this.video.id}`)) ? (
             <button onClick={this.myList} className="display-button mylist">Added!</button>
         ) : (
@@ -82,7 +72,6 @@ class VideoDetailsPage extends React.Component {
                     <p className="synopsis">{this.props.video.overview}</p>
                     <div className="display-buttons">
                         <Link to={`/watch/${this.props.video.id}`}><button className="display-button play">PLAY</button></Link>
-                        {/* <button id="my-list-toggle" onClick={this.myList} className="display-button mylist">My List</button> */}
                         {mylist}
 
                         

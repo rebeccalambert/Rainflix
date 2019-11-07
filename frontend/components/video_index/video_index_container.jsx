@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import VideoIndex from "./video_index";
-import { removeDropdown } from "../../actions/video_actions";
+// import { removeDropdown } from "../../actions/video_actions";
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    removeDropdown: () => dispatch(removeDropdown())
+    // removeDropdown: () => dispatch(removeDropdown())
 
 });
 

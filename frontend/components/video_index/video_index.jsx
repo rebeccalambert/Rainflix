@@ -1,7 +1,6 @@
 import React from "react";
 import HeaderBarContainer from "../header_bar/header_container";
 import CategoryListContainer from "../video_index/category_list_container";
-import { fetchVideos } from "../../actions/video_actions";
 
 export default class VideoIndex extends React.Component {
     constructor(props) {
@@ -11,14 +10,12 @@ export default class VideoIndex extends React.Component {
             volume: 'on'
         };
         this.categories = ['superhero', 'book-made-movie', 'mission:Possible', 'throwback', 'laughs', 'contemplative', 'mind-bending', 'sing-along', 'animated', 'realistic']
+
         // this.upVolume = this.upVolume.bind(this);
         // this.downVolume = this.downVolume.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchVideo(??????);   
-    // }
-
+    
     // upVolume () {
     //     let vid = document.getElementById("rpo-vid")
     //     vid.volume = 1;
@@ -68,9 +65,6 @@ export default class VideoIndex extends React.Component {
 
 
                 <div className="video-index">
-                    {/* <div className="slider">
-                        {videos_list}
-                    </div>   */}
 
                     <div className="slider"> Superhero
                         <CategoryListContainer category={'superhero'} key={`li-index-1}`}/>
@@ -103,6 +97,7 @@ export default class VideoIndex extends React.Component {
                     <div className="slider"> Realistic
                         <CategoryListContainer category={'realistic'} key={`li-index-10`}/>
                     </div> 
+
                 </div>
             </div>
         )

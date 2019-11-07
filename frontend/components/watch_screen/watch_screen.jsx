@@ -32,11 +32,6 @@ class WatchScreen extends React.Component {
 
     render () {
 
-        // if (!this.props.video.videoURL) {
-            
-        // }
-
-        // debugger
         return (
             <div className="watch-screen">
                 <a className="watch-arrow" href="/" onClick={this.handleClose}> ⟵ </a>

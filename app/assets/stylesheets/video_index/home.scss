@@ -3,9 +3,8 @@
     font-size: 16px;
     display: flex;
     flex-direction: column;
-
+    
     // background-color: #141414; Better color background
-
     
 }
 
@@ -13,7 +12,6 @@
   display: flex;
   flex: 0 0 19.7%;
   text-align: center;
-  /* margin: 5px 2px; */
   transition: transform 300ms ease 100ms;
   overflow-x: scroll;
   padding: 30px;
@@ -32,7 +30,7 @@
 
   ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+    background: transparent;  /* Just makes scrollbar invisible */
 }
 
 .thumbnail-pic {
@@ -94,7 +92,6 @@
  }
 
  .thumbnail-video-player {
-  // position: relative;
 
   video {
     position: absolute;
@@ -155,8 +152,6 @@
 #rpo-vid {
   width: 150%;
   height: 800px;
-  // border: 1px solid white;
-
 }
 
 .on-volume {
@@ -166,7 +161,6 @@
 .summary {
   font-size:28px;
   font-weight: 300;
-  // margin-top: 15px;
 }
 
 .index-rating {
@@ -177,9 +171,4 @@
   background: rgba(255, 255, 255, 0.2);
   padding: .5em 1.5em;
   border-left: 2px solid whitesmoke;
-}
-
-.testing {
-  // overflow:scroll;
-  // border: 1px solid red;
 }
