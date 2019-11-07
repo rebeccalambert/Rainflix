@@ -12,6 +12,7 @@ class VideoDetailsPage extends React.Component {
         this.removeDropdown = this.props.removeDropdown;
         this.handleClose = this.handleClose.bind(this);
         this.myList = this.myList.bind(this);
+        this.favorites = this.props.favorites;
     }
 
     upVolume () {
@@ -29,10 +30,19 @@ class VideoDetailsPage extends React.Component {
     componentDidUpdate () {
         
         if (this.video !== this.props.video) {
-            this.video=this.props.video;
+            this.video = this.props.video;
             document.getElementById("display-video").load();
         }
+
     }
+
+    // componentDidMount() {
+    //     console.log("in did mount")
+    //     if (this.favorites.includes(`${this.props.video.id}`)) {
+    //         document.getElementById("my-list-toggle").innerHTML = "Added!"
+    //         console.log("hit update")
+    //     }
+    // }
 
     myList () {
         addFavorite(this.props.video.id)
@@ -49,6 +59,13 @@ class VideoDetailsPage extends React.Component {
             // <button className="down-volume" onClick={this.downVolume}><img src="<=% image_url('grey-volume.png') %>" alt=""/></button>
             <button className="down-volume" onClick={this.downVolume}>ON</button>
         );
+            // console.log(this.video.id)
+            // console.log(this.favorites)
+        let mylist = (this.favorites.includes(`${this.video.id}`)) ? (
+            <button onClick={this.myList} className="display-button mylist">Added!</button>
+        ) : (
+            <button onClick={this.myList} className="display-button mylist">My List</button>
+        )
 
         return (
             <span className="content">
@@ -64,8 +81,8 @@ class VideoDetailsPage extends React.Component {
                     <p className="synopsis">{this.props.video.overview}</p>
                     <div className="display-buttons">
                         <Link to={`/watch/${this.props.video.id}`}><button className="display-button play">PLAY</button></Link>
-                        <button onClick={this.myList} className="display-button mylist">My List</button>
-                        
+                        {/* <button id="my-list-toggle" onClick={this.myList} className="display-button mylist">My List</button> */}
+                        {mylist}
 
                         
                     </div>

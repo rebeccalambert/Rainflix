@@ -4,7 +4,8 @@ import { removeDropdown } from "../../actions/video_actions";
 
 
 const mapStateToProps = (state, ownProps) => ({
-    video: state.entities.dropdown.video
+    video: state.entities.dropdown.video,
+    favorites: Object.keys(state.entities.favorites)
 });
 
 

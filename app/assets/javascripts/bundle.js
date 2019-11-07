@@ -1391,6 +1391,7 @@ function (_React$Component) {
     _this.removeDropdown = _this.props.removeDropdown;
     _this.handleClose = _this.handleClose.bind(_assertThisInitialized(_this));
     _this.myList = _this.myList.bind(_assertThisInitialized(_this));
+    _this.favorites = _this.props.favorites;
     return _this;
   }
 
@@ -1419,7 +1420,14 @@ function (_React$Component) {
         this.video = this.props.video;
         document.getElementById("display-video").load();
       }
-    }
+    } // componentDidMount() {
+    //     console.log("in did mount")
+    //     if (this.favorites.includes(`${this.props.video.id}`)) {
+    //         document.getElementById("my-list-toggle").innerHTML = "Added!"
+    //         console.log("hit update")
+    //     }
+    // }
+
   }, {
     key: "myList",
     value: function myList() {
@@ -1440,7 +1448,16 @@ function (_React$Component) {
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "down-volume",
         onClick: this.downVolume
-      }, "ON");
+      }, "ON"); // console.log(this.video.id)
+      // console.log(this.favorites)
+
+      var mylist = this.favorites.includes("".concat(this.video.id)) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.myList,
+        className: "display-button mylist"
+      }, "Added!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.myList,
+        className: "display-button mylist"
+      }, "My List");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1461,10 +1478,7 @@ function (_React$Component) {
         to: "/watch/".concat(this.props.video.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "display-button play"
-      }, "PLAY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.myList,
-        className: "display-button mylist"
-      }, "My List")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "PLAY")), mylist), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lists"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "title"
@@ -1510,7 +1524,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    video: state.entities.dropdown.video
+    video: state.entities.dropdown.video,
+    favorites: Object.keys(state.entities.favorites)
   };
 };
 
