@@ -37,7 +37,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'bcrypt'
 gem 'rails_12factor', group: :production
-gem "aws-sdk-s3"
+gem "aws-sdk-s3", require: false # didn't have require:false originally
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
