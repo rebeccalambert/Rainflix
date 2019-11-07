@@ -1416,6 +1416,8 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
+      console.log("in update");
+
       if (this.video !== this.props.video) {
         this.video = this.props.video;
         document.getElementById("display-video").load();
@@ -1431,6 +1433,7 @@ function (_React$Component) {
   }, {
     key: "myList",
     value: function myList() {
+      document.getElementById("my-list-toggle").innerHTML = "Added!";
       Object(_actions_favorites_action__WEBPACK_IMPORTED_MODULE_2__["addFavorite"])(this.props.video.id);
     }
   }, {
@@ -1456,6 +1459,7 @@ function (_React$Component) {
         className: "display-button mylist"
       }, "Added!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.myList,
+        id: "my-list-toggle",
         className: "display-button mylist"
       }, "My List");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

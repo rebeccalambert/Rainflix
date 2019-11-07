@@ -28,7 +28,7 @@ class VideoDetailsPage extends React.Component {
     }
 
     componentDidUpdate () {
-        
+        console.log("in update")
         if (this.video !== this.props.video) {
             this.video = this.props.video;
             document.getElementById("display-video").load();
@@ -45,6 +45,7 @@ class VideoDetailsPage extends React.Component {
     // }
 
     myList () {
+        document.getElementById("my-list-toggle").innerHTML = "Added!";
         addFavorite(this.props.video.id)
     }
 
@@ -64,7 +65,7 @@ class VideoDetailsPage extends React.Component {
         let mylist = (this.favorites.includes(`${this.video.id}`)) ? (
             <button onClick={this.myList} className="display-button mylist">Added!</button>
         ) : (
-            <button onClick={this.myList} className="display-button mylist">My List</button>
+            <button onClick={this.myList} id="my-list-toggle" className="display-button mylist">My List</button>
         )
 
         return (
