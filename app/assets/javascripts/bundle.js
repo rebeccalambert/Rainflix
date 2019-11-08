@@ -627,10 +627,10 @@ var HeaderBar = function HeaderBar(_ref) {
     to: "/favorites"
   }, "MyList")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "github",
-    href: ""
+    href: "https://github.com/rebeccalambert"
   }, "Github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "linkedin",
-    href: ""
+    href: "https://www.linkedin.com/in/rebeccajlambert/"
   }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: logoutUser,
     className: "authLinks redButton logout"
