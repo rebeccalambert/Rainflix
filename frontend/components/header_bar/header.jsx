@@ -22,7 +22,11 @@ const HeaderBar = ({ currentUser, logoutUser}) => {
                         <Link className="mylist" to="/favorites">MyList</Link>
                     </span>
                     <span>
-                        <p className="about">About Me</p>
+                        <button className="about" >About Me</button>
+                        <div id="my-links">
+                            <a href="">Github</a>
+                            <a href="">LinkedIn</a>
+                        </div>
                     </span>
                     <span>
                         <button onClick={logoutUser} className="authLinks redButton logout">Logout</button>
@@ -49,6 +53,7 @@ const HeaderBar = ({ currentUser, logoutUser}) => {
             </header>
         </div>
     )
+
 
     return (
         <div>
