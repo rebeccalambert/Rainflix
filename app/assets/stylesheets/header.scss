@@ -63,7 +63,16 @@
     margin: 3px 8px 3px 15px;
  }
 
- .about {
+ .github {
+    font-weight: bold;
+    border: 1px solid darkgrey;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin: 2px 7px 2px 7px;
+    cursor: pointer
+    }
+
+ .linkedin {
     font-weight: bold;
     border: 1px solid darkgrey;
     padding: 6px 10px;
@@ -77,7 +86,13 @@
     margin: 0px 6px 0px 13px;
 }
 
-.about:hover {
+.github:hover {
+    padding: 8px 12px;
+    margin: 0px 5px 2px 5px;
+}
+
+.linkedin:hover {
     padding: 8px 12px;
     margin: 0px 13px 2px 5px;
 }
+

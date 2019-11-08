@@ -625,15 +625,13 @@ var HeaderBar = function HeaderBar(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Welcome ", currentUser.username, "!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "mylist",
     to: "/favorites"
-  }, "MyList")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "about"
-  }, "About Me"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "my-links"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "MyList")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "github",
     href: ""
   }, "Github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "linkedin",
     href: ""
-  }, "LinkedIn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: logoutUser,
     className: "authLinks redButton logout"
   }, "Logout")))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {

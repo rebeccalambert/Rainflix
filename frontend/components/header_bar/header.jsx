@@ -22,11 +22,8 @@ const HeaderBar = ({ currentUser, logoutUser}) => {
                         <Link className="mylist" to="/favorites">MyList</Link>
                     </span>
                     <span>
-                        <button className="about" >About Me</button>
-                        <div id="my-links">
-                            <a href="">Github</a>
-                            <a href="">LinkedIn</a>
-                        </div>
+                        <a className="github" href="">Github</a>
+                        <a className="linkedin" href="">LinkedIn</a>
                     </span>
                     <span>
                         <button onClick={logoutUser} className="authLinks redButton logout">Logout</button>
