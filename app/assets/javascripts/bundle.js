@@ -420,9 +420,16 @@ function (_React$Component) {
   _inherits(FavoritesList, _React$Component);
 
   function FavoritesList(props) {
+    var _this;
+
     _classCallCheck(this, FavoritesList);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(FavoritesList).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FavoritesList).call(this, props));
+    _this.state = {
+      reset: false
+    }; // this.deleteItem = this.deleteItem.bind(this);
+
+    return _this;
   }
 
   _createClass(FavoritesList, [{
@@ -431,16 +438,43 @@ function (_React$Component) {
       this.props.grabFavorites();
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      // Typical usage (don't forget to compare props):
+      if (this.props.favorites.length !== prevProps.favorites.length) {
+        if (this.state.reset === true) {
+          // console.log("in set state place")
+          // this.setState({
+          //     reset: false
+          // })
+          this.state.reset = false;
+          window.location.reload();
+        } //   this.props.grabFavorites();
+        // console.log("hit the update statement!")
+
+      }
+    } // deleteItem(id) {
+    //     this.props.deleteFavorite(id).then(
+    //         (res) => {
+    //             let newState = this.state.favorites.delete(id)
+    //             this.setState(newState)
+    //         })
+    // }
+    //setting state flag to true or false, then using set state to reset it to false, and that triggers an auto re-render
+
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       var vids = this.props.favorites;
-      vids = vids.map(function (video, idx) {
+      var video_items = vids.map(function (video, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_favorites_favorites_list_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           video_id: video.id,
           video: video,
-          deleteFavorite: _this.props.deleteFavorite,
+          state: _this2.state,
+          grabFavorites: _this2.props.grabFavorites,
+          deleteFavorite: _this2.props.deleteFavorite,
           key: "favorite-index-".concat(idx)
         });
       });
@@ -452,7 +486,7 @@ function (_React$Component) {
         className: "favorites-header"
       }, "Your List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "category-list favorites"
-      }, vids)));
+      }, video_items)));
     }
   }]);
 
@@ -545,16 +579,22 @@ function (_React$Component) {
     _classCallCheck(this, VideoIndexItem);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoIndexItem).call(this, props));
-    _this.video = _this.props.video;
-    _this.deleteFavorite = _this.props.deleteFavorite.bind(_assertThisInitialized(_this));
-    _this.removeFavorite = _this.removeFavorite.bind(_assertThisInitialized(_this));
+    _this.video = _this.props.video; // this.deleteItem = this.props.deleteItem.bind(this)
+
+    _this.removeFavorite = _this.removeFavorite.bind(_assertThisInitialized(_this)); // this.grabFavorites = this.props.grabFavorites
+
     return _this;
   }
 
   _createClass(VideoIndexItem, [{
     key: "removeFavorite",
-    value: function removeFavorite(e) {
-      this.deleteFavorite(this.video.id);
+    value: function removeFavorite() {
+      // const{grabFave} = this.props
+      this.props.state.reset = true;
+      this.props.deleteFavorite(this.video.id); // .then(() => {
+      //     this.props.grabFavorites()
+      // })
+      // console.log("done")
     }
   }, {
     key: "render",
@@ -576,7 +616,7 @@ function (_React$Component) {
       }, "Watch Now")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "favorites-button",
         onClick: this.removeFavorite
-      }, "Remove"))));
+      }, " Remove "))));
     }
   }]);
 
@@ -625,13 +665,7 @@ var HeaderBar = function HeaderBar(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Welcome ", currentUser.username, "!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "mylist",
     to: "/favorites"
-  }, "MyList")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "github",
-    href: "https://github.com/rebeccalambert"
-  }, "Github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "linkedin",
-    href: "https://www.linkedin.com/in/rebeccajlambert/"
-  }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "MyList")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: logoutUser,
     className: "authLinks redButton logout"
   }, "Logout")))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
@@ -1840,7 +1874,6 @@ function (_React$Component) {
     _classCallCheck(this, WatchScreen);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(WatchScreen).call(this, props));
-    _this.video = _this.props.video;
     _this.upVolume = _this.upVolume.bind(_assertThisInitialized(_this));
     _this.downVolume = _this.downVolume.bind(_assertThisInitialized(_this));
     _this.handleClose = _this.handleClose.bind(_assertThisInitialized(_this));
@@ -1875,6 +1908,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var video_source = this.props.video ? this.props.video.videoURL : this.props.favorite.videoURL;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "watch-screen"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1887,7 +1921,7 @@ function (_React$Component) {
         controls: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         type: "video/mp4",
-        src: this.props.video.videoURL
+        src: video_source
       })));
     }
   }]);
@@ -1917,7 +1951,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    video: state.entities.videos[ownProps.match.params.videoID]
+    video: state.entities.videos[ownProps.match.params.videoID],
+    favorite: state.entities.favorites[ownProps.match.params.videoID]
   };
 };
 
@@ -2275,7 +2310,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var videosReducer = function videosReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var newState = Object.assign({}, state);

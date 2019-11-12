@@ -6,14 +6,20 @@ class VideoIndexItem extends React.Component {
         super(props);
         
         this.video = this.props.video;
-        this.deleteFavorite = this.props.deleteFavorite.bind(this)
+        // this.deleteItem = this.props.deleteItem.bind(this)
         this.removeFavorite = this.removeFavorite.bind(this)
+        // this.grabFavorites = this.props.grabFavorites
     }
     
 
-    removeFavorite(e) {
-        
-        this.deleteFavorite(this.video.id)
+    removeFavorite() {
+        // const{grabFave} = this.props
+        this.props.state.reset = true;
+        this.props.deleteFavorite(this.video.id)
+            // .then(() => {
+            //     this.props.grabFavorites()
+            // })
+        // console.log("done")
     }
 
     render () {
@@ -26,7 +32,7 @@ class VideoIndexItem extends React.Component {
                 </div>
                 <div>
                     <Link className="favorites-button" to={`/watch/${this.props.video.id}`}><button className="display-button play">Watch Now</button></Link>
-                    <button className="favorites-button" onClick={this.removeFavorite} >Remove</button>
+                    <button className="favorites-button" onClick={this.removeFavorite} > Remove </button>
                 </div>
             </div>
         </div>

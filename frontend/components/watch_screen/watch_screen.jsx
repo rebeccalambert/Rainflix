@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class WatchScreen extends React.Component {
     constructor(props) {
         super(props);
-        this.video = this.props.video
+        
         this.upVolume = this.upVolume.bind(this);
         this.downVolume = this.downVolume.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -31,13 +31,14 @@ class WatchScreen extends React.Component {
     }
 
     render () {
+        let video_source = this.props.video ? this.props.video.videoURL : this.props.favorite.videoURL;
 
         return (
             <div className="watch-screen">
                 <a className="watch-arrow" href="/" onClick={this.handleClose}> ⟵ </a>
                 
                 <video id="watch-video" autoPlay controls>
-                    <source type="video/mp4" src={this.props.video.videoURL} />
+                    <source type="video/mp4" src={video_source} />
                 </video>
            </div>
 

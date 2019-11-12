@@ -1,6 +1,6 @@
 import { RECEIVE_VIDEO, RECEIVE_VIDEOS } from "../actions/video_actions";
 
-const videosReducer = (state = [], action) => {
+const videosReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
 
